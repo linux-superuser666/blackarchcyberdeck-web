@@ -5,6 +5,11 @@ import { nerdFont } from "./fonts";
 export const metadata: Metadata = {
   title: "Cyberdeck",
   description: "Theme for BlackArch",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

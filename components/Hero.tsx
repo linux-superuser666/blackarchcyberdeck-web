@@ -1,12 +1,12 @@
 import React from "react";
-import SystemPanel from "../panel/SystemPanel";
-import Appframe from "../layer-one/Appframe";
-import Framex from "../layer-one/Framex";
-import HyprPanel from "../panel/HyprPanel";
-import ChronoPanel from "../panel/ChronoPanel";
-import ControlPanel from "../panel/ControlPanel";
-import WinSwitch from "../widget/WinSwitch";
-import Radiostation from "../widget/Radiostation";
+import Framex from "./layer-one/Framex";
+import Appframe from "./layer-one/Appframe";
+import SystemPanel from "./panel/SystemPanel";
+import HyprPanel from "./panel/HyprPanel";
+import ChronoPanel from "./panel/ChronoPanel";
+import WinSwitch from "./widget/WinSwitch";
+import Radiostation from "./widget/Radiostation";
+import ControlPanel from "./panel/ControlPanel";
 
 const Hero = () => {
   return (
