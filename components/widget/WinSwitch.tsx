@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { useUIStore } from "@/state/widgetState";
 
 type WinSwitchProps = {
@@ -11,7 +11,20 @@ type WinSwitchProps = {
 const WinSwitch = ({ className = "" }: WinSwitchProps) => {
   const activeWidget = useUIStore((s) => s.activeWidget);
 
-  if (activeWidget !== "winSwitch") return null;
+  // Akses store untuk workspace
+  const setActiveWorkspace = useUIStore((s) => s.setActiveWorkspace);
+  const setOccupiedWorkspaces = useUIStore((s) => s.setOccupiedWorkspaces);
+  const toggleWidget = useUIStore((s) => s.toggleWidget);
+
+  // Mapping app → workspace
+  const appToWorkspace: Record<string, string[]> = {
+    kitty: ["cyberware"],
+    thunar: ["inventory"],
+    firefox: ["net"],
+    "code-oss": ["crafting"],
+    "pdf-reader": ["journal"],
+    "obs-studio": ["media"],
+  };
 
   const apps = [
     "kitty",
@@ -21,6 +34,24 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
     "pdf-reader",
     "obs-studio",
   ];
+
+  // Jangan render jika widget tidak aktif
+  if (activeWidget !== "winSwitch") return null;
+
+  // Klik app → pindah workspace dan tutup WinSwitch
+  const handleClickApp = (app: string) => {
+    const workspaces = appToWorkspace[app];
+    if (!workspaces) return;
+
+    // Set workspace aktif ke workspace pertama
+    setActiveWorkspace(workspaces[0]);
+
+    // Masukkan semua workspace terkait ke occupied
+    setOccupiedWorkspaces(workspaces);
+
+    // Tutup WinSwitch
+    toggleWidget("winSwitch");
+  };
 
   return (
     <div
@@ -45,7 +76,11 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
                       overflow-y-auto scrollbar-hidden"
         >
           {apps.map((app, i) => (
-            <div key={i} className="w-[280px] h-[28px] relative group">
+            <div
+              key={i}
+              onClick={() => handleClickApp(app)}
+              className="w-[280px] h-[28px] relative group cursor-pointer"
+            >
               <Image
                 src="/window/window-idle.png"
                 alt="window item"

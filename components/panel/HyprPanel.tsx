@@ -1,5 +1,6 @@
 "use client";
-import React, { JSX, useState } from "react";
+
+import React, { JSX } from "react";
 import BinLogo from "../common/BinLogo";
 import Cyberware from "../windows/Cyberware";
 import WorkspaceSlider from "../windows/WorkspaceSlider";
@@ -11,6 +12,7 @@ import Net from "../windows/Net";
 import Journal from "../windows/Journal";
 import Codex from "../windows/Codex";
 import Message from "../windows/Message";
+import { useUIStore } from "@/state/widgetState";
 
 type Workspace = {
   label: string;
@@ -97,12 +99,19 @@ const HyprPanel = () => {
     },
   ];
 
-  const [active, setActive] = useState<string>("cyberware");
-  const [occupied, setOccupied] = useState<string[]>(["cyberware"]);
+  const active = useUIStore((s) => s.activeWorkspace);
+  const occupied = useUIStore((s) => s.occupiedWorkspaces);
+  const setActive = useUIStore((s) => s.setActiveWorkspace);
+  const setOccupied = useUIStore((s) => s.setOccupiedWorkspaces);
 
+  // Klik workspace
   const handleWorkspaceClick = (label: string) => {
     setActive(label);
-    setOccupied((prev) => (prev.includes(label) ? prev : [...prev, label]));
+
+    const newOccupied = occupied.includes(label)
+      ? occupied
+      : [...occupied, label];
+    setOccupied(newOccupied);
   };
 
   const getIconSrc = (ws: Workspace) => {
@@ -110,6 +119,7 @@ const HyprPanel = () => {
     if (occupied.includes(ws.label)) return ws.icons.occupied;
     return ws.icons.idle;
   };
+
   const workspaceViews: Record<string, JSX.Element> = {
     cyberware: <Cyberware />,
     inventory: <Inventory />,
@@ -121,6 +131,7 @@ const HyprPanel = () => {
     message: <Message />,
     machine: <Machine />,
   };
+
   const xwindowNames: Record<string, string> = {
     cyberware: "kitty",
     inventory: "thunar",
@@ -132,6 +143,7 @@ const HyprPanel = () => {
     message: "_",
     machine: "_",
   };
+
   const activeXWindow = xwindowNames[active] || "";
 
   return (
@@ -150,22 +162,20 @@ const HyprPanel = () => {
                 <div
                   key={ws.label}
                   onClick={() => handleWorkspaceClick(ws.label)}
-                  className={`flex flex-row gap-0.5 text-[9px]  items-center cursor-pointer transition-all
-                    ${isActive ? "text-whitex" : "text-redx/60 hover:text-redx"}
-                  `}
+                  className={`flex flex-row gap-0.5 text-[9px] items-center cursor-pointer transition-all ${
+                    isActive ? "text-whitex" : "text-redx/60 hover:text-redx"
+                  }`}
                 >
                   <img
                     src={getIconSrc(ws)}
                     alt={ws.label}
-                    className={`size-3 object-contain transition-all
-                      ${
-                        isActive
-                          ? "drop-shadow-[0_0_6px_#ff003c]"
-                          : occupied.includes(ws.label)
-                          ? "drop-shadow-[0_0_4px_#ff003c66]"
-                          : "opacity-60"
-                      }
-                    `}
+                    className={`size-3 object-contain transition-all ${
+                      isActive
+                        ? "drop-shadow-[0_0_6px_#ff003c]"
+                        : occupied.includes(ws.label)
+                        ? "drop-shadow-[0_0_4px_#ff003c66]"
+                        : "opacity-60"
+                    }`}
                   />
                   <p>{ws.label}</p>
                 </div>
