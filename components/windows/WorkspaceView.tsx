@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 
 type Props = {
   active: string;
