@@ -5,17 +5,75 @@ import { useUIStore } from "@/state/widgetState";
 const Radiostation = () => {
   const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
-  if (activeWidget !== "radioStation") return null;
+
   const songs = [
-    { title: "Duality", artist: "Slipknot" },
-    { title: "Psychosocial", artist: "Slipknot" },
-    { title: "Before I Forget", artist: "Slipknot" },
-    { title: "Wait and Bleed", artist: "Slipknot" },
-    { title: "Snuff", artist: "Slipknot" },
+    {
+      title: "Custer",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Custer.mp3",
+    },
+    {
+      title: "Spit It Out",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Spit It Out.mp3",
+    },
+    {
+      title: "Duality",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Duality.mp3",
+    },
+    {
+      title: "The Devil In I",
+      artist: "Slipknot",
+      src: "/music/Slipknot - The Devil In I.mp3",
+    },
+    {
+      title: "Eyeless",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Eyeless.mp3",
+    },
+    {
+      title: "The Dying Song",
+      artist: "Slipknot",
+      src: "/music/Slipknot - The Dying Song.mp3",
+    },
+    {
+      title: "Nero Forte",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Nero Forte.mp3",
+    },
+    {
+      title: "Unsainted",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Unsainted.mp3",
+    },
+    {
+      title: "Psychosocial",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Psychosocial.mp3",
+    },
+    {
+      title: "Wait And Bleed",
+      artist: "Slipknot",
+      src: "/music/Slipknot - Wait And Bleed.mp3",
+    },
   ];
+
+  const [currentSong, setCurrentSong] = React.useState(songs[0]);
+  const audioRef = React.useRef<HTMLAudioElement>(null);
+
+  const playSong = (song: (typeof songs)[0]) => {
+    setCurrentSong(song);
+    if (audioRef.current) {
+      audioRef.current.src = song.src;
+      audioRef.current.play();
+    }
+  };
+
+  if (activeWidget !== "radioStation") return null;
   return (
     <div className="absolute inset-0 z-50 w-full h-full bg-black/70 flex justify-center items-center leading-none">
-      <div className="flex flex-col w-[300px] h-[320px]">
+      <div className="flex flex-col w-[250px] h-[320px]">
         <div className="flex flex-row text-redx text-[7px] text-shadow-redx/40 text-shadow-[0px_0px_3px] font-bold  justify-between">
           <div>TRN_TCLASS_B000095</div>
           <div>RADIO STATION DATABASE</div>
@@ -26,7 +84,7 @@ const Radiostation = () => {
             <div className="bg-redx w-[5px] h-2"></div>
             <div className="bg-redx rounded-bl-[3px] w-1.5 h-1"></div>
           </div>
-          <div className="flex w-[300px] h-[18px] ">
+          <div className="flex w-[250px] h-[18px] ">
             <Image
               priority
               width={389}
@@ -40,7 +98,7 @@ const Radiostation = () => {
             </div>
           </div>
         </div>
-        <div className="flex text-center text-redx uppercase text-[5px] font-bold w-[300px] justify-center ">
+        <div className="flex text-center text-redx uppercase text-[5px] font-bold w-[250px] justify-center ">
           <div>now playing</div>
         </div>
         <div className="flex flex-row gap-[2px]">
@@ -100,16 +158,17 @@ const Radiostation = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-[180px] flex-row text-[9px]">
+        <div className="flex h-[180px] overflow-hidden hover:overflow-y-auto flex-row text-[9px] radio-list">
           <div className="flex "></div>
           <div className="flex flex-col overflow-x-hidden hover:overflow-y-auto h-56 radio-list pr-3">
             {songs.map((song, index) => (
               <button
                 key={index}
-                className="group w-[290px] gap-0.5 p-1 h-[19px] items-center flex flex-row relative"
+                onClick={() => playSong(song)}
+                className="group w-[240px] gap-0.5 p-1 h-[19px] items-center flex flex-row relative"
               >
                 <div className="w-4  h-4 items-center hidden relative group-hover:flex">
-                  <div className="flex gap-[1px] pb-px pl-[4px] flex-row absolute items-end bottom-0 ">
+                  <div className="flex gap-[1px] pb-1 pl-[4px] flex-row absolute items-end bottom-0 ">
                     <div className="w-[1px] h-1 animate-h-1 bg-whitex/60"></div>
                     <div className="animate-h-4 w-[1px] h-1 bg-whitex/60"></div>
                     <div className="animate-h-3 w-[1px] h-1 bg-whitex/60"></div>
@@ -136,6 +195,14 @@ const Radiostation = () => {
                 </div>
               </button>
             ))}
+            <audio
+              // controller
+              ref={audioRef}
+              controls
+              className="w-full  appearance-none hidden mt-2"
+            >
+              <source src={currentSong.src} type="audio/mpeg" />
+            </audio>
           </div>
         </div>
         <div className="flex flex-row border-t justify-between border-redx/50 pt-1">

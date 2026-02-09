@@ -7,11 +7,19 @@ type BinLogoProps = {
   iconSrc: string;
   alt?: string;
   speed?: number;
+  textSize?: string; // ukuran teks
+  leadingClass?: string; // class untuk line-height / leading
 };
 
 const BINARY_PATTERNS = ["1011", "1011", "0101", "1101"];
 
-const BinLogo = ({ iconSrc, alt = "icon", speed = 3000 }: BinLogoProps) => {
+const BinLogo = ({
+  iconSrc,
+  alt = "icon",
+  speed = 3000,
+  textSize = "3px",
+  leadingClass = "leading-none", // default leading
+}: BinLogoProps) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -24,7 +32,10 @@ const BinLogo = ({ iconSrc, alt = "icon", speed = 3000 }: BinLogoProps) => {
 
   return (
     <div className="flex flex-col items-center gap-1">
-      <div className="text-[3px] font-medium tracking-[1px] text-redx leading-none">
+      <div
+        className={`font-medium tracking-[1px] text-redx ${leadingClass}`}
+        style={{ fontSize: textSize }}
+      >
         {BINARY_PATTERNS.map((_, i) => (
           <div key={i}>
             {BINARY_PATTERNS[(index + i) % BINARY_PATTERNS.length]}
