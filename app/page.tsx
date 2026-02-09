@@ -3,8 +3,9 @@
 import Foot from "@/components/Semantic/Foot";
 import Head from "@/components/Semantic/Head";
 import Hero from "@/components/Semantic/Hero";
-import Nav from "@/components/Semantic/Nav";
-import Section from "@/components/Semantic/Section";
+import Gallery from "@/components/Semantic/Gallery";
+import Repo from "@/components/Semantic/Feature";
+import Feature from "@/components/Semantic/Feature";
 
 export default function Home() {
   return (
@@ -17,9 +18,9 @@ export default function Home() {
         }}
       >
         <Head />
-        <Nav />
+        <Feature />
         <Hero />
-        <Section />
+        <Gallery />
         <Foot />
       </div>
     </div>

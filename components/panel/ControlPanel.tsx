@@ -10,7 +10,7 @@ import WinBox from "../Box/WinBox";
 
 const ControlPanel = () => {
   return (
-    <div className="ml-5 mt-1 z-50 cursor-pointer absolute bottom-0  w-[280px] flex flex-row gap-1">
+    <div className="ml-2 mt-1 z-50 cursor-pointer absolute bottom-0  w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus.png" />
       <div className="flex flex-col gap-0 ">
         <p className="text-[5px] text-redx/80 uppercase font-orbitron">

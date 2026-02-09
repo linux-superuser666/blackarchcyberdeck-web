@@ -55,7 +55,7 @@
       height: 1px;
     }
     100% {
-      height: 6px;
+      height: 2px;
     }
   }
 
@@ -64,7 +64,7 @@
       height: 1px;
     }
     100% {
-      height: 12px;
+      height: 5px;
     }
   }
 
@@ -73,7 +73,7 @@
       height: 1px;
     }
     100% {
-      height: 8px;
+      height: 3px;
     }
   }
 
@@ -82,7 +82,7 @@
       height: 1px;
     }
     100% {
-      height: 14px;
+      height: 4px;
     }
   }
   --animate-h-1: h1 1s ease-out infinite;
@@ -206,4 +206,12 @@ body {
 
 .radio-list::-webkit-scrollbar-thumb:hover {
   background: #bbb;
+}
+
+.swiper-slide {
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.5;
 }
