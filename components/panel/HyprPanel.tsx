@@ -128,9 +128,9 @@ const HyprPanel = () => {
     net: "firefox",
     journal: "pdf-reader",
     media: "obs-studio",
-    codex: "",
-    message: "",
-    machine: "",
+    codex: "_",
+    message: "_",
+    machine: "_",
   };
   const activeXWindow = xwindowNames[active] || "";
 
@@ -146,7 +146,6 @@ const HyprPanel = () => {
           <div className="flex font-semibold flex-row gap-0.5 items-center justify-center">
             {workspaces.map((ws) => {
               const isActive = active === ws.label;
-
               return (
                 <div
                   key={ws.label}
@@ -179,7 +178,7 @@ const HyprPanel = () => {
           {activeXWindow && `${activeXWindow}`}
         </p>
 
-        <div className="mt-1 -mr-1 w-[884px] h-[410px] pr-1.5 pl-1 pt-1 pb-0.5">
+        <div className="mt-1 p-1 relative w-[879px] h-[411px]">
           <WorkspaceSlider active={active} views={workspaceViews} />
         </div>
       </div>

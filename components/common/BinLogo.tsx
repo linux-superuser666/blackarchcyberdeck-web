@@ -9,7 +9,7 @@ type BinLogoProps = {
   speed?: number;
 };
 
-const BINARY_PATTERNS = ["10111", "10110", "01011", "11010"];
+const BINARY_PATTERNS = ["1011", "1011", "0101", "1101"];
 
 const BinLogo = ({ iconSrc, alt = "icon", speed = 3000 }: BinLogoProps) => {
   const [index, setIndex] = useState(0);
