@@ -6,13 +6,15 @@ const STEP = 1;
 const KNOB_WIDTH = 16;
 
 const LevelSlider = () => {
-  const trackRef = useRef(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
   const [value, setValue] = useState(50);
   const [dragging, setDragging] = useState(false);
 
   const percent = ((value - MIN) / (MAX - MIN)) * 100;
 
-  const updateFromClientX = (clientX) => {
+  const updateFromClientX = (clientX: number) => {
+    if (!trackRef.current) return;
+
     const rect = trackRef.current.getBoundingClientRect();
     let x = clientX - rect.left;
     x = Math.max(0, Math.min(x, rect.width));
@@ -20,12 +22,12 @@ const LevelSlider = () => {
     setValue(newValue);
   };
 
-  const onMouseDown = (e) => {
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setDragging(true);
     updateFromClientX(e.clientX);
   };
 
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!dragging) return;
     updateFromClientX(e.clientX);
   };
