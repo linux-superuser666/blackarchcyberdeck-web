@@ -1,8 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import react, { useState } from "react";
 import BinLogo from "../common/BinLogo";
-import ImageType from "../common/ImageType";
+import Link from "next/link";
 
 const Notify = () => {
   return (
@@ -12,14 +13,17 @@ const Notify = () => {
         <p className="text-[5px] text-redx/80 uppercase font-orbitron">
           connection_dbus 1.001.1
         </p>
-        <div className="text-redx h-full items-start w-48 flex flex-row gap-0.5 uppercase text-xs">
-          <Image
-            src="/icons/package.png"
-            alt=""
-            width={30}
-            height={10}
-            className="object-contain"
-          />
+
+        <div className="text-redx mt-1 h-full items-start w-48 flex flex-row gap-0.5  text-xs">
+          <div className="bg-redx/80 border borderredx/50 rounded-full pb-px">
+            <Image
+              src="/icons/githubrepo.svg"
+              alt=""
+              width={30}
+              height={10}
+              className="object-contain drop-shadow-[0_0_2px_rgba(255,0,0,1)]"
+            />
+          </div>
           <div className="flex flex-col gap-1 overflow-hidden h-full w-full ">
             <div id="notif" className="flex-col">
               <div className="flex text-yellowx font-bold items-center text-[9px] flex-row gap-1">
@@ -30,19 +34,31 @@ const Notify = () => {
                   height={10}
                   className="object-contain"
                 />
-                <div className="pt-1">system</div>
+                <div className="pt-1 uppercase tracking-widest">github</div>
               </div>
-              <div className="font-bold text-yellowx ">notif title</div>
+              <div
+                className="font-medium text-yellowx tracking-wide"
+                style={{ textShadow: "0px 0px 2px rgba(255,255,0,1)" }}
+              >
+                BlackArchCyberpunk2077
+              </div>
               <div
                 className="bg-yellowx/50
               [clip-path:polygon(0_0,_3%_20%,_86%_20%,_100%_20%,_100%_100%,_3%_100%,_0%_85%)] p-px w-full min-h-8 h-auto
-              font-bold text-yellowx "
+              font-bold text-yellowx"
               >
                 <div
                   className="bg-black
               [clip-path:polygon(0_0,_2%_20%,_89%_20%,_100%_20%,_100%_100%,_3%_100%,_0%_85%)] min-h-8 size-full font-bold text-yellowx pt-3 pl-2 pr-px pb-x break-words whitespace-normal"
                 >
-                  notif notification
+                  <Link
+                    target="_blank"
+                    href="https://github.com/linux-superuser666/BlackArchCyberpunk2077"
+                    style={{ textShadow: "0px 0px 2px rgba(255,255,0,1)" }}
+                    className="font-medium"
+                  >
+                    Clik Here For The Github Repo
+                  </Link>
                 </div>
               </div>
             </div>

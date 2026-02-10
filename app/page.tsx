@@ -9,10 +9,10 @@ export default function Home() {
       <div className="fixed -z-10 inset-0 bg-black"></div>
       <div className="min-w-[100px] gap-0 font-rajdhani w-full h-full flex flex-col justify-start absolute inset-0 items-center">
         <GlitchText className="!text-5xl" text="Cyberdeck blackarch" />
-        <GlitchText
-          className="text-yellowx !text-base font-semibold uppercase"
-          text="crafting with passion by © mrnngstr666"
-        ></GlitchText>
+        <div className="text-yellowx !text-base font-semibold uppercase">
+          {" "}
+          crafting with passion by © mrnngstr666
+        </div>
         <Hero />
       </div>
       <Particles className="absolute inset-0 w-full h-screen -z-10" />
