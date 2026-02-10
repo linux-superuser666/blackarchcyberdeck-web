@@ -12,15 +12,30 @@ import LevelPanel from "./panel/LevelPanel";
 import NetworkPanel from "./panel/NetworkPanel";
 import Notify from "./panel/Notify";
 import SessionPanel from "./panel/SessionPanel";
+import Mur from "./common/Mur";
 
 const Hero = () => {
   return (
     <div className="flex flex-col w-full justify-end items-center h-[1200px] ">
-      <div className="w-[950px] h-[500px]  shadow-2xl shadow-redx/20  bg-redx/30 relative p-px [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
+      <div className="w-[950px] h-[500px] -mb-1  shadow-2xl shadow-redx/20  bg-redx/30 relative p-px [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
         <div className="size-full bg-black [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
           <div className="px-2 pb-2 pt-4 size-full">
-            <div className="text-xs font-nerdfonts text-yellowx/50 left-1/2 text-center top-0  absolute">
-              󰄄
+            <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0 flex w-[930px] absolute">
+              <div className="h-3 w-full px-5 flex justify-between item-center">
+                <div className="flex pt-1.5">
+                  <Mur />
+                </div>
+                <div className="flex pt-1.5">
+                  <Mur />
+                </div>
+                <div>󰄄</div>
+                <div className="flex pt-1.5">
+                  <Mur />
+                </div>
+                <div className="flex pt-1.5">
+                  <Mur />
+                </div>
+              </div>
             </div>
             {/* main content */}
             <div className="w-full shadow-2xl shadow-redx/10 h-full rounded-[2px] border-redx/20 bg-black p-1 border relative">
@@ -41,8 +56,18 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <div className="h-5 w-[958px] flex border-redx/30 border-x bg-black">
+        <div className="w-1 border border-redx/30"></div>
+        <div className="w-full h-full flex justify-between border-x border-redx/30 items-center pt-1 px-4">
+          <Mur />
+          <Mur />
+          <Mur />
+          <Mur />
+        </div>
+        <div className="w-1 border border-redx/30"></div>
+      </div>
       <div
-        className="w-[950px] h-[30px] shadow-2xl shadow-redx/20 bg-redx/30 px-px pb-px justify-center flex items-start
+        className="w-[1100px] h-[30px] shadow-2xl shadow-redx/20 bg-redx/30 px-px py-px justify-center flex items-start
         [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
       "
       >
@@ -56,9 +81,9 @@ const Hero = () => {
           </div>
           <div className="w-full flex gap-6 flex-row items-center justify-start pl-8">
             <div className="h-2 rounded-[3px] border flex w-12 border-redx/30 p-[2px] gap-px">
-              <div className="bg-redx/70 rounded-[3px] size-full"></div>
+              <div className="bg-redx/70 animate-pulse duration-75 rounded-[3px] size-full"></div>
               <div className="bg-yellowx/80 animate-blink-medium rounded-[3px] h-full w-6"></div>
-              <div className="bg-redx/70 rounded-[3px] size-full"></div>
+              <div className="bg-redx/70 animate-blink-slow rounded-[3px] size-full"></div>
             </div>
             <div className="h-2 rounded-[3px] border w-8 border-redx/30 p-[2px]">
               <div className="bg-redx/70 rounded-[3px] size-full"></div>
