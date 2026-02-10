@@ -2,6 +2,7 @@
 
 import Hero from "@/components/Hero";
 import GlitchText from "@/components/multimedia/GlitchText";
+import Particles from "@/components/multimedia/Particle";
 export default function Home() {
   return (
     <div className="relative gap-8 font-rajdhani w-full h-screen flex flex-col">
@@ -13,6 +14,7 @@ export default function Home() {
         </div>
         <Hero />
       </div>
+      <Particles className="absolute inset-0 w-full h-screen -z-10" />
     </div>
   );
 }

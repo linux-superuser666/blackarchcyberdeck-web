@@ -7,6 +7,7 @@ import NetBox from "../Box/NetBox";
 import LevelBox from "../Box/LevelBox";
 import RadioBox from "../Box/RadioBox";
 import WinBox from "../Box/WinBox";
+import SessionBox from "../Box/SessionBox";
 
 const ControlPanel = () => {
   return (
@@ -22,6 +23,7 @@ const ControlPanel = () => {
           <RadioBox />
           <NetBox />
           <WinBox />
+          <SessionBox />
         </div>
       </div>
     </div>
