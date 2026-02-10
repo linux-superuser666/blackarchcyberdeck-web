@@ -14,7 +14,6 @@ export default function Home() {
         </div>
         <Hero />
       </div>
-      <Particles className="absolute inset-0 w-full h-screen -z-10" />
     </div>
   );
 }
