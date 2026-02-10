@@ -69,12 +69,7 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
         />
 
         {/* List of apps */}
-        <div
-          className="absolute top-[57px] left-[20px] z-10
-                      w-[280px] h-[88px]
-                      flex flex-col gap-1
-                      overflow-y-auto scrollbar-hidden"
-        >
+        <div className="absolute top-[57px] left-[20px] z-10 w-[280px] h-[88px] flex flex-col gap-1 overflow-y-auto scrollbar-hidden">
           {apps.map((app, i) => (
             <div
               key={i}

@@ -1,9 +1,14 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import React from "react";
+import { useUIStore } from "@/state/widgetState";
 
 const PacmanBox = () => {
+  const toggleWidget = useUIStore((s) => s.toggleWidget);
   return (
-    <div className="flex flex-col  relative w-4 h-4 gap-0 leading-none justify-center items-center">
+    <div
+      onClick={() => toggleWidget("launcherPanel")}
+      className="flex flex-col z-50 relative w-4 h-4 gap-0 leading-none justify-center items-center"
+    >
       <Image
         priority
         src="/panel/control-box.png"

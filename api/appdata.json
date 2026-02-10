@@ -1,0 +1,70 @@
+{
+  "apps": [
+    {
+      "id": "wireshark",
+      "name": "Wireshark",
+      "category": "Network Analysis",
+      "type": "Desktop"
+    },
+    {
+      "id": "putty",
+      "name": "PuTTY",
+      "category": "Remote Access",
+      "type": "Terminal"
+    },
+    {
+      "id": "john",
+      "name": "John The Ripper",
+      "category": "Password Cracking",
+      "type": "CLI"
+    },
+    {
+      "id": "metasploit",
+      "name": "Metasploit Framework",
+      "category": "Exploitation",
+      "type": "CLI"
+    },
+    {
+      "id": "nmap",
+      "name": "Nmap",
+      "category": "Network Scanning",
+      "type": "CLI"
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "category": "Web Browser",
+      "type": "Desktop"
+    },
+    {
+      "id": "thunar",
+      "name": "Thunar",
+      "category": "File Manager",
+      "type": "Desktop"
+    },
+    {
+      "id": "obs",
+      "name": "OBS Studio",
+      "category": "Streaming & Recording",
+      "type": "Desktop"
+    },
+    {
+      "id": "kitty",
+      "name": "Kitty Terminal",
+      "category": "Terminal Emulator",
+      "type": "Desktop"
+    },
+    {
+      "id": "pdfreader",
+      "name": "PDF Reader",
+      "category": "Document Viewer",
+      "type": "Desktop"
+    },
+    {
+      "id": "codeoss",
+      "name": "Code OSS",
+      "category": "Development",
+      "type": "Desktop"
+    }
+  ]
+}

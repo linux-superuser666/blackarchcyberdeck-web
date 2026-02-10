@@ -1,7 +1,7 @@
 "use client";
 import { useUIStore } from "@/state/widgetState";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const BAR_COUNT = 4;
 const MIN_H = 1;

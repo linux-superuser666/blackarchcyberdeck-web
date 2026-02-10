@@ -7,19 +7,21 @@ import ChronoPanel from "./panel/ChronoPanel";
 import WinSwitch from "./widget/WinSwitch";
 import Radiostation from "./widget/Radiostation";
 import ControlPanel from "./panel/ControlPanel";
+import LauncherPanel from "./panel/LauncherPanel";
 
 const Hero = () => {
   return (
     <div className="flex flex-col w-full justify-end items-center h-[1200px] ">
       <div className="w-[950px] h-[500px] border-redx/20 shadow-2xl shadow-redx/20 rounded-t-2xl bg-black  px-2 pb-2 pt-4 border relative">
-        <div className="text-xs font-nerdfonts text-yellowx/50 left-1/2 text-center top-0 absolute">
+        <div className="text-xs font-nerdfonts text-yellowx/50 left-1/2 text-center top-0  absolute">
           󰄄
         </div>
         {/* main content */}
-        <div className="w-full h-full rounded-sm border-redx/20 bg-black p-1 border relative">
+        <div className="w-full shadow-2xl shadow-redx/10 h-full rounded-[2px] border-redx/20 bg-black p-1 border relative">
           <Framex />
           <Appframe />
           <SystemPanel />
+          <LauncherPanel />
           <HyprPanel />
           <ChronoPanel />
           <WinSwitch />

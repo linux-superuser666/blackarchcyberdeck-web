@@ -1,17 +1,22 @@
 import React from "react";
-import Image from "next/image";
 
 const Cyberware = () => {
   return (
-    <div className=" border  border-redx/50 h-full w-full ">
-      <Image
-        priority
-        src="/widget/ws1.png"
-        alt="ws1"
-        width={1259}
-        height={636}
-        className="opacity-70 size-full object-fill"
-      />
+    <div className="grid gap-1 grid-cols-[2fr_1fr]  h-full w-full ">
+      <div className=" border text-[9px] p-1 text-redx font-semibold flex border-redx/50 h-full tracking-wide w-full flex-col gap-1">
+        <p>
+          mrnngstr666
+          <span className="text-yellowx">@</span>
+          <span className="text-orangex">BlackArch:</span>
+        </p>
+      </div>
+      <div className=" border text-[9px] p-1 text-redx font-semibold flex border-redx/50 h-full tracking-wide w-full flex-col gap-1">
+        <p>
+          mrnngstr666
+          <span className="text-yellowx">@</span>
+          <span className="text-orangex">BlackArch:</span>
+        </p>
+      </div>
     </div>
   );
 };
