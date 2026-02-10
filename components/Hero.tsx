@@ -46,22 +46,40 @@ const Hero = () => {
         [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
       "
       >
-        <div
-          className="size-full bg-black shadow-2xl shadow-redx/50 justify-center flex items-start
-        [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
-      "
-        >
-          <div className="border-b border-x rounded-b-md border-redx/30 w-[200px] h-4"></div>
+        <div className="size-full bg-black shadow-2xl shadow-redx/50 justify-center grid grid-cols-3 grid-rows-2 items-start [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)] pb-1 text-[6px] text-transparent">
+          <div className="w-full items-center justify-center border-b border-redx/30">
+            1
+          </div>
+          <div className="border-b border-x border-redx/30 w-full h-4"></div>
+          <div className="w-full items-center justify-center border-b border-redx/30">
+            3
+          </div>
+          <div className="w-full flex gap-6 flex-row items-center justify-start pl-8">
+            <div className="h-2 rounded-[3px] border flex w-12 border-redx/30 p-[2px] gap-px">
+              <div className="bg-redx/70 rounded-[3px] size-full"></div>
+              <div className="bg-yellowx/80 animate-blink-medium rounded-[3px] h-full w-6"></div>
+              <div className="bg-redx/70 rounded-[3px] size-full"></div>
+            </div>
+            <div className="h-2 rounded-[3px] border w-8 border-redx/30 p-[2px]">
+              <div className="bg-redx/70 rounded-[3px] size-full"></div>
+            </div>
+          </div>
+          <div className="w-full items-center justify-center">5</div>
+          <div className="w-full flex gap-8 flex-row items-center justify-end pr-8">
+            <div className="border size-3 border-redx/30 rounded-full p-px">
+              <div className="border size-full border-redx/30 rounded-full p-px"></div>
+            </div>
+            <div className="border size-3 border-redx/30 rounded-full p-px">
+              <div className="border size-full border-redx/30 rounded-full p-px"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-row w-[900px] justify-between">
-        <div className="w-10 h-2 shadow-2xl shadow-redx/20 bg-redx/40 justify-center px-px pb-px flex items-start [clip-path:polygon(0_0,_100%_0,_100%_79%,_80%_100%,_21%_100%,_0_76%)]">
-          <div className="size-full bg-black/90 [clip-path:polygon(0_0,_100%_0,_100%_79%,_80%_100%,_21%_100%,_0_76%)] shadow-2xl shadow-redx/40"></div>
-        </div>
-        <div className="w-10 h-2 shadow-2xl shadow-redx/20 bg-redx/40 justify-center px-px pb-px flex items-start [clip-path:polygon(0_0,_100%_0,_100%_79%,_80%_100%,_21%_100%,_0_76%)]">
-          <div className="size-full bg-black/90 [clip-path:polygon(0_0,_100%_0,_100%_79%,_80%_100%,_21%_100%,_0_76%)] shadow-2xl shadow-redx/40"></div>
-        </div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x border-b border-redx/30"></div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x border-b border-redx/30"></div>
       </div>
+      <div className="w-full h-1 border-t border-redx/30 mt-[1px] bg-redx/10"></div>
     </div>
   );
 };
