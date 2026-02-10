@@ -72,7 +72,7 @@ const Radiostation = () => {
 
   if (activeWidget !== "radioStation") return null;
   return (
-    <div className="absolute inset-0 z-50 w-full h-full bg-black/70 flex justify-center items-center leading-none">
+    <div className="absolute inset-0 z-[999] w-full h-full bg-black/70 flex justify-center items-center leading-none">
       <div className="flex flex-col w-[250px] h-[320px]">
         <div className="flex flex-row text-redx text-[7px] text-shadow-redx/40 text-shadow-[0px_0px_3px] font-bold  justify-between">
           <div>TRN_TCLASS_B000095</div>

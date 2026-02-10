@@ -8,6 +8,9 @@ import WinSwitch from "./widget/WinSwitch";
 import Radiostation from "./widget/Radiostation";
 import ControlPanel from "./panel/ControlPanel";
 import LauncherPanel from "./panel/LauncherPanel";
+import LevelPanel from "./panel/LevelPanel";
+import NetworkPanel from "./panel/NetworkPanel";
+import Notify from "./panel/Notify";
 
 const Hero = () => {
   return (
@@ -21,7 +24,10 @@ const Hero = () => {
           <Framex />
           <Appframe />
           <SystemPanel />
+          <Notify />
           <LauncherPanel />
+          <NetworkPanel />
+          <LevelPanel />
           <HyprPanel />
           <ChronoPanel />
           <WinSwitch />
