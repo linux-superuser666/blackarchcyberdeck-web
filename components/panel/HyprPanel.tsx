@@ -162,7 +162,7 @@ const HyprPanel = () => {
                 <div
                   key={ws.label}
                   onClick={() => handleWorkspaceClick(ws.label)}
-                  className={`flex flex-row gap-0.5 text-[9px] items-center cursor-pointer transition-all ${
+                  className={`flex flex-row gap-0.5 text-[9px] items-center pointer transition-all ${
                     isActive ? "text-whitex" : "text-redx/60 hover:text-redx"
                   }`}
                 >

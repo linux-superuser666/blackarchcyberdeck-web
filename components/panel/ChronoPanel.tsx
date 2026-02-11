@@ -64,7 +64,7 @@ const ChronoPanel = () => {
               </div>
               <div
                 onClick={handleClick}
-                className="absolute cursor-pointer items-center justify-center flex w-[76px] h-9  z-50 text-[8px] text-black font-bold"
+                className="absolute pointer items-center justify-center flex w-[76px] h-9  z-50 text-[8px] text-black font-bold"
               >
                 <p>{getDisplayText()}</p>
               </div>

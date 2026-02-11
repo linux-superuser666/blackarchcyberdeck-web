@@ -780,3 +780,25 @@ body {
     clip-path: polygon(0 -20%, 100% -20%, 100% 0%, 0 0);
   }
 }
+
+body,
+.cursor {
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/cursor.png"),
+    auto;
+}
+.pointer,
+button,
+a {
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/pointer.png"),
+    auto;
+}
+
+.grab {
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grab.png"),
+    auto;
+}
+.grabbed,
+.grabbed:active {
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grabbed.png"),
+    auto;
+}

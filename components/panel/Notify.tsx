@@ -64,7 +64,7 @@ const Notify = () => {
               <div className="flex text-yellowx font-bold items-center text-[9px] flex-row gap-1">
                 <Image
                   src="/icons/ba-logo.png"
-                  alt=""
+                  alt="ba logo"
                   width={9}
                   height={10}
                   className="object-contain"
