@@ -13,11 +13,12 @@ import NetworkPanel from "./panel/NetworkPanel";
 import Notify from "./panel/Notify";
 import SessionPanel from "./panel/SessionPanel";
 import Mur from "./common/Mur";
+import TodoPanel from "./panel/TodoPanel";
 
 const Hero = () => {
   return (
     <div className="flex flex-col w-full justify-end items-center h-[1200px] ">
-      <div className="w-[950px] h-[500px] -mb-1  shadow-2xl shadow-redx/20  bg-redx/30 relative p-px [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
+      <div className="w-[950px] h-[500px] -mb-1  drop-shadow-2xl shadow-redx/50 bg-redx/30 relative p-px [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
         <div className="size-full bg-black [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
           <div className="px-2 pb-2 pt-4 size-full">
             <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0 flex w-[930px] absolute">
@@ -50,6 +51,7 @@ const Hero = () => {
               <ChronoPanel />
               <WinSwitch />
               <Radiostation />
+              <TodoPanel />
               <ControlPanel />
               <SessionPanel />
             </div>

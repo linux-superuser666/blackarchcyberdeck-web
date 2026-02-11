@@ -45,16 +45,14 @@ const SystemPanel = () => {
 
         {/* CPU */}
         <div className="text-redx flex flex-row gap-1">
-          <div className="size-5 relative flex items-center justify-center">
-            <Image
-              src="/panel/system-dbus-cpu-percent.png"
-              alt="cpubg"
-              width={18}
-              height={18}
-              className="object-contain absolute inset-0 z-0"
-            />
-
-            <p className="text-[8px] z-20 text-black font-bold">{cpu}</p>
+          <div className="size-5.5 relative flex items-center justify-center">
+            <div className="bg-greyx size-full p-px  [clip-path:polygon(0_0,_100%_0%,_100%_100%,_40%_100%,_0%_60%)] ">
+              <div className="bg-black size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_44%_100%,_0%_58%)] text-center p-px">
+                <div className="bg-greyx size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_44%_100%,_0%_58%)] p-px text-black   text-center items-center justify-center font-bold text-[10px]">
+                  <div className="size-full p-[3px]">{cpu}</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-0.5 leading-none">
             <div className="bg-white/50 h-[2px] w-32 overflow-hidden">
@@ -63,7 +61,6 @@ const SystemPanel = () => {
                 style={{ width: `${cpu}%` }}
               />
             </div>
-
             <div
               className="w-32 h-1 bg-redx/40 relative overflow-hidden
               [clip-path:polygon(0_0,100%_0%,100%_65%,97%_100%,0_100%)]"
@@ -74,7 +71,6 @@ const SystemPanel = () => {
                 style={{ width: `${cpu}%` }}
               />
             </div>
-
             <RamBar usage={ramUsed} />
           </div>
         </div>
