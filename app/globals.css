@@ -783,22 +783,22 @@ body {
 
 body,
 .cursor {
-  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/cursor.png"),
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/cursorv2.png"),
     auto;
 }
 .pointer,
 button,
 a {
-  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/pointer.png"),
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/pointerv2.png"),
     auto;
 }
 
 .grab {
-  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grab.png"),
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grabv2.png"),
     auto;
 }
 .grabbed,
 .grabbed:active {
-  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grabbed.png"),
+  cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/grabbedv2.png"),
     auto;
 }
