@@ -188,7 +188,7 @@ const HyprPanel = () => {
           {activeXWindow && `${activeXWindow}`}
         </p>
 
-        <div className="mt-1 p-1 relative w-[879px] h-[411px]">
+        <div className="mt-1 p-1 relative w-[863px] h-[415px]">
           <WorkspaceSlider active={active} views={workspaceViews} />
         </div>
       </div>

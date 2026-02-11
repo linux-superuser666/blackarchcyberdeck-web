@@ -1,68 +1,36 @@
 import Image from "next/image";
 import React from "react";
 import { useUIStore } from "@/state/widgetState";
+import { radioSongs } from "@/api/radioSongs";
 
 const Radiostation = () => {
+  const [volume, setVolume] = React.useState(0.1);
   const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
+  React.useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
+  const increaseVolume = () => {
+    setVolume((prev) => {
+      const newVolume = Math.min(prev + 0.1, 1);
+      return Number(newVolume.toFixed(2));
+    });
+  };
 
-  const songs = [
-    {
-      title: "Custer",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Custer.mp3",
-    },
-    {
-      title: "Spit It Out",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Spit It Out.mp3",
-    },
-    {
-      title: "Duality",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Duality.mp3",
-    },
-    {
-      title: "The Devil In I",
-      artist: "Slipknot",
-      src: "/music/Slipknot - The Devil In I.mp3",
-    },
-    {
-      title: "Eyeless",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Eyeless.mp3",
-    },
-    {
-      title: "The Dying Song",
-      artist: "Slipknot",
-      src: "/music/Slipknot - The Dying Song.mp3",
-    },
-    {
-      title: "Nero Forte",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Nero Forte.mp3",
-    },
-    {
-      title: "Unsainted",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Unsainted.mp3",
-    },
-    {
-      title: "Psychosocial",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Psychosocial.mp3",
-    },
-    {
-      title: "Wait And Bleed",
-      artist: "Slipknot",
-      src: "/music/Slipknot - Wait And Bleed.mp3",
-    },
-  ];
+  const decreaseVolume = () => {
+    setVolume((prev) => {
+      const newVolume = Math.max(prev - 0.1, 0);
+      return Number(newVolume.toFixed(2));
+    });
+  };
 
-  const [currentSong, setCurrentSong] = React.useState(songs[0]);
+  const [currentSong, setCurrentSong] = React.useState(radioSongs[0]);
+
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
-  const playSong = (song: (typeof songs)[0]) => {
+  const playSong = (song: (typeof radioSongs)[0]) => {
     setCurrentSong(song);
     if (audioRef.current) {
       audioRef.current.src = song.src;
@@ -149,11 +117,25 @@ const Radiostation = () => {
               <p>SLIPKNOT</p>
             </div>
             <div className="uppercase flex justify-between w-full flex-row">
-              <div className="font-bold text-[7px] text-redx">control</div>
-              <div className="flex">
-                <div className="text-white">x</div>
-                <div className="text-white">x</div>
-                <div className="text-white">x</div>
+              <div className="text-[8px] font-bold text-redx">control</div>
+              <div className="flex gap-px text-[9px] text-greyx flex-row items-center">
+                <div
+                  onClick={decreaseVolume}
+                  className="font-nerdfonts mr-px cursor-pointer hover:text-redx"
+                >
+                  
+                </div>
+
+                <div className="font-bold w-[29px] text-center">
+                  {Math.round(volume * 100)}%
+                </div>
+
+                <div
+                  onClick={increaseVolume}
+                  className="font-nerdfonts w-fit cursor-pointer hover:text-redx"
+                >
+                  󰜄
+                </div>
               </div>
             </div>
           </div>
@@ -161,18 +143,18 @@ const Radiostation = () => {
         <div className="flex h-[180px] overflow-hidden hover:overflow-y-auto flex-row text-[9px] radio-list">
           <div className="flex "></div>
           <div className="flex flex-col overflow-x-hidden hover:overflow-y-auto h-56 radio-list pr-3">
-            {songs.map((song, index) => (
+            {radioSongs.map((song, index) => (
               <button
                 key={index}
                 onClick={() => playSong(song)}
                 className="group w-[240px] gap-0.5 p-1 h-[19px] items-center flex flex-row relative"
               >
-                <div className="w-4  h-4 items-center hidden relative group-hover:flex">
+                <div className="w-4 h-4 items-center hidden relative group-hover:flex">
                   <div className="flex gap-[1px] pb-1 pl-[4px] flex-row absolute items-end bottom-0 ">
-                    <div className="w-[1px] h-1 animate-h-1 bg-whitex/60"></div>
-                    <div className="animate-h-4 w-[1px] h-1 bg-whitex/60"></div>
-                    <div className="animate-h-3 w-[1px] h-1 bg-whitex/60"></div>
-                    <div className="animate-h-2 w-[1px] h-1 bg-whitex/60 "></div>
+                    <div className="w-[1px] h-1 animate-h-2 bg-greyx"></div>
+                    <div className="animate-h-4 w-[1px] h-3 bg-greyx"></div>
+                    <div className="animate-h-3 w-[1px] h-2 bg-greyx"></div>
+                    <div className="animate-h-2 w-[1px] h-1 bg-greyx "></div>
                   </div>
                 </div>
                 <div className="w-4 h-4  pl-1 items-center tracking-wide leading-[3px] text-[2px] pt-1 group-hover:hidden flex ">
@@ -189,7 +171,7 @@ const Radiostation = () => {
                   src="/radiostation/radio-select.png"
                   alt=""
                 />
-                <div className="absolute flex gap-1 uppercase top-2 left-5">
+                <div className="absolute flex tracking-wider gap-1 uppercase top-2 left-5">
                   <p> {song.artist}</p>
                   <p>{song.title}</p>
                 </div>

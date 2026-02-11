@@ -14,10 +14,55 @@ interface Commit {
   };
 }
 
+const SHOW_DURATION = 10000; // 10 detik tampil
+const HIDE_DURATION = 5000; // 5 detik hilang
+const CONTENT_DELAY = 400; // delay antar animasi
+
 const TodoPanel = () => {
   const [commit, setCommit] = useState<Commit | null>(null);
   const [isNew, setIsNew] = useState(false);
 
+  // animasi state (TAMBAHAN)
+  const [containerVisible, setContainerVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+
+  // LOOP ANIMASI (SAMA SEPERTI NOTIFY)
+  useEffect(() => {
+    let mainTimeout: NodeJS.Timeout;
+    let innerTimeout: NodeJS.Timeout;
+
+    const loop = () => {
+      // STEP 1: container muncul
+      setContainerVisible(true);
+
+      // STEP 2: konten muncul setelah delay
+      innerTimeout = setTimeout(() => {
+        setContentVisible(true);
+      }, CONTENT_DELAY);
+
+      // STEP 3: mulai hide setelah SHOW_DURATION
+      mainTimeout = setTimeout(() => {
+        setContentVisible(false);
+
+        // STEP 4: container hide setelah delay
+        innerTimeout = setTimeout(() => {
+          setContainerVisible(false);
+        }, CONTENT_DELAY);
+
+        // ulangi loop
+        mainTimeout = setTimeout(loop, HIDE_DURATION);
+      }, SHOW_DURATION);
+    };
+
+    loop();
+
+    return () => {
+      clearTimeout(mainTimeout);
+      clearTimeout(innerTimeout);
+    };
+  }, []);
+
+  // FETCH COMMIT (TIDAK DIUBAH)
   useEffect(() => {
     const fetchCommit = async () => {
       try {
@@ -28,13 +73,11 @@ const TodoPanel = () => {
         const data = await res.json();
         const latestCommit = data[0];
 
-        // cek apakah commit baru
         const lastSha = localStorage.getItem("lastCommitSha");
 
         if (lastSha && lastSha !== latestCommit.sha) {
           setIsNew(true);
 
-          // hilangkan notifikasi setelah 4 detik
           setTimeout(() => {
             setIsNew(false);
           }, 4000);
@@ -68,13 +111,29 @@ const TodoPanel = () => {
   };
 
   return (
-    <div className="absolute z-50 right-0 mr-[12px] top-36 w-[220px] h-fit flex flex-row gap-1 justify-end">
+    <div
+      className={`absolute z-50 right-0 mr-[12px] top-36 w-[160px] h-fit flex flex-row gap-1 justify-end
+      transition-all duration-500 ease-in-out transform origin-right
+      ${
+        containerVisible
+          ? "opacity-100 scale-x-100"
+          : "opacity-0 scale-x-0 pointer-events-none"
+      }`}
+    >
       <div className="flex flex-col w-full gap-0 leading-none">
         <p className="text-[5px] flex w-full justify-end text-redx/80 uppercase font-orbitron">
           To - do panel 1.001.1
         </p>
 
-        <div className="text-redx h-[160px] w-full flex items-start">
+        <div
+          className={`text-redx h-[160px] w-full flex items-start
+          transition-all duration-500 ease-in-out
+          ${
+            contentVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-4"
+          }`}
+        >
           <div className="flex w-full font-medium flex-col gap-1 text-yellowx text-xs">
             <div className="w-full uppercase border-b border-redx/30 tracking-wide">
               Update Logs
@@ -84,7 +143,6 @@ const TodoPanel = () => {
 
             {commit && (
               <div className="flex flex-col gap-1 text-[11px]">
-                {/* NEW UPDATE ALERT */}
                 {isNew && (
                   <div className="text-redx text-[9px] animate-pulse tracking-widest">
                     ⚠ NEW UPDATE DETECTED
@@ -96,9 +154,7 @@ const TodoPanel = () => {
                     id="iconNewCommits"
                     className="bg-yellowx/40 size-3.5 p-px [clip-path:polygon(0_0,_100%_0%,_100%_100%,_47%_100%,_0%_50%)]"
                   >
-                    {" "}
                     <div className="bg-black size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_47%_100%,_0%_50%)] text-center p-px">
-                      {" "}
                       <div className="bg-yellowx size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_47%_100%,_0%_50%)] text-black text-[9px] text-center font-bold">
                         !
                       </div>
@@ -110,12 +166,10 @@ const TodoPanel = () => {
                   </div>
                 </div>
 
-                {/* AUTHOR */}
                 <div className="text-[9px] pl-4 opacity-70">
                   Author: {commit.commit.author.name}
                 </div>
 
-                {/* DATE & TIME */}
                 <div className="text-[9px] pl-4 opacity-70">
                   Date: {formatDate(commit.commit.author.date).formattedDate} |{" "}
                   {formatDate(commit.commit.author.date).formattedTime}

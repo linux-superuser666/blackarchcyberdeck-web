@@ -42,7 +42,7 @@ const Framex = () => {
 
       {/* frame right */}
       <div className="items-start justify-between text-start w-full h-full flex">
-        <div className="flex h-full py-16 justify-between flex-col">
+        <div className="flex h-full pt-16 justify-between flex-col">
           <div className="flex flex-col gap-4 top-0 relative">
             {/* Binary pertama */}
             <div

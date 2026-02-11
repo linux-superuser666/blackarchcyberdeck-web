@@ -11,7 +11,9 @@ export default function Home() {
         <div className="text-yellowx !text-base font-semibold uppercase">
           crafting with passion by © mrnngstr666
         </div>
-        <Hero />
+        <div className="absolute bottom-0 w-full">
+          <Hero />
+        </div>
       </div>
     </div>
   );
