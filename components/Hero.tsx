@@ -18,7 +18,7 @@ import TodoPanel from "./panel/TodoPanel";
 const Hero = () => {
   return (
     <div className="flex flex-col w-full justify-end items-center h-[1200px]">
-      <div className="w-[950px] h-[500px] -mb-1  drop-shadow-2xl shadow-redx/50 bg-redx/30 relative p-[2px] [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
+      <div className="w-[950px] h-[500px] -mb-1 drop-shadow-2xl shadow-redx/50 bg-redx/30 relative p-[2px] [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
         <div className="size-full bg-black [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
           <div className="px-4 pb-1 pt-4 size-full">
             <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0  w-[930px] flex flex-col gap-10 absolute">
