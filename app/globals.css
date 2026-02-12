@@ -788,3 +788,41 @@ a,
   cursor: url("https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/cursorv2.png"),
     auto;
 }
+
+.glitch-wrapper {
+  --glitch-x: 0px;
+  --glitch-y: 0px;
+  --glitch-opacity: 1;
+}
+
+.glitch-red {
+  transform: translate(var(--glitch-x), var(--glitch-y));
+  filter: drop-shadow(-2px 0 red);
+  opacity: var(--glitch-opacity);
+}
+
+.glitch-cyan {
+  transform: translate(calc(var(--glitch-x) * -1), var(--glitch-y));
+  filter: drop-shadow(2px 0 cyan);
+  opacity: var(--glitch-opacity);
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.2) 2px,
+    rgba(0, 0, 0, 0.4) 4px
+  );
+  mix-blend-mode: overlay;
+  animation: scanMove 3s linear infinite;
+}
+
+@keyframes scanMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}

@@ -13,7 +13,7 @@ export default function Home() {
     <div className="relative gap-8 font-rajdhani w-full h-screen flex flex-col">
       <div className="fixed -z-10 inset-0 bg-black"></div>
       <div className="min-w-[100px] gap-0 font-rajdhani w-full h-full flex flex-col justify-start absolute inset-0 items-center">
-        <div className="absolute bottom-0 z-[3]  w-[1300px] h-[630px] flex items-end justify-center">
+        <div className="absolute bottom-0 z-[1]  w-[1300px] h-[630px] flex items-end justify-center">
           <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
             <div className="border border-redx/20 relative row-span-3 flex justify-end">
               {/* left card */}

@@ -6,7 +6,7 @@ const SocialContent = () => {
   return (
     <div className="border border-redx/30 size-full flex flex-col gap-1">
       <div className="text-redx font-medium font-orbitron text-[9px] text-center tracking-widest flex items-center justify-center pt-1 uppercase">
-        Tiktok
+        linux.superuser
       </div>
       <div className="size-full">
         <div className="flex size-full min-h-full min-w-full border border-redx/30">
