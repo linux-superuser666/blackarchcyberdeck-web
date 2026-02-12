@@ -51,7 +51,7 @@ const Notify = () => {
 
   return (
     <div
-      className={`ml-[7px] absolute z-[999] top-[290px] w-[200px] flex flex-row gap-1 h-[145px]
+      className={`ml-[7px] absolute z-[999] top-[290px] w-[220px] flex flex-row gap-1 h-[145px]
       transition-all duration-500 ease-in-out transform origin-left
       ${
         containerVisible
@@ -69,7 +69,7 @@ const Notify = () => {
         </p>
 
         <div
-          className={`text-redx mt-1 h-full items-start w-48 flex flex-row gap-0.5 text-xs
+          className={`text-redx mt-1 h-full items-start w-full flex flex-row gap-0.5 text-xs
           transition-all duration-500 ease-in-out
           ${
             contentVisible
@@ -127,7 +127,8 @@ const Notify = () => {
                     }}
                     className="font-medium"
                   >
-                    Click Here For The Github Repo
+                    Click Here For The Github Repo <br />
+                    don't frget to give the repo stars
                   </Link>
                 </div>
               </div>
