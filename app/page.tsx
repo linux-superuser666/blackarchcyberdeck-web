@@ -32,6 +32,9 @@ export default function Home() {
               <div className="absolute right-[162px] top-[145px] tranform rotate-180">
                 <CableCat radius={8} width={32} height={55} />
               </div>
+              <div className="absolute right-[163px] top-[139px] tranform rotate-180">
+                <CableCat radius={11} width={36} height={61} />
+              </div>
               <div className="absolute right-[113px] top-[251px]">
                 <SocialPanelL />
               </div>
@@ -55,6 +58,9 @@ export default function Home() {
               </div>
               <div className="absolute left-[162px] bottom-[131px]">
                 <CableCat radius={8} width={40} height={93} />
+              </div>
+              <div className="absolute left-[163px] bottom-[126px]">
+                <CableCat radius={11} width={44} height={96} />
               </div>
               <div className="absolute left-[113px] bottom-[271px]">
                 <SocialPanel />

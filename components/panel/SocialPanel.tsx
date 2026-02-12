@@ -1,5 +1,4 @@
 import React from "react";
-import SocialContent from "../content/SocialContent";
 import Mur from "../common/Mur";
 import GlitchCanvas from "../multimedia/GlitchCanvas";
 import PanelBorderPx from "../common/PanelBorderPx";
