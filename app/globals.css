@@ -27,6 +27,20 @@
   --font-orbitron: "Orbitron", sans-serif;
   --font-nerdfonts: "FiraCode Nerd Font", monospace;
 
+  @keyframes scanner-y {
+    0% {
+      transform: translateY(-170%);
+    }
+    50% {
+      transform: translateY(190%);
+    }
+    100% {
+      transform: translateY(-170%);
+    }
+  }
+
+  --animate-scanner-y: scanner-y 10s ease-in-out infinite;
+
   @keyframes scanner-x {
     0% {
       transform: translateX(-100%);

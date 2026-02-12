@@ -56,7 +56,7 @@ export default function Home() {
               <div className="absolute left-[162px] bottom-[131px]">
                 <CableCat radius={8} width={40} height={93} />
               </div>
-              <div className="absolute left-[113px] top-[45px]">
+              <div className="absolute left-[113px] bottom-[271px]">
                 <SocialPanel />
               </div>
             </div>
