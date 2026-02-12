@@ -13,7 +13,7 @@ const SocialPanel = () => {
         </div>
         <div className="w-full flex h-full items-center justify-between flex-row">
           <Mur />
-          <SocialContent />
+          {/* <SocialContent /> */}
           <Mur />
         </div>
         <div className="w-full flex h-2.5 justify-between flex-row">

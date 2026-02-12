@@ -1,8 +1,18 @@
 import React from "react";
 
-const ImageType = () => {
+type ImageTypeProps = {
+  textSize?: string;
+  textColor?: string;
+};
+
+const ImageType = ({
+  textSize = "text-[4px]",
+  textColor = "text-redx",
+}: ImageTypeProps) => {
   return (
-    <div className="flex flex-col leading-none text-[4px] uppercase text-redx font-bold">
+    <div
+      className={`flex flex-col leading-none uppercase font-bold ${textSize} ${textColor}`}
+    >
       <div>image name: blackarch small</div>
       <div>image type: kernel isolated image</div>
       <div>iccxs compressed</div>

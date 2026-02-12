@@ -26,6 +26,21 @@
   --font-rajdhani: "Rajdhani", sans-serif;
   --font-orbitron: "Orbitron", sans-serif;
   --font-nerdfonts: "FiraCode Nerd Font", monospace;
+
+  @keyframes scanner-x {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  --animate-scanner-x: scanner-x 3s ease-in-out infinite;
+
   --animate-ws-slide-in: ws-slide-in 0.35s ease-out;
   --animate-ws-slide-out: ws-slide-out 0.35s ease-in;
 
