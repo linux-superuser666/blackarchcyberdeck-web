@@ -6,6 +6,8 @@ import Hero from "@/components/Hero";
 import GlitchText from "@/components/multimedia/GlitchText";
 import CableCat from "@/components/common/CableCat";
 import SocialPanel from "@/components/panel/SocialPanel";
+import SocialPanelL from "@/components/panel/SocialPanelL";
+import AthLeft from "@/components/common/AthLeft";
 export default function Home() {
   return (
     <div className="relative gap-8 font-rajdhani w-full h-screen flex flex-col">
@@ -13,8 +15,26 @@ export default function Home() {
       <div className="min-w-[100px] gap-0 font-rajdhani w-full h-full flex flex-col justify-start absolute inset-0 items-center">
         <div className="absolute bottom-0 z-[3]  w-[1300px] h-[630px] flex items-end justify-center">
           <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
-            <div className="border border-redx/0 relative row-span-3 flex justify-end">
+            <div className="border border-redx/20 relative row-span-3 flex justify-end">
               {/* left card */}
+              <div className="absolute top-[90px] transform rotate-90 right-[93px]">
+                <CableTx />
+              </div>
+              <div className="absolute right-[135px] top-[200px] transform rotate-180">
+                <CableRx />
+              </div>
+              <div className="absolute right-[230px] top-[100px]">
+                <AthLeft />
+              </div>
+              <div className="absolute right-[163px] top-[133px] tranform rotate-180">
+                <CableCat height={68} width={41} />
+              </div>
+              <div className="absolute right-[162px] top-[145px] tranform rotate-180">
+                <CableCat radius={8} width={32} height={55} />
+              </div>
+              <div className="absolute right-[113px] top-[251px]">
+                <SocialPanelL />
+              </div>
             </div>
             <div className="flex flex-col justify-center items-center">
               <GlitchText className="!text-5xl" text="Cyberdeck blackarch" />

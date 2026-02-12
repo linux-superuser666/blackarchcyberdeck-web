@@ -4,9 +4,9 @@ const CableRx = () => {
   return (
     <div className="flex flex-col gap-0 ml-12 justify-center items-center">
       <div className="w-6 h-1 flex">
-        <div className="w-1 h1 border-l border-t border-redx/40"></div>
-        <div className="w-4 h1 border-l border-t border-redx/40"></div>
-        <div className="w-1 h1 border-x border-t border-redx/40"></div>
+        <div className="w-1 h1 border-l border-redx/40"></div>
+        <div className="w-4 h1 border-l border-redx/40"></div>
+        <div className="w-1 h1 border-x border-redx/40"></div>
       </div>
       <div
         className="w-8 h-10
