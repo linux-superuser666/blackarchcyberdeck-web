@@ -14,8 +14,6 @@ import Notify from "./panel/Notify";
 import SessionPanel from "./panel/SessionPanel";
 import Mur from "./common/Mur";
 import TodoPanel from "./panel/TodoPanel";
-import GlitchText from "./multimedia/GlitchText";
-import GlitchSlideImg from "./multimedia/GlitchSlideImg";
 import PanelTop from "./multimedia/PanelTop";
 import BottomBody from "./multimedia/BottomBody";
 
@@ -25,21 +23,34 @@ const Hero = () => {
       <div className="w-[950px] h-[540px] drop-shadow-2xl shadow-redx/50 bg-yellowx/50 relative px-[2px] pt-[2px] [clip-path:polygon(1.3%_3%,_59.8%_3%,_62%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)]">
         <div className="size-full bg-black [clip-path:polygon(1.3%_3%,_60%_3%,_62.1%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)] relative">
           <PanelTop />
-          <div className="px-4 pb-1 pt-[56px] size-full">
-            <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0  w-[930px] flex flex-col gap-10 absolute">
-              <div className="h-3 w-full px-5 flex justify-between item-center">
-                <div className="flex pt-1.5">
+          <div className="px-5 pb-1 pt-[56px] size-full">
+            <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0 w-full h-full flex flex-row inset-0 z-0 absolute mur-border-dalam">
+              <div className="size-full">
+                <div className="border-b border-redx/30 h-12 w-full">
+                  <Mur />
+                  <Mur />
                   <Mur />
                 </div>
-                <div className="flex pt-1.5">
-                  <Mur />
+                <div className="size-full flex flex-row">
+                  <div className="border-r border-redx/30 h-[91%] py-1 items-center w-4 justify-between flex flex-col">
+                    <Mur />
+                    <Mur />
+                    <Mur />
+                    <Mur />
+                  </div>
+                  <div className="size-full"></div>
                 </div>
-                <div>󰄄</div>
-                <div className="flex pt-1.5">
-                  <Mur />
-                </div>
-                <div className="flex pt-1.5">
-                  <Mur />
+              </div>
+              <div className="h-full w-[300px] flex flex-col">
+                <div className="border-b border-redx/30 h-7 w-full"></div>
+                <div className="size-full flex flex-row">
+                  <div className="size-full"></div>
+                  <div className="border-l border-redx/30 h-full w-4 py-1 items-center justify-between flex flex-col">
+                    <Mur />
+                    <Mur />
+                    <Mur />
+                    <Mur />
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,8 +119,8 @@ const Hero = () => {
       </div>
       <BottomBody />
       <div className="flex cursor flex-row w-[1030px] justify-between">
-        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px  flex items-start border-x-[2px] border-b-[2px] border-yellowx/50"></div>
-        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x-[2px] border-b-[2px] border-yellowx/50"></div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start rounded-b-sm border-x border-b border-yellowx/50"></div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x rounded-b-sm border-b border-yellowx/50"></div>
       </div>
       <div className="w-full cursor h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
     </div>
