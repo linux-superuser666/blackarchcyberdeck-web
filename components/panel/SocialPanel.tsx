@@ -33,7 +33,7 @@ const SocialPanel = () => {
                 <GlitchCanvas
                   src="/icons/mrnngstr666.png"
                   width={100}
-                  height={1000}
+                  height={100}
                   intensity={5}
                 />
               </div>
