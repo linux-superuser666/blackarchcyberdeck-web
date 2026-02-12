@@ -23,20 +23,21 @@ const SocialPanel = () => {
                 <PanelBorderPx />
               </div>
             </div>
-            <div className="size-full border-redx/30 border flex py-4 items-center flex-col justify-between">
+            <div className="size-full border-redx/30 border flex py-3 items-center flex-col justify-between">
               <GlitchText
                 text="linux.superuser"
                 className="uppercase text-center"
                 layers={9}
                 fontSize={9}
               />
-              <div className="size-4"></div>
-              <GlitchCanvas
-                src="/icons/mrnngstr666.png"
-                width={100}
-                height={100}
-                intensity={5}
-              />
+              <div className="absolute top-[45px] size-fit">
+                <GlitchCanvas
+                  src="/icons/mrnngstr666.png"
+                  width={100}
+                  height={1000}
+                  intensity={5}
+                />
+              </div>
               <GlitchText
                 text="mrnngstr666"
                 className="uppercase text-center"
