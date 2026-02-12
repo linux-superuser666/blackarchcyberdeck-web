@@ -16,7 +16,7 @@ const socials = [
   {
     name: "youtube",
     href: "https://www.youtube.com/@linux.superuser",
-    src: "/icons/youtube.png",
+    src: "/icons/youtubev2.png",
   },
   {
     name: "saweria",
@@ -32,7 +32,7 @@ const socials = [
 
 const SocialPanelL = () => {
   return (
-    <div className="bg-redx/30 w-[120px] h-[310px] p-[2px] [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)]">
+    <div className="bg-yellowx/50 w-[120px] h-[310px] p-[2px] [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)]">
       <div className="bg-black size-full [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)] flex flex-col justify-between p-px">
         {/* Top decorative */}
         <div className="w-full flex h-2.5 justify-between flex-row">
@@ -45,7 +45,7 @@ const SocialPanelL = () => {
         <div className="w-full flex h-full items-center justify-between flex-row">
           <Mur />
 
-          <div className="border size-full p-px items-center justify-center flex flex-col border-redx/30">
+          <div className="border size-full p-px items-center justify-center flex flex-col border-redx/30 relative">
             <GlitchText
               text="social & support"
               className="uppercase text-center"
@@ -57,7 +57,7 @@ const SocialPanelL = () => {
               {socials.map((item, index) => (
                 <div
                   key={item.name}
-                  className="flex flex-col items-center justify-center"
+                  className="flex flex-col items-center relative z-10 justify-center"
                 >
                   <Link
                     href={item.href}
@@ -69,7 +69,7 @@ const SocialPanelL = () => {
                       src={item.src}
                       width={30}
                       height={40}
-                      intensity={5}
+                      intensity={1}
                     />
                   </Link>
 

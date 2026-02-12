@@ -3,7 +3,6 @@
 import CableTx from "@/components/common/CableTx";
 import CableRx from "@/components/common/CableRx";
 import Hero from "@/components/Hero";
-import GlitchText from "@/components/multimedia/GlitchText";
 import CableCat from "@/components/common/CableCat";
 import SocialPanel from "@/components/panel/SocialPanel";
 import SocialPanelL from "@/components/panel/SocialPanelL";
@@ -17,34 +16,32 @@ export default function Home() {
           <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
             <div className="border border-redx/0 relative row-span-3 flex justify-end">
               {/* left card */}
-              <div className="absolute top-[90px] transform rotate-90 right-[93px]">
+              <div className="absolute top-[45px] right-[111px]">
+                <div className="w-1 h-10 border-l rounded-l-sm border-y border-yellowx/50"></div>
+              </div>
+              <div className="absolute top-[70px] transform rotate-90 right-[93px]">
                 <CableTx />
               </div>
-              <div className="absolute right-[135px] top-[200px] transform rotate-180">
+              <div className="absolute right-[135px] top-[180px] transform rotate-180">
                 <CableRx />
               </div>
               <div className="absolute right-[230px] top-[100px]">
                 <AthLeft />
               </div>
-              <div className="absolute right-[163px] top-[133px] tranform rotate-180">
+              <div className="absolute right-[163px] top-[112px] tranform rotate-180">
                 <CableCat height={68} width={41} />
               </div>
-              <div className="absolute right-[162px] top-[145px] tranform rotate-180">
-                <CableCat radius={8} width={32} height={55} />
-              </div>
-              <div className="absolute right-[163px] top-[139px] tranform rotate-180">
+              <div className="absolute right-[163px] top-[119px] tranform rotate-180">
                 <CableCat radius={11} width={36} height={61} />
               </div>
-              <div className="absolute right-[113px] top-[251px]">
+              <div className="absolute right-[162px] top-[125px] tranform rotate-180">
+                <CableCat radius={8} width={32} height={55} />
+              </div>
+              <div className="absolute right-[113px] top-[232px]">
                 <SocialPanelL />
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <GlitchText className="!text-5xl" text="Cyberdeck blackarch" />
-              <div className="text-yellowx !text-base font-semibold uppercase">
-                crafting with passion by © mrnngstr666
-              </div>
-            </div>
+            <div className="flex flex-col justify-center items-center"></div>
             <div className="border realtive border-redx/0 relative row-span-3 flex justify-start">
               {/* right card */}
               <div className="absolute top-[500px] transform -rotate-90 left-[93px] ">
@@ -62,13 +59,11 @@ export default function Home() {
               <div className="absolute left-[163px] bottom-[126px]">
                 <CableCat radius={11} width={44} height={96} />
               </div>
-              <div className="absolute left-[113px] bottom-[271px]">
+              <div className="absolute left-[113px] bottom-[273px]">
                 <SocialPanel />
               </div>
             </div>
-            <div className="row-span-2 row-start-2 col-start-2 text-transparent">
-              5 8
-            </div>
+            <div className="row-span-2 row-start-2 col-start-2 text-transparent"></div>
           </div>
         </div>
         <div className="absolute z-[3] bottom-0 w-[1000]">

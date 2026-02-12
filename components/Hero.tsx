@@ -14,13 +14,18 @@ import Notify from "./panel/Notify";
 import SessionPanel from "./panel/SessionPanel";
 import Mur from "./common/Mur";
 import TodoPanel from "./panel/TodoPanel";
+import GlitchText from "./multimedia/GlitchText";
+import GlitchSlideImg from "./multimedia/GlitchSlideImg";
+import PanelTop from "./multimedia/PanelTop";
+import BottomBody from "./multimedia/BottomBody";
 
 const Hero = () => {
   return (
     <div className="flex flex-col w-full justify-end items-center h-[1200px]">
-      <div className="w-[950px] h-[500px] -mb-1 drop-shadow-2xl shadow-redx/50 bg-redx/30 relative p-[2px] [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
-        <div className="size-full bg-black [clip-path:polygon(1%_0,_99%_0,_100%_2%,_100%_100%,_0_100%,_0_2%)]">
-          <div className="px-4 pb-1 pt-4 size-full">
+      <div className="w-[950px] h-[540px] drop-shadow-2xl shadow-redx/50 bg-yellowx/50 relative px-[2px] pt-[2px] [clip-path:polygon(1.3%_3%,_59.8%_3%,_62%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)]">
+        <div className="size-full bg-black [clip-path:polygon(1.3%_3%,_60%_3%,_62.1%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)] relative">
+          <PanelTop />
+          <div className="px-4 pb-1 pt-[56px] size-full">
             <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0  w-[930px] flex flex-col gap-10 absolute">
               <div className="h-3 w-full px-5 flex justify-between item-center">
                 <div className="flex pt-1.5">
@@ -58,53 +63,53 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-5 w-[958px] cursor flex border-redx/30 border-x bg-black">
-        <div className="w-1 border border-redx/30"></div>
-        <div className="w-full h-full flex justify-between border-x border-redx/30 items-center pt-1 px-4">
-          <Mur />
-          <Mur />
-          <Mur />
-          <Mur />
-        </div>
-        <div className="w-1 border border-redx/30"></div>
-      </div>
-      <div
-        className="w-[1100px] cursor h-[30px] shadow-2xl shadow-redx/20 bg-redx/30 p-[2px] justify-center flex items-start
-        [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
-      "
-      >
-        <div className="size-full bg-black shadow-2xl shadow-redx/50 justify-center grid grid-cols-3 cursor grid-rows-2 items-start [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)] pb-1 text-[6px] text-transparent">
-          <div className="w-full items-center cursor justify-center border-b border-redx/30">
-            1
-          </div>
-          <div className="border-b border-x cursor border-redx/30 w-full h-4"></div>
-          <div className="w-full items-center cursor justify-center border-b border-redx/30">
-            3
-          </div>
-          <div className="w-full flex gap-6 cursor flex-row items-center justify-start pl-8">
-            <div className="h-2 rounded-[3px] cursor border flex w-12 border-redx/30 p-[2px] gap-px">
-              <div className="bg-redx/70 cursor animate-pulse duration-75 rounded-[3px] size-full"></div>
-              <div className="bg-yellowx/80 cursor animate-blink-medium rounded-[3px] h-full w-6"></div>
-              <div className="bg-redx/70 cursor animate-blink-slow rounded-[3px] size-full"></div>
-            </div>
-            <div className="h-2 rounded-[3px] cursor border w-8 border-redx/30 p-[2px]">
-              <div className="bg-redx/70 cursor rounded-[3px] size-full"></div>
-            </div>
-          </div>
-          <div className="w-full items-center cursor justify-center">5</div>
-          <div className="w-full flex cursor gap-8 flex-row items-center justify-end pr-8">
-            <div className="border size-3 cursor border-redx/30 rounded-full p-px">
-              <div className="border size-full border-redx/30 rounded-full p-px"></div>
-            </div>
-            <div className="border size-3 cursor border-redx/30 rounded-full p-px">
-              <div className="border size-full border-redx/30 rounded-full p-px"></div>
-            </div>
+      <div className="h-6 w-[987px] flex bg-black">
+        <div className="w-4 h-full bg-yellowx/50 pt-[2px] pl-[2px] [clip-path:polygon(0%_0%,_75%_0%,_100%_15%,_100%_100%,_0%_100%)]">
+          <div className="size-full bg-black [clip-path:polygon(0%_0%,_60%_0%,_100%_20%,_100%_100%,_0%_100%)] flex flex-col">
+            <div className="border-b h-1.5 border-redx/30"></div>
+            <div className="size-full"></div>
           </div>
         </div>
+        <div className="h-full pt-[3px]">
+          <div className="w-[3px] border-t-[2px] border-yellowx/50 size-full">
+            <div className="size-full border-redx/30 border-l"></div>
+          </div>
+        </div>
+        <div className="w-full h-full flex justify-between items-center">
+          <div className="border-redx/30 flex border-r flex-col border-t h-full w-[300px]">
+            <div className="w-full h-1.5 border-l-[2px] border-yellowx/50"></div>
+            <div className="size-full border-t border-l border-redx/30"></div>
+          </div>
+          <div className="w-full h-full flex flex-col">
+            <div className="w-full h-1"></div>
+            <div className="w-full h-full border-t-[2px] border-x-[2px] border-yellowx/50 items-center flex flex-row justify-between pt-px px-4 ">
+              <Mur />
+              <Mur />
+              <Mur />
+              <Mur />
+            </div>
+          </div>
+          <div className="border-redx/30 flex border-l flex-col border-t h-full w-[300px]">
+            <div className="w-full h-1.5 border-r-[2px] border-yellowx/50"></div>
+            <div className="size-full border-t border-r border-redx/30"></div>
+          </div>
+        </div>
+        <div className="h-full pt-[3px]">
+          <div className="w-[3px] border-t-[2px] border-yellowx/50 size-full">
+            <div className="size-full border-redx/30 border-r"></div>
+          </div>
+        </div>
+        <div className="w-4 h-full bg-yellowx/50 pt-[2px] pr-[2px] [clip-path:polygon(25%_0%,_100%_0%,_100%_100%,_0%_100%,_0%_15%)]">
+          <div className="size-full bg-black [clip-path:polygon(40%_0%,_100%_0%,_100%_100%,_0%_100%,_0%_20%)] flex flex-col">
+            <div className="border-b h-1.5 border-redx/30"></div>
+            <div className="size-full"></div>
+          </div>
+        </div>
       </div>
+      <BottomBody />
       <div className="flex cursor flex-row w-[1030px] justify-between">
-        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px  flex items-start border-x border-b border-redx/30"></div>
-        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x border-b border-redx/30"></div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px  flex items-start border-x-[2px] border-b-[2px] border-yellowx/50"></div>
+        <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x-[2px] border-b-[2px] border-yellowx/50"></div>
       </div>
       <div className="w-full cursor h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
     </div>

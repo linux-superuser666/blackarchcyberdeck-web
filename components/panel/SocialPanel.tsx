@@ -6,7 +6,7 @@ import GlitchText from "../multimedia/GlitchText";
 
 const SocialPanel = () => {
   return (
-    <div className="bg-redx/30 w-[170px] h-[170px] p-[2px] [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)]">
+    <div className="bg-yellowx/50 w-[170px] h-[170px] p-[2px] [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)]">
       <div className="bg-black size-full [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)] flex flex-col justify-between p-[2px]">
         <div className="w-full flex h-2.5 justify-between flex-row">
           <Mur />
