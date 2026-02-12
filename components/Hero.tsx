@@ -106,7 +106,7 @@ const Hero = () => {
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px  flex items-start border-x border-b border-redx/30"></div>
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x border-b border-redx/30"></div>
       </div>
-      <div className="w-full cursor h-1 border-t border-redx/30 mt-[1px] bg-redx/10"></div>
+      <div className="w-full cursor h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
     </div>
   );
 };
