@@ -1,81 +1,16 @@
 "use client";
 
-import CableTx from "@/components/common/CableTx";
-import CableRx from "@/components/common/CableRx";
 import Hero from "@/components/Hero";
-import CableCat from "@/components/common/CableCat";
-import SocialPanel from "@/components/panel/SocialPanel";
-import SocialPanelL from "@/components/panel/SocialPanelL";
-import AthLeft from "@/components/common/AthLeft";
-import AiPanel from "@/components/panel/AiPanel";
+import SideWidget from "@/components/multimedia/SideWidget";
+
 export default function Home() {
   return (
-    <div className="relative gap-8 font-rajdhani w-full h-screen flex flex-col">
-      <div className="fixed -z-10 inset-0 bg-black"></div>
-      <div className="min-w-[100px] gap-0 font-rajdhani w-full h-full flex flex-col justify-start absolute inset-0 items-center">
-        <div className="absolute bottom-0 z-[2]  w-[1300px] h-[630px] flex items-end justify-center">
-          <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
-            <div className="border border-redx/0 relative row-span-3 flex justify-end">
-              {/* left card */}
-              <div className="absolute top-[50px] right-[111px]">
-                <div className="w-1 h-10 border-l rounded-l-sm border-y border-yellowx/50"></div>
-              </div>
-              <div className="absolute top-[70px] transform rotate-90 right-[93px]">
-                <CableTx />
-              </div>
-              <div className="absolute right-[135px] top-[180px] transform rotate-180">
-                <CableRx />
-              </div>
-              <div className="absolute right-[230px] top-[100px]">
-                <AthLeft />
-              </div>
-              <div className="absolute right-[163px] top-[112px] tranform rotate-180">
-                <CableCat height={68} width={41} />
-              </div>
-              <div className="absolute right-[163px] top-[119px] tranform rotate-180">
-                <CableCat radius={11} width={36} height={61} />
-              </div>
-              <div className="absolute right-[162px] top-[125px] tranform rotate-180">
-                <CableCat radius={8} width={32} height={55} />
-              </div>
-              <div className="absolute right-[113px] top-[232px]">
-                <SocialPanelL />
-              </div>
-            </div>
-            <div className="flex flex-col justify-center items-center"></div>
-            <div className="border realtive border-redx/0 relative row-span-3 flex justify-start">
-              {/* right card */}
-              <div className="absolute top-[30px] left-[111px]">
-                <div className="w-1 h-10 border-r rounded-r-sm border-y border-yellowx/50"></div>
-              </div>
-              <div className="absolute top-[500px] transform -rotate-90 left-[93px] ">
-                <CableTx />
-              </div>
-              <div className="absolute left-[143px] bottom-[222px]">
-                <CableRx />
-              </div>
-              <div className="absolute left-[163px] bottom-[120px]">
-                <CableCat height={103} />
-              </div>
-              <div className="absolute left-[162px] bottom-[131px]">
-                <CableCat radius={8} width={40} height={93} />
-              </div>
-              <div className="absolute left-[163px] bottom-[126px]">
-                <CableCat radius={11} width={44} height={96} />
-              </div>
-              <div className="absolute left-[113px] bottom-[273px]">
-                <SocialPanel />
-              </div>
-              <div className="absolute left-[113px] bottom-[445px]">
-                <AiPanel />
-              </div>
-            </div>
-            <div className="row-span-2 row-start-2 col-start-2 text-transparent"></div>
-          </div>
-        </div>
-        <div className="absolute z-[3] bottom-0 w-[1000]">
-          <Hero />
-        </div>
+    <div className="font-rajdhani flex min-w-full mih-h-full justify-center items-center size-full">
+      <div className="size-full absolute bottom-0 flex z-10 justify-center items-end">
+        <SideWidget />
+      </div>
+      <div className="absolute z-20 bottom-0 w-[1100px] h-full">
+        <Hero />
       </div>
     </div>
   );

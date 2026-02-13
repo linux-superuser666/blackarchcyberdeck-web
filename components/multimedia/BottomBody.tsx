@@ -4,7 +4,7 @@ import Mur from "../common/Mur";
 const BottomBody = () => {
   return (
     <div
-      className="w-[1100px] cursor h-[40px] shadow-2xl shadow-redx/20 bg-yellowx/50 p-[2px] justify-center flex items-start
+      className="w-[1100px] cursor h-[45px] shadow-2xl shadow-redx/20 bg-yellowx/50 p-[2px] justify-center flex items-start
         [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
       "
     >
@@ -38,12 +38,12 @@ const BottomBody = () => {
           </div>
         </div>
         <div className="w-full h-full"></div>
-        <div className="w-full flex gap-8 mt-0.5 flex-row items-center justify-end pr-8">
-          <div className="border size-3 border-yellowx/50 rounded-full p-px">
-            <div className="border size-full border-redx/30 rounded-full p-px"></div>
+        <div className="w-full flex gap-4 mt-0.5 flex-row items-center justify-end pr-8">
+          <div className="border size-3 cursor border-redx/30 rounded-full p-px">
+            <div className="border size-full border-yellowx/50 rounded-full p-px"></div>
           </div>
-          <div className="border size-3 cursor border-yellowx/50 rounded-full p-px">
-            <div className="border size-full border-redx/30 rounded-full p-px"></div>
+          <div className="border size-3 cursor border-redx/30 rounded-full p-px">
+            <div className="border size-full border-yellowx/50 rounded-full p-px"></div>
           </div>
         </div>
       </div>

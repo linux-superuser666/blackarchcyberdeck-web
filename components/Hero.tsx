@@ -1,79 +1,27 @@
 import React from "react";
-import Framex from "./layer-one/Framex";
-import Appframe from "./layer-one/Appframe";
-import SystemPanel from "./panel/SystemPanel";
-import HyprPanel from "./panel/HyprPanel";
-import ChronoPanel from "./panel/ChronoPanel";
-import WinSwitch from "./widget/WinSwitch";
-import Radiostation from "./widget/Radiostation";
-import ControlPanel from "./panel/ControlPanel";
-import LauncherPanel from "./panel/LauncherPanel";
-import LevelPanel from "./panel/LevelPanel";
-import NetworkPanel from "./panel/NetworkPanel";
-import Notify from "./panel/Notify";
-import SessionPanel from "./panel/SessionPanel";
+
 import Mur from "./common/Mur";
-import TodoPanel from "./panel/TodoPanel";
-import PanelTop from "./multimedia/PanelTop";
 import BottomBody from "./multimedia/BottomBody";
+import HeadDecor from "./multimedia/HeadDecor";
+import PanelLeft from "./multimedia/PanelLeft";
+import PanelRight from "./multimedia/PanelRight";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col w-full justify-end items-center h-[1200px]">
-      <div className="w-[950px] h-[540px] drop-shadow-2xl shadow-redx/50 bg-yellowx/50 relative px-[2px] pt-[2px] [clip-path:polygon(1.3%_3%,_59.8%_3%,_62%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)]">
-        <div className="size-full bg-black [clip-path:polygon(1.3%_3%,_60%_3%,_62.1%_0%,_99%_0,_100%_1.5%,_100%_100%,_0_100%,_0_5%)] relative">
-          <PanelTop />
-          <div className="px-5 pb-1 pt-[56px] size-full">
-            <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0 w-full h-full flex flex-row inset-0 z-0 absolute mur-border-dalam">
-              <div className="size-full">
-                <div className="border-b border-redx/30 h-[52px] w-full">
-                  <Mur />
-                  <Mur />
-                  <Mur />
-                </div>
-                <div className="size-full flex flex-row">
-                  <div className="border-r border-redx/30 h-[90%] py-1 items-center w-4 justify-between flex flex-col">
-                    <Mur />
-                    <Mur />
-                    <Mur />
-                    <Mur />
-                  </div>
-                  <div className="size-full"></div>
-                </div>
-              </div>
-              <div className="h-full w-[300px] flex flex-col">
-                <div className="border-b border-redx/30 h-7 w-full"></div>
-                <div className="size-full flex flex-row">
-                  <div className="size-full"></div>
-                  <div className="border-l border-redx/30 h-full w-4 py-1 items-center justify-between flex flex-col">
-                    <Mur />
-                    <Mur />
-                    <Mur />
-                    <Mur />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* main content */}
-            <div className="w-full shadow-2xl shadow-redx/10 h-full rounded-[2px] border-redx/20 bg-black p-1 border relative">
-              <Framex />
-              <Appframe />
-              <SystemPanel />
-              <Notify />
-              <LauncherPanel />
-              <NetworkPanel />
-              <LevelPanel />
-              <HyprPanel />
-              <ChronoPanel />
-              <WinSwitch />
-              <Radiostation />
-              <TodoPanel />
-              <ControlPanel />
-              <SessionPanel />
-            </div>
-          </div>
+    <div className="flex flex-col justify-end items-center size-full">
+      <div className="absolute z-50 size-fit top-40 left-10">
+        <PanelLeft />
+      </div>
+      <div className="absolute z-50 size-fit top-40 right-10">
+        <PanelRight />
+      </div>
+      {/* laptop screen frame */}
+      <div className="w-full z-40 max-w-[987px] h-[540px] bg-yellowx/50 px-[2px] pt-[2px] [clip-path:polygon(0_6.5%,_1.5%_4%,_60.7%_4%,_63.4%_0,_98.6%_0,_100%_2%,_100%_70%,_98%_70%,_98%_100%,_2%_100%,_2%_70%,_0%_70%)]">
+        <div className="size-full relative bg-black [clip-path:polygon(0_6.5%,_1.5%_4%,_60.9%_4%,_63.6%_0,_98.6%_0,_100%_2%,_100%_69.5%,_98%_69.5%,_98%_100%,_2%_100%,_2%_69.5%,_0%_69.5%)]">
+          <HeadDecor />
         </div>
       </div>
+      {/* lcd roll */}
       <div className="h-6 w-[987px] flex bg-black">
         <div className="w-4 h-full bg-yellowx/50 pt-[2px] pl-[2px] [clip-path:polygon(0%_0%,_75%_0%,_100%_15%,_100%_100%,_0%_100%)]">
           <div className="size-full bg-black [clip-path:polygon(0%_0%,_60%_0%,_100%_20%,_100%_100%,_0%_100%)] flex flex-col">
@@ -117,12 +65,15 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/* laptop bottom body */}
       <BottomBody />
-      <div className="flex cursor flex-row w-[1030px] justify-between">
+      {/* laptop foot */}
+      <div className="flex flex-row w-[1030px] justify-between">
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start rounded-b-sm border-x border-b border-yellowx/50"></div>
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x rounded-b-sm border-b border-yellowx/50"></div>
       </div>
-      <div className="w-full cursor h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
+      {/* space bottom screen / table */}
+      <div className="w-full h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
     </div>
   );
 };

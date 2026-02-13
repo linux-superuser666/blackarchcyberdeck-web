@@ -104,7 +104,6 @@ const HyprPanel = () => {
   const setActive = useUIStore((s) => s.setActiveWorkspace);
   const setOccupied = useUIStore((s) => s.setOccupiedWorkspaces);
 
-  // Klik workspace
   const handleWorkspaceClick = (label: string) => {
     setActive(label);
 
@@ -147,8 +146,8 @@ const HyprPanel = () => {
   const activeXWindow = xwindowNames[active] || "";
 
   return (
-    <div className="absolute z-50 right-0 top-0 mr-[12px] mt-1 w-full h-full flex flex-row gap-1 justify-end">
-      <div className="flex flex-col gap-0 leading-none">
+    <div className="absolute z-50 right-0 top-0 pr-3 pt-1 size-full flex flex-row gap-1 justify-end">
+      <div className="flex flex-col w-[865px] pl-1 pb-1 h-[438px] gap-0 leading-none">
         <p className="text-[5px] flex justify-end text-redx/80 uppercase font-orbitron">
           connection-dbus 1.001.1
         </p>
@@ -184,11 +183,11 @@ const HyprPanel = () => {
           </div>
         </div>
 
-        <p className="text-[7px] flex justify-end text-greyx uppercase">
+        <p className="text-[7px] mb-1 flex justify-end text-greyx uppercase">
           {activeXWindow && `${activeXWindow}`}
         </p>
 
-        <div className="mt-1 p-1 relative w-[863px] h-[415px]">
+        <div className="p-1 relative size-full">
           <WorkspaceSlider active={active} views={workspaceViews} />
         </div>
       </div>

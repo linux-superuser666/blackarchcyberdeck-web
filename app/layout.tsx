@@ -19,10 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${nerdFont.className} antialiased   *: 
-      `}
-      >
+      <body className={`${nerdFont.className} antialiased !bg-black size-full`}>
         {children}
       </body>
     </html>

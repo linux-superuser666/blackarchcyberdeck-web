@@ -21,8 +21,8 @@ const GlitchSlideImg = () => {
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % logos.length);
         setShaking(false);
-      }, 300); // durasi shake
-    }, 2000); // total delay tiap ganti
+      }, 300);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
