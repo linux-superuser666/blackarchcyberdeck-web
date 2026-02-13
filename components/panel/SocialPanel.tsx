@@ -16,12 +16,6 @@ const SocialPanel = () => {
         <div className="w-full flex h-full items-center justify-between flex-row">
           <Mur />
           <div className="size-full relative border-redx/30 border p-px">
-            <div className="size-full border-redx/30 border absolute inset-0 flex items-center overflow-hidden">
-              <div className="h-16 w-full flex flex-col animate-scanner-y">
-                <PanelBorderPx />
-                <PanelBorderPx />
-              </div>
-            </div>
             <div className="size-full border-redx/30 border flex py-3 items-center flex-col justify-between">
               <GlitchText
                 text="linux.superuser"

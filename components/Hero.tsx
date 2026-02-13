@@ -26,13 +26,13 @@ const Hero = () => {
           <div className="px-5 pb-1 pt-[56px] size-full">
             <div className="text-xs font-nerdfonts text-yellowx/50 text-center top-0 w-full h-full flex flex-row inset-0 z-0 absolute mur-border-dalam">
               <div className="size-full">
-                <div className="border-b border-redx/30 h-12 w-full">
+                <div className="border-b border-redx/30 h-[52px] w-full">
                   <Mur />
                   <Mur />
                   <Mur />
                 </div>
                 <div className="size-full flex flex-row">
-                  <div className="border-r border-redx/30 h-[91%] py-1 items-center w-4 justify-between flex flex-col">
+                  <div className="border-r border-redx/30 h-[90%] py-1 items-center w-4 justify-between flex flex-col">
                     <Mur />
                     <Mur />
                     <Mur />

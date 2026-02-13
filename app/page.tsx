@@ -7,6 +7,7 @@ import CableCat from "@/components/common/CableCat";
 import SocialPanel from "@/components/panel/SocialPanel";
 import SocialPanelL from "@/components/panel/SocialPanelL";
 import AthLeft from "@/components/common/AthLeft";
+import AiPanel from "@/components/panel/AiPanel";
 export default function Home() {
   return (
     <div className="relative gap-8 font-rajdhani w-full h-screen flex flex-col">
@@ -16,7 +17,7 @@ export default function Home() {
           <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
             <div className="border border-redx/0 relative row-span-3 flex justify-end">
               {/* left card */}
-              <div className="absolute top-[45px] right-[111px]">
+              <div className="absolute top-[50px] right-[111px]">
                 <div className="w-1 h-10 border-l rounded-l-sm border-y border-yellowx/50"></div>
               </div>
               <div className="absolute top-[70px] transform rotate-90 right-[93px]">
@@ -44,6 +45,9 @@ export default function Home() {
             <div className="flex flex-col justify-center items-center"></div>
             <div className="border realtive border-redx/0 relative row-span-3 flex justify-start">
               {/* right card */}
+              <div className="absolute top-[30px] left-[111px]">
+                <div className="w-1 h-10 border-r rounded-r-sm border-y border-yellowx/50"></div>
+              </div>
               <div className="absolute top-[500px] transform -rotate-90 left-[93px] ">
                 <CableTx />
               </div>
@@ -61,6 +65,9 @@ export default function Home() {
               </div>
               <div className="absolute left-[113px] bottom-[273px]">
                 <SocialPanel />
+              </div>
+              <div className="absolute left-[113px] bottom-[445px]">
+                <AiPanel />
               </div>
             </div>
             <div className="row-span-2 row-start-2 col-start-2 text-transparent"></div>
