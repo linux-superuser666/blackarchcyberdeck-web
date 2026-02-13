@@ -49,7 +49,6 @@ const SocialPanelL = () => {
             <GlitchText
               text="social & support"
               className="uppercase text-center"
-              layers={9}
               fontSize={9}
             />
 
@@ -64,7 +63,7 @@ const SocialPanelL = () => {
                     target="_blank"
                     className="flex size-full flex-col items-center justify-center hover:text-redx transition-colors"
                   >
-                    <GlitchText text={item.name} layers={9} fontSize={14} />
+                    <GlitchText text={item.name} fontSize={14} />
                     <GlitchCanvas
                       src={item.src}
                       width={30}
