@@ -28,13 +28,13 @@ const BottomBody = () => {
         </div>
         <div className="w-full items-center justify-center border-b border-redx/30 h-4"></div>
         <div className="w-full flex gap-6 flex-row items-center justify-start pl-8 mt-1">
-          <div className="h-2 rounded-[3px]  border flex w-12 border-yellowx/50 p-[2px] gap-px">
+          <div className="h-2 rounded-[3px]  border flex w-12 border-yellowx/20 p-[2px] gap-px">
             <div className="bg-redx/70  animate-pulse duration-75 rounded-[3px] size-full"></div>
             <div className="bg-yellowx/80  animate-blink-medium rounded-[3px] h-full w-6"></div>
             <div className="bg-redx/70  animate-blink-slow rounded-[3px] size-full"></div>
           </div>
-          <div className="h-2 rounded-[3px]  border w-8 border-yellowx/50 p-[2px]">
-            <div className="bg-redx/70 rounded-[3px] size-full"></div>
+          <div className="h-2 rounded-[3px]  border w-8 border-yellowx/20 p-[2px]">
+            <div className="bg-redx/70 animate-pulse rounded-[3px] size-full"></div>
           </div>
         </div>
         <div className="w-full h-full"></div>
