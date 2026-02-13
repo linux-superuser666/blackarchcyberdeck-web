@@ -20,7 +20,6 @@ const SocialPanel = () => {
               <GlitchText
                 text="linux.superuser"
                 className="uppercase text-center"
-                layers={9}
                 fontSize={9}
               />
               <div className="absolute top-[45px] size-fit">
@@ -34,7 +33,6 @@ const SocialPanel = () => {
               <GlitchText
                 text="mrnngstr666"
                 className="uppercase text-center"
-                layers={9}
                 fontSize={9}
               />
             </div>
