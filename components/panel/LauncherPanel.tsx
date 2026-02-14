@@ -23,7 +23,7 @@ const LauncherPanel = () => {
   if (activeWidget !== "launcherPanel") return null;
 
   return (
-    <div className="ml-[7px] absolute z-[999] top-14 w-[280px] flex flex-row gap-1">
+    <div className="ml-3 absolute z-[999] top-14 w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
 
       <div className="flex flex-col leading-none gap-0">

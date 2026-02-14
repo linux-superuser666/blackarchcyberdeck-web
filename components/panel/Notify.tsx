@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
 import Link from "next/link";
 
-const SHOW_DURATION = 10000; // 10 detik tampil
-const HIDE_DURATION = 5000; // 5 detik hilang
-const CONTENT_DELAY = 400; // delay antar animasi
+const SHOW_DURATION = 10000;
+const HIDE_DURATION = 5000;
+const CONTENT_DELAY = 400;
 
 const Notify = () => {
   const [containerVisible, setContainerVisible] = useState(false);
@@ -18,25 +18,18 @@ const Notify = () => {
     let innerTimeout: NodeJS.Timeout;
 
     const loop = () => {
-      // STEP 1: container muncul dulu
       setContainerVisible(true);
-
-      // STEP 2: setelah delay baru konten muncul
       innerTimeout = setTimeout(() => {
         setContentVisible(true);
       }, CONTENT_DELAY);
 
-      // setelah SHOW_DURATION mulai close
       mainTimeout = setTimeout(() => {
-        // STEP 3: konten hilang dulu
         setContentVisible(false);
 
-        // STEP 4: setelah delay container hilang
         innerTimeout = setTimeout(() => {
           setContainerVisible(false);
         }, CONTENT_DELAY);
 
-        // ulangi loop setelah HIDE_DURATION
         mainTimeout = setTimeout(loop, HIDE_DURATION);
       }, SHOW_DURATION);
     };
@@ -51,7 +44,7 @@ const Notify = () => {
 
   return (
     <div
-      className={`ml-[7px] absolute z-[999] top-[290px] w-[220px] flex flex-row gap-1 h-[145px]
+      className={`ml-3 absolute z-[999] top-[290px] w-[220px] flex flex-row gap-1 h-[145px]
       transition-all duration-500 ease-in-out transform origin-left
       ${
         containerVisible
@@ -59,15 +52,11 @@ const Notify = () => {
           : "opacity-0 scale-x-0 pointer-events-none"
       }`}
     >
-      {/* BIN LOGO */}
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
-
-      {/* CONTENT WRAPPER */}
       <div className="flex flex-col leading-none gap-0 w-full">
         <p className="text-[5px] text-redx/80 uppercase font-orbitron">
           connection_dbus 1.001.1
         </p>
-
         <div
           className={`text-redx mt-1 h-full items-start w-full flex flex-row gap-0.5 text-xs
           transition-all duration-500 ease-in-out

@@ -35,7 +35,7 @@ const SystemPanel = () => {
   }, []);
 
   return (
-    <div className="ml-[7px] w-[280px] flex flex-row gap-1">
+    <div className="ml-3 mt-px w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
 
       <div className="flex flex-col leading-none gap-0">

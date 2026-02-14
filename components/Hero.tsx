@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
       </div>
       {/* lcd roll */}
-      <div className="h-6 w-[987px] flex bg-black">
+      <div className="h-6 w-[985px] flex bg-black">
         <div className="w-4 h-full bg-yellowx/50 pt-[2px] pl-[2px] [clip-path:polygon(0%_0%,_75%_0%,_100%_15%,_100%_100%,_0%_100%)]">
           <div className="size-full bg-black [clip-path:polygon(0%_0%,_60%_0%,_100%_20%,_100%_100%,_0%_100%)] flex flex-col">
             <div className="border-b h-1.5 border-redx/30"></div>

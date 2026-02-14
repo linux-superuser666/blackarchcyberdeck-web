@@ -14,42 +14,35 @@ interface Commit {
   };
 }
 
-const SHOW_DURATION = 10000; // 10 detik tampil
-const HIDE_DURATION = 5000; // 5 detik hilang
-const CONTENT_DELAY = 400; // delay antar animasi
+const SHOW_DURATION = 9000;
+const HIDE_DURATION = 7000;
+const CONTENT_DELAY = 400;
 
 const TodoPanel = () => {
   const [commit, setCommit] = useState<Commit | null>(null);
   const [isNew, setIsNew] = useState(false);
 
-  // animasi state (TAMBAHAN)
   const [containerVisible, setContainerVisible] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
 
-  // LOOP ANIMASI (SAMA SEPERTI NOTIFY)
   useEffect(() => {
     let mainTimeout: NodeJS.Timeout;
     let innerTimeout: NodeJS.Timeout;
 
     const loop = () => {
-      // STEP 1: container muncul
       setContainerVisible(true);
 
-      // STEP 2: konten muncul setelah delay
       innerTimeout = setTimeout(() => {
         setContentVisible(true);
       }, CONTENT_DELAY);
 
-      // STEP 3: mulai hide setelah SHOW_DURATION
       mainTimeout = setTimeout(() => {
         setContentVisible(false);
 
-        // STEP 4: container hide setelah delay
         innerTimeout = setTimeout(() => {
           setContainerVisible(false);
         }, CONTENT_DELAY);
 
-        // ulangi loop
         mainTimeout = setTimeout(loop, HIDE_DURATION);
       }, SHOW_DURATION);
     };
@@ -62,7 +55,6 @@ const TodoPanel = () => {
     };
   }, []);
 
-  // FETCH COMMIT (TIDAK DIUBAH)
   useEffect(() => {
     const fetchCommit = async () => {
       try {
