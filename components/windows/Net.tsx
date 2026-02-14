@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import GithubPages from "../repo/GithubPages";
 const Net = () => {
   return (
     <div className="absolute border border-redx/50 h-full w-full ">
@@ -11,7 +12,9 @@ const Net = () => {
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts text-greyx pl-5">󰒃</div>
           <div className="font-nerdfonts text-greyx"></div>
-          <div className="w-full">link</div>
+          <div className="w-full text-greyx tracking-wider font-medium">
+            https://github.com/linux-superuser666/
+          </div>
           <div className="font-nerdfonts text-greyx"></div>
           <p>-</p>
           <p>100%</p>
@@ -27,7 +30,9 @@ const Net = () => {
         </div>
         <div className="flex text-redx flex-row size-full">
           <div className="flex bg-black flex-col h-full w-[36px] gap-3.5 items-center p-1">
-            <div className="bg-slate-300/50 w-full  h-12"></div>
+            <div className="bg-slate-300/20 font-nerdfonts text-lg justify-center w-full flex items-center text-center h-12 text-greyx rounded-xs pr-px">
+              
+            </div>
             <div className="hover:bg-slate-300/50 flex justify-center items-center text-lg text-greyx size-6 hover:text-black">
               +
             </div>
@@ -45,7 +50,7 @@ const Net = () => {
               
             </div>
           </div>
-          <div className="flex size-full border-l border-t border-redx/30 bg-slate-900/90"></div>
+          <GithubPages />
         </div>
       </div>
     </div>

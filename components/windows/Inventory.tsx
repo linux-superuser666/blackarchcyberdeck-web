@@ -99,11 +99,8 @@ const Inventory: React.FC = () => {
       }
     }
     return (
-      <div className="flex text-redx font-medium w-full flex-col gap-1">
+      <div className="flex text-greyx text-base font-medium w-full flex-col gap-1">
         <div>Strucktur Folder When you must put the dotfiles</div>
-        <div>if you</div>
-        <div>1</div>
-        <div>1</div>
       </div>
     );
   };
