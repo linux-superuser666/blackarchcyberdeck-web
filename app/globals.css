@@ -62,11 +62,22 @@
   --animate-expandr1: expandright 7s ease-out infinite;
   --animate-expandr2: expandright 7s ease-out infinite;
   --animate-expandr3: expandright 7s ease-out infinite;
+  --animate-equalizer: equalizer 1s ease-in-out infinite;
 }
 
 /* =========================
    KEYFRAMES
 ========================= */
+@keyframes equalizer {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
 @keyframes expandleft {
   0% {
     margin-left: 0px;
