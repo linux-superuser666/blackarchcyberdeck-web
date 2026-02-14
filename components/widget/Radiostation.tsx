@@ -80,7 +80,7 @@ const Radiostation = () => {
       {activeWidget === "radioStation" && (
         <div className="absolute inset-0 z-[999] w-full h-full bg-black/70 flex justify-center items-center leading-none">
           <div className="flex flex-col w-[234px] h-[320px]">
-            <div className="flex flex-row text-redx text-[7px] text-shadow-redx/40 text-shadow-[0px_0px_3px] font-bold  justify-between">
+            <div className="flex flex-row text-redx text-[5px] text-shadow-redx/40 text-shadow-[0px_0px_3px] font-medium tracking-wide justify-between">
               <div>TRN_TCLASS_B000095</div>
               <div>RADIO STATION DATABASE</div>
             </div>
@@ -90,16 +90,8 @@ const Radiostation = () => {
                 <div className="bg-redx w-[5px] h-2"></div>
                 <div className="bg-redx rounded-bl-[3px] w-1.5 h-1"></div>
               </div>
-              <div className="flex w-[250px] h-[18px] ">
-                <Image
-                  priority
-                  width={389}
-                  height={32}
-                  className="w-[300px] h-[18px]"
-                  src="/radiostation/radio-head.png"
-                  alt=""
-                />
-                <div className="uppercase text-xs absolute pl-2 pt-0.5 text-start flex items-center text-shadow-white text-shadow-2xs/50">
+              <div className="flex w-[250px] h-4.5 bg-redx/30 [clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)] p-px">
+                <div className="uppercase  [clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)] bg-black/90 size-full text-[10px] pl-2 pt-0.5 text-start flex items-center text-shadow-white text-shadow-2xs/50">
                   RADIOSTATION
                 </div>
               </div>
@@ -128,7 +120,7 @@ const Radiostation = () => {
                       alt=""
                     />
                   </div>
-                <CoverGridLine/>
+                  <CoverGridLine />
                 </div>
               </div>
               <div className="flex ml-1 text-xs border-redx/50 border-y flex-col justify-between w-full">
@@ -189,13 +181,21 @@ const Radiostation = () => {
                           <div className="w-[1px] h-1 bg-greyx/50 origin-bottom animate-equalizer [animation-delay:0.2s]"></div>
                           <div className="w-[1px] h-2 bg-greyx/50 origin-bottom animate-equalizer [animation-delay:0.3s]"></div>
                         </div>
-                        <div className="w-4 h-full pl-1 items-center tracking-wide jsutify-center leading-[2px] text-greyx/70 text-[1px] group-hover:hidden flex ">
+                        <div
+                          className={`w-4 h-full pl-1 items-center tracking-wide justify-center leading-[2px] text-greyx/70 text-[1px] ${
+                            isActive ? "hidden" : "flex group-hover:hidden"
+                          }`}
+                        >
                           531343244123 <br />
                           512334343336 <br />
                           123124352324 <br />
                           124353442355 <br />
                         </div>
-                        <div className="flex flex-row size-full items-center justify-start tracking-wider gap-1 text-[8px] uppercase">
+                        <div
+                          className={`flex flex-row size-full items-center justify-start hover:text-greyx tracking-wider gap-1 text-[8px] uppercase ${
+                            isActive ? "text-greyx" : "text-greyx/50"
+                          }`}
+                        >
                           <p> {song.artist}</p>
                           <p>{song.title}</p>
                         </div>
