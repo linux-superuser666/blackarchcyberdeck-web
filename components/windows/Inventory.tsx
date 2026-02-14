@@ -116,7 +116,7 @@ const Inventory: React.FC = () => {
         <div className="font-nerdfonts text-sm"></div>
         <div className="size-full border-redx/50 pl-1 pr-2 items-center border flex-row flex gap-3">
           <div className="font-nerdfonts text-xs"></div>
-          <div className="w-full">/root</div>
+          <div className="w-full">/home/mrnngstr666/</div>
           <div className="font-nerdfonts text-sm"></div>
         </div>
       </div>
@@ -127,6 +127,7 @@ const Inventory: React.FC = () => {
           {sections.map((section, i) => (
             <div key={i} className="mb-2">
               <div className="font-bold">{section.title}</div>
+
               <div className="pl-2">{renderTree(section.items)}</div>
             </div>
           ))}

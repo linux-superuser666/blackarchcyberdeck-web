@@ -5,15 +5,17 @@ const BottomBody = () => {
   return (
     <div
       className="w-[1100px] cursor h-[45px] shadow-2xl shadow-redx/20 bg-yellowx/50 p-[2px] justify-center flex items-start
-        [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)]
+        [clip-path:polygon(0_0,_100%_0,_100%_75%,_99%_100%,_81.8%_100%,_81.8%_98%,_81.4%_98%,_81.4%_100%,_18.6%_100%,_18.6%_95%,_18.3%_95%,_18.3%_100%,_1%_100%,_0_75%)]
       "
     >
-      <div className="size-full bg-black shadow-2xl shadow-redx/50 justify-center grid grid-cols-3 grid-rows-2 items-start [clip-path:polygon(0_0,_100%_0,_100%_78%,_99%_100%,_1%_100%,_0%_78%)] text-[6px] text-transparent relative">
+      <div
+        className="
+           [clip-path:polygon(0_0,_100%_0,_100%_75%,_99%_100%,_81.9%_100%,_81.9%_96%,_81.5%_96%,_81.5%_100%,_18.5%_100%,_18.5%_93%,_18.1%_93%,_18.1%_100%,_1%_100%,_0_75%)]
+      size-full bg-black shadow-2xl shadow-redx/50 justify-center grid grid-cols-3 grid-rows-2 items-start  text-transparent relative"
+      >
         <div className="absolute bottom-0 size-full flex items-end justify-center">
-          <div className="border-redx/40 border-x border-t w-[700px] h-4 rounded-t-sm px-[2px] pt-[2px]">
-            <div className="rounded-t-xs size-full border-redx/40 border-x border-t flex flex-row items-center justify-between px-1">
-              <Mur />
-              <Mur />
+          <div className="border-redx/40 border-x border-t w-[700px] h-5 rounded-t-sm px-1 pt-1">
+            <div className="rounded-t-xs size-full border-redx/40 border-x border-t flex flex-row items-center justify-between px-1 pt-0.5">
               <Mur />
               <Mur />
             </div>

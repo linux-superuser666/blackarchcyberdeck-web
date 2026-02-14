@@ -5,7 +5,7 @@ const Net = () => {
   return (
     <div className="absolute border border-redx/50 h-full w-full ">
       <div className="size-full text-[10px] flex flex-col">
-        <div className="flex flex-row text-redx gap-4 bg-black px-2.5 w-full items-center h-6">
+        <div className="flex flex-row text-redx gap-4 bg-black/80 px-2.5 w-full items-center h-6">
           <div className="w-3 h-2 border-l-2 border-y border-r rounded-xs border-redx/40"></div>
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts"></div>
@@ -29,7 +29,7 @@ const Net = () => {
           <div className="font-nerdfonts text-greyx">󰍜</div>
         </div>
         <div className="flex text-redx flex-row size-full">
-          <div className="flex bg-black flex-col h-full w-[36px] gap-3.5 items-center p-1">
+          <div className="flex bg-black/90 flex-col h-full w-[36px] gap-3.5 items-center p-1">
             <div className="bg-slate-300/20 font-nerdfonts text-lg justify-center w-full flex items-center text-center h-12 text-greyx rounded-xs pr-px">
               
             </div>

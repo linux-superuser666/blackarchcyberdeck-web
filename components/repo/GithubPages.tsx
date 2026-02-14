@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const GithubPages = () => {
   type GithubStats = {
     repos: number;
@@ -100,7 +101,7 @@ const GithubPages = () => {
   }, []);
 
   return (
-    <div className="size-full border-l text-greyx border-t border-redx/30 bg-black/90 grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
+    <div className="size-full border-l text-greyx border-t border-redx/30 bg-black/30 grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
       <div className="size-full border-greyx/20 border-b">
         <div className="grid size-full grid-cols-[2fr_1fr] grid-rows 1">
           <div className="flex size-full pl-1 flex-row gap-2 items-center">
@@ -171,8 +172,14 @@ const GithubPages = () => {
           <div className="w-full pl-12 pr-12 gap-2 flex flex-col">
             <div className="w-full h-fit font-bold">mrnngstr666</div>
             <div className="w-full h-fit">linux-superuser666</div>
-            <div className="w-full h-fit rounded-sm border border-greyx/30 justify-center flex py-1 bg-slate-600/70">
-              follow
+            <div className="w-full h-fit rounded-sm border border-greyx/30 py-1 hover:bg-slate-600 ease-in duration-75 bg-slate-600/70">
+              <Link
+                className="size-full justify-center flex items-center"
+                target="_blank"
+                href="https://github.com/linux-superuser666/"
+              >
+                follow
+              </Link>
             </div>
             <div className=" w-full items-center flex gap-2">
               <div className="text-[7px] font-nerdfonts "></div>

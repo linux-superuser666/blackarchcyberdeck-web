@@ -63,11 +63,35 @@
   --animate-expandr2: expandright 5s ease-out infinite;
   --animate-expandr3: expandright 5s ease-out infinite;
   --animate-equalizer: equalizer 1s ease-in-out infinite;
+  --animate-ws-slide-in: ws-slide-in 350ms ease forwards;
+  --animate-ws-slide-out: ws-slide-out 350ms ease forwards;
 }
 
 /* =========================
    KEYFRAMES
 ========================= */
+@keyframes ws-slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes ws-slide-out {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.4;
+  }
+}
+
 @keyframes equalizer {
   0%,
   100% {
