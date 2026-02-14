@@ -24,32 +24,32 @@ const SESSION_ACTIONS = [
   {
     key: "lock",
     label: "lock",
-    icon: "/wlogout/lock.png",
+    icon: "", // nf-fa-lock
   },
   {
     key: "logout",
     label: "logout",
-    icon: "/wlogout/logout.png",
+    icon: "󰍃", // nf-md-logout
   },
   {
     key: "suspend",
     label: "suspend",
-    icon: "/wlogout/suspend.png",
+    icon: "󰒲", // nf-md-power_sleep
   },
   {
     key: "hibernate",
     label: "hibernate",
-    icon: "/wlogout/hibernate.png",
+    icon: "󰤄", // nf-md-power_plug_off
   },
   {
     key: "shutdown",
     label: "shutdown",
-    icon: "/wlogout/shutdown.png",
+    icon: "⏻", // nf-md-power
   },
   {
     key: "reboot",
     label: "reboot",
-    icon: "/wlogout/reboot.png",
+    icon: "󰑐", // nf-md-restart
   },
 ];
 
@@ -78,14 +78,12 @@ const SessionPanel = ({ className = "" }: SessionPanelProps) => {
               <div className="size-16 bg-yellowx/80 p-px [clip-path:polygon(0%_0%,_100%_0,_100%_75%,_75%_100%,_0%_100%)]">
                 <div className="size-full bg-darkbluex/95 group-hover:bg-darkbluex/45  p-px flex items-center justify-center text-center [clip-path:polygon(0%_0%,_100%_0,_100%_75%,_75%_100%,_0%_100%)]">
                   <div className="flex-col flex gap-1 items-center justify-center">
-                    <Image
-                      src={item.icon}
-                      alt={item.label}
-                      width={30}
-                      height={30}
-                      className="object-contain"
-                    />
-                    <div className="text-greyx uppercase"> {item.label}</div>
+                    <div className="text-[24px] font-nerdfonts text-greyx group-hover:text-black transition-colors duration-200">
+                      {item.icon}
+                    </div>
+                    <div className="text-greyx uppercase group-hover:text-black transition-colors tracking-wide font-bold duration-200">
+                      {item.label}
+                    </div>
                   </div>
                 </div>
               </div>
