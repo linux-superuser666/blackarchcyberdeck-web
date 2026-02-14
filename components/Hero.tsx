@@ -9,10 +9,10 @@ import PanelRight from "./multimedia/PanelRight";
 const Hero = () => {
   return (
     <div className="flex flex-col justify-end items-center size-full">
-      <div className="absolute z-50 size-fit top-40 left-10">
+      <div className="absolute z-50 size-fit bottom-40 left-10">
         <PanelLeft />
       </div>
-      <div className="absolute z-50 size-fit top-40 right-10">
+      <div className="absolute z-50 size-fit bottom-40 right-10">
         <PanelRight />
       </div>
       {/* laptop screen frame */}
