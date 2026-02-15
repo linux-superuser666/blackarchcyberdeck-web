@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
 import RamBar from "../common/RamBar";
+import BinTitle from "../common/BinTitle";
 
 const MAX_CPU = 100;
 const MAX_RAM = 37065;
@@ -39,10 +40,7 @@ const SystemPanel = () => {
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
 
       <div className="flex flex-col leading-none gap-0">
-        <p className="text-[5px] text-redx/80 uppercase font-orbitron">
-          system_panel 1.001.1
-        </p>
-
+        <BinTitle text="system_panel 1.001.1" />
         {/* CPU */}
         <div className="text-redx flex flex-row gap-1">
           <div className="size-5.5 relative flex items-center justify-center">

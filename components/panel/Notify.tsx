@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
 import Link from "next/link";
+import BinTitle from "../common/BinTitle";
 
 const SHOW_DURATION = 10000;
 const HIDE_DURATION = 5000;
@@ -54,9 +55,7 @@ const Notify = () => {
     >
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
       <div className="flex flex-col leading-none gap-0 w-full">
-        <p className="text-[5px] text-redx/80 uppercase font-orbitron">
-          connection_dbus 1.001.1
-        </p>
+        <BinTitle text="coonection_d-bus 1.0010.1" />
         <div
           className={`text-redx mt-1 h-full items-start w-full flex flex-row gap-0.5 text-xs
           transition-all duration-500 ease-in-out

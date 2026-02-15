@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
+import BinTitle from "../common/BinTitle";
 
 type Mode = "time" | "date" | "uptime";
 
@@ -41,9 +42,7 @@ const ChronoPanel = () => {
   return (
     <div className="absolute z-50 right-0 bottom-0  mr-[11px] mt-1 w-[210px] flex flex-row gap-1 justify-end">
       <div className="flex flex-col gap-0 ">
-        <p className="text-[5px] text-redx/80 uppercase font-orbitron">
-          connection-dbus 1.001.1
-        </p>
+        <BinTitle text="chrono_panel 1.001.1" />
         <div className="text-redx justify-end  w-[76px] flex justify-self-end">
           <div className="flex justify-end -mr-3 items-center justify-self-end w-[76px]">
             <div className="relative flex w-[76px] h-4 items-center justify-center">

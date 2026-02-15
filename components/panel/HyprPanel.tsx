@@ -13,6 +13,7 @@ import Journal from "../windows/Journal";
 import Codex from "../windows/Codex";
 import Message from "../windows/Message";
 import { useUIStore } from "@/state/widgetState";
+import BinTitle from "../common/BinTitle";
 
 type Workspace = {
   label: string;
@@ -148,10 +149,9 @@ const HyprPanel = () => {
   return (
     <div className="absolute z-50 right-0 top-0 pr-3 pt-1 size-full flex flex-row gap-1 justify-end">
       <div className="flex flex-col w-[865px] pl-1 pb-1 h-[438px] gap-0 leading-none">
-        <p className="text-[5px] flex justify-end text-redx/80 uppercase font-orbitron">
-          connection-dbus 1.001.1
-        </p>
-
+        <div className="w-full flex justify-end">
+          <BinTitle text="hypr_panel 1.001.1" />
+        </div>
         <div className="text-redx w-full uppercase justify-end flex">
           {/* WORKSPACES */}
           <div className="flex font-semibold flex-row gap-0.5 items-center justify-center">

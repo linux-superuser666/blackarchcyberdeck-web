@@ -6,6 +6,7 @@ import { useUIStore } from "@/state/widgetState";
 import BottomPanelButton from "../Box/BottomPanelButton";
 import BinLogo from "../common/BinLogo";
 import RamBar from "../common/RamBar";
+import BinTitle from "../common/BinTitle";
 
 const MAX_RAM_USAGE = 3000;
 
@@ -92,9 +93,7 @@ const QuickHack = () => {
         <div className="size-fit flex-row flex gap-0.5">
           <BinLogo iconSrc={"/icons/control-dbus-alt.png"} />
           <div className="flex-col flex gap-px items-start">
-            <div className="font-orbitron uppercase text-[4px]">
-              connection dbus
-            </div>
+            <BinTitle text="cyberdeck v.2334.300" />
             <div className="uppercase w-40 border-b border-redx/30 font-semibold text-[9px] flex flex-row  justify-between">
               <div> cyberdeck ram</div>
               <div>
@@ -111,9 +110,7 @@ const QuickHack = () => {
         <div className="size-full flex-row flex gap-0.5">
           <BinLogo iconSrc={"/icons/control-dbus-alt.png"} />
           <div className="flex-col size-full flex gap-px items-start">
-            <div className="font-orbitron uppercase text-[4px]">
-              connection dbus
-            </div>
+            <BinTitle text="cyberdeck v.2334.300" />
             <div className="uppercase w-full border-b border-redx/30 font-semibold text-[9px] flex flex-row justify-between">
               quickshack list
             </div>
@@ -166,8 +163,8 @@ const QuickHack = () => {
       <div className="col-start-3 row-start-2 size-full flex justify-end">
         <div className="size-full flex-row flex gap-0.5">
           <div className="flex-col size-full flex gap-px items-start">
-            <div className="font-orbitron flex justify-end w-full uppercase text-[4px]">
-              connection dbus
+            <div className="flex w-full justify-end">
+              <BinTitle text="hack info" />
             </div>
             <div className="uppercase w-full border-b border-redx/30 font-semibold text-[9px] flex flex-row justify-between">
               thug

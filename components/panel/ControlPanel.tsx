@@ -9,15 +9,14 @@ import RadioBox from "../Box/RadioBox";
 import WinBox from "../Box/WinBox";
 import SessionBox from "../Box/SessionBox";
 import QuickHackBox from "../Box/QuickHackBox";
+import BinTitle from "../common/BinTitle";
 
 const ControlPanel = () => {
   return (
     <div className="ml-3 mt-1 z-50 pointer absolute bottom-0  w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus.png" />
       <div className="flex flex-col gap-0 ">
-        <p className="text-[5px] text-redx/80 uppercase font-orbitron">
-          connection-dbus 1.001.1
-        </p>
+        <BinTitle text="control_panel 1.001.1" />
         <div className="text-redx flex gap-[2px] flex-row">
           <PacmanBox />
           <LevelBox />

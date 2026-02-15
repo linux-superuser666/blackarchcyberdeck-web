@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
+import BinTitle from "../common/BinTitle";
 
 interface Commit {
   sha: string;
@@ -113,10 +114,9 @@ const TodoPanel = () => {
       }`}
     >
       <div className="flex flex-col w-full gap-0 leading-none">
-        <p className="text-[5px] flex w-full justify-end text-redx/80 uppercase font-orbitron">
-          To - do panel 1.001.1
-        </p>
-
+        <div className="flex justify-end w-full">
+          <BinTitle text="To - do panel 1.001.1" />
+        </div>
         <div
           className={`text-redx h-[160px] w-full flex items-start
           transition-all duration-500 ease-in-out

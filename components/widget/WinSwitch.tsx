@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useUIStore } from "@/state/widgetState";
 import LeftBracket from "../common/LeftBracket";
 import ImageType from "../common/ImageType";
+import BottomPanelButton from "../Box/BottomPanelButton";
 
 type WinSwitchProps = {
   className?: string;
@@ -56,7 +57,7 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
 
   return (
     <div
-      className={`absolute z-[999] flex items-center justify-center left-[30%] top-2/6
+      className={`absolute z-[999] flex flex-col gap-px items-center justify-center left-[30%] top-2/6
        ${className}`}
     >
       <div className="w-[320px] h-[184px] animate-fade-in">
@@ -134,6 +135,14 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-between">
+        <ImageType />
+        <BottomPanelButton
+          onClick={() => toggleWidget("winSwitch")}
+          icon="/options/close.png"
+          label="Clode"
+        />
       </div>
     </div>
   );

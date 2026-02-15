@@ -6,6 +6,7 @@ import appsData from "../../api/appdata.json";
 import { useUIStore } from "@/state/widgetState";
 import ImageType from "../common/ImageType";
 import BottomPanelButton from "../Box/BottomPanelButton";
+import BinTitle from "../common/BinTitle";
 
 const LauncherPanel = () => {
   const activeWidget = useUIStore((s) => s.activeWidget);
@@ -27,10 +28,7 @@ const LauncherPanel = () => {
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
 
       <div className="flex flex-col leading-none gap-0">
-        <p className="text-[5px] text-redx/80 uppercase font-orbitron">
-          connection_dbus 1.001.1
-        </p>
-
+        <BinTitle text="connection_dbus 1.001.1" />
         <div className="text-redx border-b border-redx/50 h-52 w-48 flex flex-row gap-1 uppercase text-xs">
           <div className="flex flex-col gap-1 h-full w-full">
             {/* INPUT */}
