@@ -28,7 +28,9 @@ const Radiostation = () => {
     });
   };
 
-  const [currentSong, setCurrentSong] = React.useState(radioSongs[0]);
+  const [currentSong, setCurrentSong] = React.useState<
+    (typeof radioSongs)[0] | null
+  >(null);
 
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
@@ -48,8 +50,12 @@ const Radiostation = () => {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
+    setCurrentSong(null);
   };
+
   const playNextSong = () => {
+    if (!currentSong) return;
+
     const currentIndex = radioSongs.findIndex(
       (song) => song.src === currentSong.src
     );
@@ -71,12 +77,10 @@ const Radiostation = () => {
     }
   };
 
-  // if (activeWidget !== "radioStation") return null; //uncomment if not play background music
   return (
     <>
-      <audio ref={audioRef} onEnded={playNextSong} className="hidden">
-        <source src={currentSong.src} type="audio/mpeg" />
-      </audio>
+      <audio ref={audioRef} onEnded={playNextSong} className="hidden" />
+
       {activeWidget === "radioStation" && (
         <div className="absolute inset-0 z-[999] w-full h-full bg-black/70 flex justify-center items-center leading-none">
           <div className="flex flex-col w-[234px] h-[320px]">
@@ -125,8 +129,12 @@ const Radiostation = () => {
               </div>
               <div className="flex ml-1 text-xs border-redx/50 border-y flex-col justify-between w-full">
                 <div className="flex text-[8px] text-start flex-col text-redx font-bold uppercase">
-                  <p>{currentSong.title}</p>
-                  <p>{currentSong.artist}</p>
+                  {currentSong && (
+                    <>
+                      <p>{currentSong.title}</p>
+                      <p>{currentSong.artist}</p>
+                    </>
+                  )}
                 </div>
                 <div className="uppercase flex justify-between w-full flex-row pr-2">
                   <div className="text-[8px] font-bold text-redx">VOLUME</div>
@@ -154,49 +162,31 @@ const Radiostation = () => {
             <div className="p-l py-1 w-full h-[180px]">
               <div className="flex size-full flex-col overflow-x-hidden overflow-y-scroll radio-list pl-1 pr-0.5 gap-0.5">
                 {radioSongs.map((song, index) => {
-                  const isActive = song.src === currentSong.src;
                   return (
-                    // button songs
                     <button
                       key={index}
                       onClick={() => playSong(song)}
-                      className={`group size-full gap-0.5 h-4.5 items-center flex flex-row p-px hover:bg-greyx/70 hover:[clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)] ${
-                        isActive
-                          ? "bg-greyx/70 [clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)]"
-                          : ""
-                      } `}
+                      className="group size-full gap-0.5 h-4.5 items-center flex flex-row p-px hover:bg-greyx/70 hover:[clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)]"
                     >
-                      <div
-                        className={`size-full p-1 flex flex-row gap-1 [clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)] hover:bg-darkbluex/50 ${
-                          isActive ? "bg-darkbluex/50" : "bg-darkbluex/0"
-                        } `}
-                      >
-                        <div
-                          className={`w-4 h-full items-end justify-center flex flex-row gap-[1px] ${
-                            isActive ? "flex" : "hidden group-hover:flex"
-                          }`}
-                        >
+                      <div className="size-full p-1 flex flex-row gap-1 [clip-path:polygon(0%_0%,_100%_0,_100%_56%,_96%_100%,_0%_100%)] group-hover:bg-darkbluex/50">
+                        <div className="w-4 h-full items-end justify-center hidden group-hover:flex flex-row gap-[1px]">
                           <div className="w-[1px] h-1 bg-greyx/50 origin-bottom animate-equalizer"></div>
                           <div className="w-[1px] h-1.5 bg-greyx/50 origin-bottom animate-equalizer [animation-delay:0.1s]"></div>
                           <div className="w-[1px] h-1 bg-greyx/50 origin-bottom animate-equalizer [animation-delay:0.2s]"></div>
                           <div className="w-[1px] h-2 bg-greyx/50 origin-bottom animate-equalizer [animation-delay:0.3s]"></div>
                         </div>
-                        <div
-                          className={`w-4 h-full pl-1 items-center tracking-wide justify-center leading-[2px] text-greyx/70 text-[1px] ${
-                            isActive ? "hidden" : "flex group-hover:hidden"
-                          }`}
-                        >
+
+                        {/* Dummy Code Text (hilang saat hover) */}
+                        <div className="w-4 h-full pl-1 items-center tracking-wide justify-center leading-[2px] text-greyx/70 text-[1px] flex group-hover:hidden">
                           531343244123 <br />
                           512334343336 <br />
                           123124352324 <br />
                           124353442355 <br />
                         </div>
-                        <div
-                          className={`flex flex-row size-full items-center justify-start hover:text-greyx tracking-wider gap-1 text-[8px] uppercase ${
-                            isActive ? "text-greyx" : "text-greyx/50"
-                          }`}
-                        >
-                          <p> {song.artist}</p>
+
+                        {/* Song Info */}
+                        <div className="flex flex-row size-full items-center justify-start group-hover:text-greyx tracking-wider gap-1 text-[8px] uppercase text-greyx/50">
+                          <p>{song.artist}</p>
                           <p>{song.title}</p>
                         </div>
                       </div>

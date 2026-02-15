@@ -35,7 +35,7 @@ const LauncherPanel = () => {
           <div className="flex flex-col gap-1 h-full w-full">
             {/* INPUT */}
             <div className="bg-black border border-redx/50 h-fit pl-1 items-center p-0.5 w-full gap-0 flex flex-row">
-              <div className="w-fit">sequences:</div>
+              <div className="w-fit text-[9px]">sequences:</div>
               <input
                 type="text"
                 placeholder=". . . . . . . "
