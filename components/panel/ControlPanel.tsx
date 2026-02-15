@@ -8,6 +8,7 @@ import LevelBox from "../Box/LevelBox";
 import RadioBox from "../Box/RadioBox";
 import WinBox from "../Box/WinBox";
 import SessionBox from "../Box/SessionBox";
+import QuickHackBox from "../Box/QuickHackBox";
 
 const ControlPanel = () => {
   return (
@@ -24,6 +25,7 @@ const ControlPanel = () => {
           <NetBox />
           <WinBox />
           <SessionBox />
+          <QuickHackBox />
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ import SystemPanel from "./panel/SystemPanel";
 import WinSwitch from "./widget/WinSwitch";
 import Radiostation from "./widget/Radiostation";
 import SessionPanel from "./panel/SessionPanel";
+import QuickHack from "./panel/QuickHack";
 
 const Cyberdeck = () => {
   return (
@@ -31,6 +32,7 @@ const Cyberdeck = () => {
       <TodoPanel />
       <ControlPanel />
       <SessionPanel />
+      <QuickHack />
     </div>
   );
 };

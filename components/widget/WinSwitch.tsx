@@ -11,11 +11,10 @@ type WinSwitchProps = {
 };
 
 const WinSwitch = ({ className = "" }: WinSwitchProps) => {
-  const activeWidget = useUIStore((s) => s.activeWidget);
-
   // Akses store untuk workspace
   const setActiveWorkspace = useUIStore((s) => s.setActiveWorkspace);
   const setOccupiedWorkspaces = useUIStore((s) => s.setOccupiedWorkspaces);
+  const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
 
   // Mapping app → workspace

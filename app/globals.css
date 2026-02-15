@@ -65,11 +65,27 @@
   --animate-equalizer: equalizer 1s ease-in-out infinite;
   --animate-ws-slide-in: ws-slide-in 350ms ease forwards;
   --animate-ws-slide-out: ws-slide-out 350ms ease forwards;
+  --animate-sweep-right: sweep-right 350ms ease forwards;
 }
 
 /* =========================
    KEYFRAMES
 ========================= */
+
+@keyframes sweep-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
 @keyframes ws-slide-in {
   0% {
     transform: translateX(100%);
