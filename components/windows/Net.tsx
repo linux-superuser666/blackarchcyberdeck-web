@@ -1,10 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import GithubPages from "../repo/GithubPages";
+import CyberTooltipRight from "../common/CyberTooltipRight";
 const Net = () => {
   return (
     <div className="absolute border border-redx/50 h-full w-full ">
-      <div className="size-full text-[10px] flex flex-col">
+      <div className="size-full text-[10px] flex flex-col relative">
+        {/* tootltip */}
+        <CyberTooltipRight
+          className="bottom-[150px] left-[220px]"
+          lines={["Github Profile", "Click for directing to my github profile"]}
+          colorClass="text-yellowx"
+          accentClass="bg-yellowx"
+        />
         <div className="flex flex-row text-redx gap-4 bg-black/80 px-2.5 w-full items-center h-6">
           <div className="w-3 h-2 border-l-2 border-y border-r rounded-xs border-redx/40"></div>
           <div className="font-nerdfonts"></div>

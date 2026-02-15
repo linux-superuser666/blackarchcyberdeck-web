@@ -53,7 +53,7 @@ const Notify = () => {
           : "opacity-0 scale-x-0 pointer-events-none"
       }`}
     >
-      <BinLogo iconSrc="/icons/control-dbus-alt.png" />
+      <BinLogo iconSrc="/icons/dbus-icon.png" />
       <div className="flex flex-col leading-none gap-0 w-full">
         <BinTitle text="coonection_d-bus 1.0010.1" />
         <div

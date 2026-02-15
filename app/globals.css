@@ -66,12 +66,30 @@
   --animate-ws-slide-in: ws-slide-in 350ms ease forwards;
   --animate-ws-slide-out: ws-slide-out 350ms ease forwards;
   --animate-sweep-right: sweep-right 350ms ease forwards;
+  --animate-walk-up: walk-up 7s linear infinite;
+  --animate-walk-down: walk-down 7s linear infinite;
 }
-
 /* =========================
    KEYFRAMES
 ========================= */
 
+@keyframes walk-up {
+  0% {
+    padding-bottom: 0px;
+  }
+  100% {
+    padding-bottom: 768px;
+  }
+}
+
+@keyframes walk-down {
+  0% {
+    padding-top: 0px;
+  }
+  100% {
+    padding-top: 768px;
+  }
+}
 @keyframes sweep-right {
   0% {
     transform: translateX(-100%);

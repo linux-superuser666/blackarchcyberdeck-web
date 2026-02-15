@@ -183,8 +183,6 @@ const Radiostation = () => {
                           123124352324 <br />
                           124353442355 <br />
                         </div>
-
-                        {/* Song Info */}
                         <div className="flex flex-row size-full items-center justify-start group-hover:text-greyx tracking-wider gap-1 text-[8px] uppercase text-greyx/50">
                           <p>{song.artist}</p>
                           <p>{song.title}</p>

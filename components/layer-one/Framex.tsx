@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import PinDown from "../common/PinDown";
+import PinUp from "../common/PinUp";
 
 const BINARY_PATTERNS_1 = ["1001", "0101", "0011", "1100"];
 const BINARY_PATTERNS_2 = ["1100", "0010", "1010", "0111"];
@@ -33,7 +35,15 @@ const Framex = () => {
           <div>1</div>
           <div>1</div>
         </div>
-        <div className="flex h-full justify-center bg-scanner flex-col w-1"></div>
+        <div className="flex h-full flex-col bg-scanner w-1 overflow-hidden">
+          <div className="h-1/2 flex items-end animate-walk-up relative overflow-hidden">
+            <PinUp />
+          </div>
+
+          <div className="h-1/2 flex items-start animate-walk-down relative overflow-hidden">
+            <PinDown />
+          </div>
+        </div>
         <div></div>
       </div>
 
@@ -78,7 +88,15 @@ const Framex = () => {
           <div>1</div>
         </div>
 
-        <div className="flex h-full justify-center bg-scanner flex-col w-1"></div>
+        <div className="flex h-full flex-col bg-scanner w-1 overflow-hidden">
+          <div className="h-1/2 flex items-end animate-walk-up relative overflow-hidden">
+            <PinUp />
+          </div>
+
+          <div className="h-1/2 flex items-start animate-walk-down relative overflow-hidden">
+            <PinDown />
+          </div>
+        </div>
         <div className="flex h-full justify-center flex-col">3</div>
       </div>
     </div>

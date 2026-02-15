@@ -7,6 +7,7 @@ import KittyFolder from "../repo/KittyFolder";
 import RofiFolder from "../repo/RofiFolder";
 import ThemesFolder from "../repo/ThemesFolder";
 import IconsFolder from "../repo/IconsFolder";
+import CyberTooltipRight from "../common/CyberTooltipRight";
 
 interface FolderItem {
   name: string;
@@ -99,8 +100,8 @@ const Inventory: React.FC = () => {
       }
     }
     return (
-      <div className="flex text-greyx text-base font-medium w-full flex-col gap-1">
-        <div>Strucktur Folder When you must put the dotfiles</div>
+      <div className="flex text-redx font-medium w-full flex-col gap-1 text-xs">
+        <div>Select The Folder to Show List . . . . . .</div>
       </div>
     );
   };
@@ -121,7 +122,17 @@ const Inventory: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-[150px_1fr] size-full">
+      <div className="grid grid-cols-[150px_1fr] size-full relative">
+        {/* tootltip */}
+        <CyberTooltipRight
+          className="top-10 left-[100px]"
+          lines={[
+            "Folder Struckture",
+            "After clone the repo this is where you have to put the folder",
+          ]}
+          colorClass="text-yellowx"
+          accentClass="bg-yellowx"
+        />
         {/* Sidebar */}
         <div className="border-r border-redx/30 p-2">
           {sections.map((section, i) => (
