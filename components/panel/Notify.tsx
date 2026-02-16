@@ -5,15 +5,14 @@ import React, { useEffect, useState } from "react";
 import BinLogo from "../common/BinLogo";
 import BinTitle from "../common/BinTitle";
 
-// Timeline constants (ms)
 const TIMINGS = {
   WRAPPER_OPEN: 0,
   NOTIF1_SHOW: 500,
   NOTIF2_SHOW: 1500,
   NOTIF2_HIDE: 7000,
   NOTIF1_HIDE: 10000,
-  WRAPPER_HIDE_DELAY: 1000, // delay 1 detik setelah notif1 hide
-  LOOP: 10000,
+  WRAPPER_HIDE_DELAY: 1000, // delay 1 detik sebelum wrapper hide
+  LOOP: 20000,
 };
 
 const Notify = () => {
@@ -26,40 +25,27 @@ const Notify = () => {
     let timeouts: NodeJS.Timeout[] = [];
 
     const startSequence = () => {
-      // Wrapper open
       timeouts.push(
         setTimeout(() => setContainerVisible(true), TIMINGS.WRAPPER_OPEN)
       );
-
-      // Notif 1 show
       timeouts.push(
         setTimeout(() => setContentVisible([true, false]), TIMINGS.NOTIF1_SHOW)
       );
-
-      // Notif 2 show
       timeouts.push(
         setTimeout(() => setContentVisible([true, true]), TIMINGS.NOTIF2_SHOW)
       );
-
-      // Notif 2 hide
       timeouts.push(
         setTimeout(() => setContentVisible([true, false]), TIMINGS.NOTIF2_HIDE)
       );
-
-      // Notif 1 hide
       timeouts.push(
         setTimeout(() => setContentVisible([false, false]), TIMINGS.NOTIF1_HIDE)
       );
-
-      // Wrapper hide 1 detik setelah notif 1 hide
       timeouts.push(
         setTimeout(
           () => setContainerVisible(false),
           TIMINGS.NOTIF1_HIDE + TIMINGS.WRAPPER_HIDE_DELAY
         )
       );
-
-      // Loop ulang
       timeouts.push(setTimeout(startSequence, TIMINGS.LOOP));
     };
 
@@ -71,7 +57,8 @@ const Notify = () => {
   return (
     <div
       className={`ml-3 absolute z-[999] top-[290px] w-[200px] flex flex-row gap-1 h-[145px]
-      transform origin-left transition-transform duration-500 ease-in-out
+      transform origin-left transition-transform transition-opacity duration-700
+      ease-[cubic-bezier(0.65,0,0.35,1)]
       ${
         containerVisible
           ? "scale-x-100 opacity-100"
@@ -85,7 +72,9 @@ const Notify = () => {
         {notifications.map((text, i) => (
           <div
             key={i}
-            className={`text-redx mt-1 h-full items-start max-w-full w-fit flex flex-row gap-0.5 text-xs transition-all duration-500 ease-in-out
+            className={`text-redx mt-1 h-full items-start max-w-full w-fit flex flex-row gap-0.5 text-xs
+            transition-transform transition-opacity duration-700
+            ease-[cubic-bezier(0.65,0,0.35,1)]
             ${
               contentVisible[i]
                 ? "opacity-100 translate-x-0"
