@@ -21,14 +21,40 @@ interface Section {
 
 const Inventory: React.FC = () => {
   const [activeFolder, setActiveFolder] = useState<string | null>(null);
+  const [currentPath, setCurrentPath] = useState<string>("/home/mrnngstr666");
+  const computePath = (targetItem: FolderItem): string => {
+    const pathParts: string[] = [];
+
+    const traverse = (items: (FolderItem | string)[], parentPath: string) => {
+      for (const item of items) {
+        if (typeof item !== "string") {
+          const newPath = parentPath + "/" + item.name.replace(" /", "");
+          if (item === targetItem) {
+            pathParts.push(newPath);
+            return true;
+          }
+          if (item.children) {
+            if (traverse(item.children, newPath)) return true;
+          }
+        }
+      }
+      return false;
+    };
+
+    traverse(
+      sections.flatMap((s) => s.items),
+      "/home/mrnngstr666"
+    );
+    return pathParts[0] || "/home/mrnngstr666";
+  };
 
   const sections: Section[] = [
     { title: "Computer", items: [] },
     {
-      title: "mrnngstr666",
+      title: "mrnngstr666 /",
       items: [
         {
-          name: ".config",
+          name: ".config /",
           children: [
             { name: "quickshell", component: <QuickshellFolder /> },
             {
@@ -42,14 +68,14 @@ const Inventory: React.FC = () => {
           ],
         },
         {
-          name: ".themes",
+          name: ".themes /",
           component: <ThemesFolder />,
           children: [
             { name: "Cyberdeck-Blackarch", component: <ThemesFolder /> },
           ],
         },
         {
-          name: ".icons",
+          name: ".icons /",
           component: <IconsFolder />,
           children: [
             { name: "BlackArch-Cyberdeck", component: <IconsFolder /> },
@@ -79,9 +105,12 @@ const Inventory: React.FC = () => {
                 activeFolder === item.name ? "bg-greyx/50 font-bold" : ""
               }`}
               onClick={() => {
-                // ✅ hanya set active jika punya component
                 if (item.component) {
                   setActiveFolder(item.name);
+
+                  // Hitung path
+                  const newPath = computePath(item);
+                  setCurrentPath(newPath);
                 }
               }}
             >
@@ -135,7 +164,7 @@ const Inventory: React.FC = () => {
         <div className="font-nerdfonts text-sm text-greyx"></div>
         <div className="size-full border-redx/50 pl-1 pr-2 items-center border flex-row flex gap-2">
           <div className="font-nerdfonts text-xs"></div>
-          <div className="w-full text-greyx">/home/mrnngstr666/</div>
+          <div className="w-full text-greyx">{currentPath}</div>
         </div>
         <div className="font-nerdfonts w-3 pr-2 items-center text-greyx justify-center flex text-sm">
           
