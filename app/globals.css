@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
 
@@ -47,6 +48,7 @@
   /* Fonts */
   --font-rajdhani: "Rajdhani", sans-serif;
   --font-orbitron: "Orbitron", sans-serif;
+  --font-Inter: "Inter", sans-serif;
   --font-nerdfonts: "FiraCode Nerd Font", monospace;
 
   /* Animations */
