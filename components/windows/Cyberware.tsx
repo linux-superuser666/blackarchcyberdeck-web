@@ -1,6 +1,4 @@
 import React from "react";
-import CyberTooltip from "../common/CyberTooltip";
-import CyberTooltipRight from "../common/CyberTooltipRight";
 
 const leftCommands = [
   "sudo su",
@@ -17,16 +15,6 @@ const rightCommands = [
 const Cyberware = () => {
   return (
     <div className="grid gap-1 grid-cols-[1fr_2fr] z-40 h-full w-full text-[10px] font-semibold tracking-wide relative">
-      {/* tootltip */}
-      <CyberTooltipRight
-        className="bottom-[280px] left-[200px]"
-        lines={[
-          "instaltion  & repository",
-          "install this packages & Clone the repo",
-        ]}
-        colorClass="text-yellowx"
-        accentClass="bg-yellowx"
-      />
       {/* LEFT PANEL */}
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         {/* First command: sudo su */}
