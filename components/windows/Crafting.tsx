@@ -11,6 +11,7 @@ interface GitHubItem {
 const Crafting = () => {
   const [items, setItems] = useState<GitHubItem[]>([]);
   const [shellContent, setShellContent] = useState<string>("");
+
   useEffect(() => {
     fetch(
       "https://api.github.com/repos/linux-superuser666/BlackArchCyberpunk2077/contents/quickshell/shell.qml"
@@ -76,19 +77,18 @@ const Crafting = () => {
         </div>
         <div className="row-start-2 border-x border-redx/30"></div>
         <div className="row-start-2 flex size-full">
-          <div className="flex text-transparent flex-col w-[80px] text-[3px] p-1">
-            <p>sddlasjdklsjadkla</p>
-            <p>sddlasjd</p>
-            <p>sddlasjdsaasd</p>
-            <p>sddlasjd</p>
-            <p>sddlasjdklsjadkla</p>
+          <div className="flex flex-col w-[80px] text-[3px] p-1 overflow-hidden pointer-event-none">
+            {shellContent.split("\n").map((line, idx) => (
+              <p key={idx}>{line}</p>
+            ))}
           </div>
-          <div className="flex text-center w-8 flex-col border-r border-redx/30 gap-1 text-transparent">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <p>5</p>
+          <div
+            id="line number"
+            className="flex text-center w-8 flex-col border-r border-redx/30 gap-1 text-yellowx "
+          >
+            {shellContent.split("\n").map((_, idx) => (
+              <p key={idx}>{idx + 1}</p>
+            ))}
           </div>
           <div className="flex w-full"></div>
         </div>
