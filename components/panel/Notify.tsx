@@ -57,7 +57,7 @@ const Notify = () => {
   return (
     <div
       className={`ml-3 absolute z-[999] top-[290px] w-[200px] flex flex-row gap-1 h-[145px]
-      transform origin-left transition-transform transition-opacity duration-700
+      transform origin-left transition-transform  duration-700
       ease-[cubic-bezier(0.65,0,0.35,1)]
       ${
         containerVisible
@@ -73,7 +73,7 @@ const Notify = () => {
           <div
             key={i}
             className={`text-redx mt-1 h-full items-start max-w-full w-fit flex flex-row gap-0.5 text-xs
-            transition-transform transition-opacity duration-700
+            transition-transform duration-700
             ease-[cubic-bezier(0.65,0,0.35,1)]
             ${
               contentVisible[i]

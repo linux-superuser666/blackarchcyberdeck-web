@@ -2,12 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 const GithubPages = () => {
+  type RepoStars = {
+    profileRepo: number;
+    blackarchRepo: number;
+  };
+
   type GithubStats = {
     repos: number;
     followers: number;
     following: number;
     stars: number;
   };
+  const [repoStars, setRepoStars] = React.useState<RepoStars | null>(null);
 
   const [githubData, setGithubData] = React.useState<GithubStats | null>(null);
 
@@ -76,21 +82,28 @@ const GithubPages = () => {
         );
         const userData = await userRes.json();
 
-        const repoRes = await fetch(
-          "https://api.github.com/users/linux-superuser666/repos?per_page=100"
+        // Fetch repo 1
+        const repo1Res = await fetch(
+          "https://api.github.com/repos/linux-superuser666/linux-superuser666"
         );
-        const repos = await repoRes.json();
+        const repo1 = await repo1Res.json();
 
-        const totalStars = repos.reduce(
-          (acc: number, repo: any) => acc + repo.stargazers_count,
-          0
+        // Fetch repo 2
+        const repo2Res = await fetch(
+          "https://api.github.com/repos/linux-superuser666/BlackArchCyberpunk2077"
         );
+        const repo2 = await repo2Res.json();
 
         setGithubData({
           repos: userData.public_repos,
           followers: userData.followers,
           following: userData.following,
-          stars: totalStars,
+          stars: 0, // tidak dipakai lagi
+        });
+
+        setRepoStars({
+          profileRepo: repo1.stargazers_count,
+          blackarchRepo: repo2.stargazers_count,
         });
       } catch (err) {
         console.error(err);
@@ -101,7 +114,7 @@ const GithubPages = () => {
   }, []);
 
   return (
-    <div className="size-full border-l text-greyx border-t border-redx/30 bg-black/30 grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
+    <div className="size-full font-Inter border-l text-greyx border-t border-redx/30 bg-black/30 grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
       <div className="size-full border-greyx/20 border-b">
         <div className="grid size-full grid-cols-[2fr_1fr] grid-rows 1">
           <div className="flex size-full pl-1 flex-row gap-2 items-center">
@@ -139,7 +152,7 @@ const GithubPages = () => {
           </div>
         </div>
       </div>
-      <div className="size-full border-greyx/20 border-b grid grid-cols-[1fr_500px] gap-2 px-12">
+      <div className="size-full border-greyx/20 border-b grid grid-cols-[1fr_500px] gap-2 pr-16">
         <div></div>
         <div className="size-full pl-4 gap-4 flex flex-row justify-start items-center">
           {profileTabs.map((tab, index) => (
@@ -150,7 +163,7 @@ const GithubPages = () => {
               <div className="text-[7px] font-nerdfonts">{tab.icon}</div>
               <div className="text-[8px] tracking-wide">{tab.label}</div>
               {tab.numcount > 0 && (
-                <div className="min-w-[13px] h-[13px] pt-px rounded-full bg-slate-500/20 flex items-center justify-center text-[8px]">
+                <div className="min-w-[13px] h-[13px] pt-px rounded-full bg-slate-500/20 font-inter flex items-center justify-center text-[8px]">
                   {tab.numcount}
                 </div>
               )}
@@ -158,7 +171,7 @@ const GithubPages = () => {
           ))}
         </div>
       </div>
-      <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-2 px-12 pb-2 p-1">
+      <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-2 pl-0 pr-12 pb-2 p-1">
         <div className="row-span-2 p-1 gap-4 size-full flex flex-col items-center text-greyx/70">
           <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black size-24">
             <Image
@@ -218,10 +231,18 @@ const GithubPages = () => {
         </div>
         {/* repo */}
 
-        <div className="col-start-2 px-2 py-1 row-start-2 border border-greyx/20 rounded-sm grid grid-cols-1 grid-rows-2 tracking-wide size-full">
+        <div className="col-start-2 px-2 py-1 row-start-2 border border-greyx/20 rounded-sm grid group grid-cols-1 grid-rows-2 tracking-wide size-full">
           <div className="size-full items-center flex gap-1">
             <div className="text-[10px] font-nerdfonts "></div>
-            <div>BlackArchCyberpunk2077</div>
+            <div className="text-bluex font-bold">
+              <Link
+                target="_blank"
+                className="group-hover:underline"
+                href="https://github.com/linux-superuser666/BlackArchCyberpunk2077"
+              >
+                BlackArchCyberpunk2077
+              </Link>
+            </div>
             <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20">
               Public
             </div>
@@ -230,13 +251,23 @@ const GithubPages = () => {
             <div className="size-2 bg-orangex rounded-full"></div>
             <div className="">QML</div>
             <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-[10px] pl-1">2</div>
+            <div className="text-[10px] pl-1">
+              {repoStars?.blackarchRepo ?? "-"}
+            </div>
           </div>
         </div>
-        <div className="col-start-3 row-start-2 border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-2 size-full">
+        <div className="group col-start-3 row-start-2 border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-2 size-full">
           <div className="size-full items-center flex gap-1">
             <div className="text-[10px] font-nerdfonts "></div>
-            <div>Archcraft-X-Cyberpunk-2077-UI</div>
+            <div className="text-bluex font-bold">
+              <Link
+                className="group-hover:underline"
+                target="_blank"
+                href="https://github.com/linux-superuser666/linux-superuser666"
+              >
+                linux-superuser666
+              </Link>
+            </div>
             <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20">
               Public
             </div>
@@ -245,7 +276,9 @@ const GithubPages = () => {
             <div className="size-2 bg-bluex rounded-full"></div>
             <div className="">Shell</div>
             <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-[10px] pl-1">8</div>
+            <div className="text-[10px] pl-1">
+              {repoStars?.profileRepo ?? "-"}
+            </div>
           </div>
         </div>
       </div>
