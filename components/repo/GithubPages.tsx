@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonIcon from "./ButtonIcon";
 const GithubPages = () => {
   type RepoStars = {
     profileRepo: number;
     blackarchRepo: number;
   };
-
   type GithubStats = {
     repos: number;
     followers: number;
@@ -14,17 +14,7 @@ const GithubPages = () => {
     stars: number;
   };
   const [repoStars, setRepoStars] = React.useState<RepoStars | null>(null);
-
   const [githubData, setGithubData] = React.useState<GithubStats | null>(null);
-
-  const menuItems = [
-    "Platform",
-    "Solution",
-    "Resources",
-    "Open Source",
-    "Enterprise",
-    "Pricing",
-  ];
   const baseUrl =
     "https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/";
   const cdnImgReadme = [
@@ -75,10 +65,10 @@ const GithubPages = () => {
 
   const profileTabs = [
     { label: "Overview", icon: "", numcount: 0 },
-    { label: "Repositories", icon: "", numcount: githubData?.repos ?? 0 },
-    { label: "Projects", icon: "", numcount: 0 },
+    { label: "Repositories", icon: "", numcount: githubData?.repos ?? 0 },
+    { label: "Projects", icon: "", numcount: 0 },
     { label: "Packages", icon: "", numcount: 0 },
-    { label: "Stars", icon: "", numcount: githubData?.stars ?? 0 },
+    { label: "Stars", icon: "", numcount: githubData?.stars ?? 0 },
   ];
 
   React.useEffect(() => {
@@ -121,63 +111,70 @@ const GithubPages = () => {
   }, []);
 
   return (
-    <div className="size-full font-Inter border-l text-greyx border-t border-redx/30 bg-[#0d1117] grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
-      <div className="size-full border-greyx/20 border-b">
-        <div className="grid size-full grid-cols-[2fr_1fr] grid-rows 1">
-          <div className="flex size-full pl-1 flex-row gap-2 items-center">
-            <div className="text-sm font-nerdfonts"></div>
-            {menuItems.map((item, index) => (
-              <div key={index} className="text-[8px] flex gap-1 text-greyx">
-                <div>{item}</div>
-                <div className="font-nerdfonts">󰅀</div>
-              </div>
-            ))}
+    <div className="size-full font-Inter border-l text-greyx border-t border-redx/30 bg-[#0d1117] grid grid-cols-1 grid-rows-[45px_1fr] gap-1">
+      <div className="grid size-full grid-rows-[25px_20px]">
+        <div className="size-full px-2 pt-1 bg-[#010409] flex-row flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="border border-greyx/30 size-4 p-[2px_3px_2px_2px] rounded-sm text-[9px] font-light font-nerdfonts flex items-center">
+              󰍜
+            </div>
+            <div className="flex w-fit flex-row gap-2 items-center text-sm font-nerdfonts">
+              
+            </div>
+            <div className="text-[9px]">linux-superuser666</div>
           </div>
-          <div className="flex flex-row gap-2 items-center justify-end pr-4">
-            <div className="rounded-sm w-[200px] flex items-center pl-1 pr-0.5 gap-px border border-greyx/20">
+          <div className="flex flex-row gap-2 items-center justify-end pr-1">
+            <div className="rounded-sm w-[100px] flex items-center pl-1 pr-0.5 border border-greyx/20 gap-1 py-px">
               <div className="font-nerdfonts text-[8px] pr-px"></div>
-              <input
-                id="github-search"
-                type="text"
-                placeholder="Search or jump to..."
-                className="bg-black text-[8px] w-full px-2 py-1 outline-none"
-              />
+              <div className="text-[8px]">type </div>
               <div className="rounded-sm flex items-center size-3.5 gap-px border border-greyx/20 justify-center">
                 /
               </div>
+              <div className="text-[8px]">to search </div>
+            </div>
+            <div className="flex">
+              <div className="rounded-l-sm w-fit flex items-center pl-1 pr-0.5 border border-greyx/20 gap-1 py-1">
+                <div className="font-nerdfonts text-[8px] pr-1.5"></div>
+              </div>
+              <div className="rounded-r-sm w-fit flex items-center pl-1 pr-0.5 border-y border-r  border-greyx/20 gap-1 py-1">
+                <div className="font-nerdfonts text-[8px] pr-1">󰅀</div>
+              </div>
             </div>
 
-            <div className="w-10 h-fit py-1 px-1 rounded-sm flex items-center justify-center text-[8px] ">
-              Sign in
+            <div className="text-greyx/30">|</div>
+            <div className="rounded-sm w-fit flex items-center pl-1 pr-0.5 border border-greyx/20 gap-1 py-1">
+              <div className="font-nerdfonts text-[8px] pr-1"></div>
+              <div className="font-nerdfonts text-[8px] pr-1">󰅀</div>
             </div>
-            <div className="w-10 h-fit py-1 px-1 rounded-sm border border-greyx/20 flex items-center justify-center text-[8px]">
-              Sign up
-            </div>
-            <div className="size-fit py-1 pl-1 pr-1.5 rounded-sm border border-greyx/20 flex items-center justify-center text-[8px]">
-              <div className="font-nerdfonts"></div>
+            <ButtonIcon icon="" />
+            <ButtonIcon icon="" />
+            <ButtonIcon icon="" />
+            <ButtonIcon icon="" />
+            <div className="size-fit flex items-center justify-center text-xs font-nerdfonts">
+              
             </div>
           </div>
         </div>
-      </div>
-      <div className="size-full border-greyx/20 border-b grid grid-cols-[1fr_500px] gap-2 pr-16">
-        <div></div>
-        <div className="size-full pl-4 gap-4 flex flex-row justify-start items-center">
-          {profileTabs.map((tab, index) => (
-            <div
-              key={index}
-              className="h-full w-fit gap-2 flex flex-row items-center cursor-pointer hover:text-white transition"
-            >
-              <div className="text-[7px] font-nerdfonts">{tab.icon}</div>
-              <div className="text-[8px] tracking-wide">{tab.label}</div>
-              {tab.numcount > 0 && (
-                <div className="min-w-[13px] h-[13px] pt-px rounded-full bg-slate-500/20 font-inter flex items-center justify-center text-[8px]">
-                  {tab.numcount}
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="size-full pl-2 bg-[#010409] border-greyx/20 border-b grid grid-cols-1 gap-2">
+          <div className="size-full gap-4 flex flex-row justify-start items-center">
+            {profileTabs.map((tab, index) => (
+              <div
+                key={index}
+                className="h-full w-fit gap-2 flex flex-row items-center cursor-pointer hover:text-white transition"
+              >
+                <div className="text-[7px] font-nerdfonts">{tab.icon}</div>
+                <div className="text-[8px] tracking-wide">{tab.label}</div>
+                {tab.numcount > 0 && (
+                  <div className="min-w-[13px] h-[13px] pt-px rounded-full bg-slate-500/20 font-inter flex items-center justify-center text-[8px]">
+                    {tab.numcount}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
       <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-2 pl-0 pr-12 pb-2 p-1">
         <div className="row-span-2 p-1 gap-4 size-full flex flex-col items-center text-greyx/70">
           <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black/80 size-24">
@@ -237,54 +234,62 @@ const GithubPages = () => {
           </div>
         </div>
         {/* repo */}
-
-        <div className="col-start-2 px-2 py-1 row-start-2 border border-greyx/20 rounded-sm grid group grid-cols-1 grid-rows-2 tracking-wide size-full">
-          <div className="size-full items-center flex gap-1">
-            <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-bluex font-bold">
-              <Link
-                target="_blank"
-                className="group-hover:underline"
-                href="https://github.com/linux-superuser666/BlackArchCyberpunk2077"
-              >
+        <div className="col-start-2 row-start-2 size-full">
+          <Link
+            target="_blank"
+            className=" border px-2 py-1 border-greyx/20 rounded-sm grid group grid-cols-1 grid-rows-3 tracking-wide size-full"
+            href="https://github.com/linux-superuser666/BlackArchCyberpunk2077"
+          >
+            <div className="size-full items-center flex gap-1">
+              <div className="text-[10px] font-nerdfonts "></div>
+              <div className="text-bluex group-hover:underline font-bold">
                 BlackArchCyberpunk2077
-              </Link>
+              </div>
+              <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20 text-greyx/50">
+                Public
+              </div>
             </div>
-            <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20">
-              Public
+            <div className="text-[8px] text-greyx/50 size-full flex items-center">
+              Quickshell, Hyprland, Wayland
             </div>
-          </div>
-          <div className="size-full flex gap-1 items-center">
-            <div className="size-2 bg-orangex rounded-full"></div>
-            <div className="">QML</div>
-            <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-[10px] pl-1">
-              {repoStars?.blackarchRepo ?? "-"}
+            <div className="size-full flex gap-1 items-center">
+              <div className="size-2 bg-orangex rounded-full"></div>
+              <div className="text-[8px]">QML</div>
+              <div className="text-[8px] font-nerdfonts "></div>
+              <div className="text-[8px] pl-1">
+                {repoStars?.blackarchRepo ?? "-"}
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
-        <div className="group col-start-3 row-start-2 border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-2 size-full">
-          <div className="size-full items-center flex gap-1">
-            <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-bluex font-bold">
-              <Link
-                className="group-hover:underline"
-                target="_blank"
-                href="https://github.com/linux-superuser666/linux-superuser666"
-              >
-                linux-superuser666
-              </Link>
+        <div className="group col-start-3 row-start-2 size-full">
+          <Link
+            className="size-full relative z-10"
+            target="_blank"
+            href="https://github.com/linux-superuser666/linux-superuser666"
+          >
+            <div className="size-full border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-3">
+              <div className="size-full items-center flex gap-1">
+                <div className="text-[10px] font-nerdfonts "></div>
+                <div className="group-hover:underline text-bluex font-bold">
+                  linux-superuser666
+                </div>
+                <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20 text-greyx/50">
+                  Public
+                </div>
+              </div>
+              <div className="text-[8px] text-greyx/50 size-full flex items-center">
+                Github Profile
+              </div>
+
+              <div className="size-full flex gap-1 items-center">
+                <div className="text-[8px]  font-nerdfonts "></div>
+                <div className="text-[8px] pl-1">
+                  {repoStars?.profileRepo ?? "-"}
+                </div>
+              </div>
             </div>
-            <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20">
-              Public
-            </div>
-          </div>
-          <div className="size-full flex gap-1 items-center">
-            <div className="text-[10px] font-nerdfonts "></div>
-            <div className="text-[10px] pl-1">
-              {repoStars?.profileRepo ?? "-"}
-            </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
