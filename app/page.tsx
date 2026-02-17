@@ -21,13 +21,13 @@ export default function Home() {
     <div
       ref={ref}
       onDoubleClick={handleFullscreen}
-      className="font-rajdhani flex min-w-full min-h-screen relative overflow-hidden justify-center items-center size-full"
+      className="font-rajdhani flex mx-auto w-full min-h-screen relative overflow-hidden justify-center items-center"
     >
       <div className="size-full max-w-[1340px] md:max-h-[630px] max-h-[630px] absolute bottom-0 flex z-10 justify-center items-end">
         <SideWidget />
       </div>
 
-      <div className="absolute z-20 bottom-0 size-full max-w-[1100px] max-h-[630px] md:max-h-[630px]">
+      <div className="absolute z-20 bottom-0 size-full max-w-[1100px] max-h-[630px] md:max-h-[630px] mx-auto">
         <Hero />
       </div>
     </div>
