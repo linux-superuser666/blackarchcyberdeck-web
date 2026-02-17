@@ -175,7 +175,7 @@ const GithubPages = () => {
         </div>
       </div>
 
-      <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-0 pl-0 pr-12 pb-2 p-1">
+      <div className="size-full grid grid-cols-[1fr_234px_234px] grid-rows-[1fr_50px] gap-2 pl-0 pr-12 pb-2 p-1">
         <div className="row-span-2 p-1 gap-4 size-full flex flex-col items-center text-greyx/70">
           <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black/80 size-24">
             <Image

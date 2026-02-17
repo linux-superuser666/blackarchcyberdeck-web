@@ -25,33 +25,20 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
     firefox: ["net"],
     "code-oss": ["crafting"],
     "pdf-reader": ["journal"],
-    "obs-studio": ["media"],
   };
 
-  const apps = [
-    "kitty",
-    "thunar",
-    "firefox",
-    "code-oss",
-    "pdf-reader",
-    "obs-studio",
-  ];
+  const apps = ["kitty", "thunar", "firefox", "code-oss", "pdf-reader"];
 
-  // Jangan render jika widget tidak aktif
   if (activeWidget !== "winSwitch") return null;
 
-  // Klik app → pindah workspace dan tutup WinSwitch
   const handleClickApp = (app: string) => {
     const workspaces = appToWorkspace[app];
     if (!workspaces) return;
 
-    // Set workspace aktif ke workspace pertama
     setActiveWorkspace(workspaces[0]);
 
-    // Masukkan semua workspace terkait ke occupied
     setOccupiedWorkspaces(workspaces);
 
-    // Tutup WinSwitch
     toggleWidget("winSwitch");
   };
 
