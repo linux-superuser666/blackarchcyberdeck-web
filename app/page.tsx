@@ -23,11 +23,11 @@ export default function Home() {
       onDoubleClick={handleFullscreen}
       className="font-rajdhani flex min-w-full min-h-full justify-center items-center size-full"
     >
-      <div className="size-full absolute bottom-0 flex z-10 justify-center items-end">
+      <div className="size-full max-w-[1340px] max-h-[630px] absolute bottom-0 flex z-10 justify-center items-end">
         <SideWidget />
       </div>
 
-      <div className="absolute z-20 bottom-0 w-[1100px] h-full">
+      <div className="absolute z-20 bottom-0 size-full max-w-[1100px] max-h-[630px]">
         <Hero />
       </div>
     </div>
