@@ -7,6 +7,9 @@ import KittyFolder from "../repo/KittyFolder";
 import RofiFolder from "../repo/RofiFolder";
 import ThemesFolder from "../repo/ThemesFolder";
 import IconsFolder from "../repo/IconsFolder";
+import ConfigFolder from "../repo/ConfigFolder";
+import DotIconsFolder from "../repo/DotIconsFolder";
+import DotThemesFolder from "../repo/DotThemesFolder";
 
 interface FolderItem {
   name: string;
@@ -55,6 +58,7 @@ const Inventory: React.FC = () => {
       items: [
         {
           name: ".config /",
+          component: <ConfigFolder />,
           children: [
             { name: "quickshell", component: <QuickshellFolder /> },
             {
@@ -69,14 +73,14 @@ const Inventory: React.FC = () => {
         },
         {
           name: ".themes /",
-          component: <ThemesFolder />,
+          component: <DotThemesFolder />,
           children: [
             { name: "Cyberdeck-Blackarch", component: <ThemesFolder /> },
           ],
         },
         {
           name: ".icons /",
-          component: <IconsFolder />,
+          component: <DotIconsFolder />,
           children: [
             { name: "BlackArch-Cyberdeck", component: <IconsFolder /> },
           ],
@@ -154,7 +158,7 @@ const Inventory: React.FC = () => {
   };
 
   return (
-    <div className="absolute bg-black/70 text-[10px] size-full grid grid-rows-[30px_1fr] border-redx/30 border">
+    <div className="absolute bg-black/30 text-[10px] size-full grid grid-rows-[30px_1fr] border-redx/30 border">
       {/* Top bar */}
       <div className="border-b size-full font-medium items-center border-redx/30 flex flex-row gap-3.5 p-0.5 text-redx/50">
         <div className="font-nerdfonts text-lg text-greyx pl-px">󰇙</div>

@@ -17,7 +17,14 @@ const GithubPages = () => {
 
   const [githubData, setGithubData] = React.useState<GithubStats | null>(null);
 
-  const menuItems = ["Platform", "Solution", "Pricing", "Docs", "Support"];
+  const menuItems = [
+    "Platform",
+    "Solution",
+    "Resources",
+    "Open Source",
+    "Enterprise",
+    "Pricing",
+  ];
   const baseUrl =
     "https://cdn.jsdelivr.net/gh/linux-superuser666/linux-superuser666@main/img/";
   const cdnImgReadme = [
@@ -114,7 +121,7 @@ const GithubPages = () => {
   }, []);
 
   return (
-    <div className="size-full font-Inter border-l text-greyx border-t border-redx/30 bg-black/30 grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
+    <div className="size-full font-Inter border-l text-greyx border-t border-redx/30 bg-[#0d1117] grid grid-cols-1 grid-rows-[25px_20px_1fr] gap-2">
       <div className="size-full border-greyx/20 border-b">
         <div className="grid size-full grid-cols-[2fr_1fr] grid-rows 1">
           <div className="flex size-full pl-1 flex-row gap-2 items-center">
@@ -173,7 +180,7 @@ const GithubPages = () => {
       </div>
       <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-2 pl-0 pr-12 pb-2 p-1">
         <div className="row-span-2 p-1 gap-4 size-full flex flex-col items-center text-greyx/70">
-          <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black size-24">
+          <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black/80 size-24">
             <Image
               src="/icons/mrnngstr666.png"
               alt=""
@@ -185,7 +192,7 @@ const GithubPages = () => {
           <div className="w-full pl-12 pr-12 gap-2 flex flex-col">
             <div className="w-full h-fit font-bold">mrnngstr666</div>
             <div className="w-full h-fit">linux-superuser666</div>
-            <div className="w-full h-fit rounded-sm border border-greyx/30 py-1 hover:bg-slate-600 ease-in duration-75 bg-slate-600/70">
+            <div className="w-full h-fit rounded-sm border border-greyx/30 py-1  bg-[#262C36]">
               <Link
                 className="size-full justify-center flex items-center"
                 target="_blank"
@@ -273,8 +280,6 @@ const GithubPages = () => {
             </div>
           </div>
           <div className="size-full flex gap-1 items-center">
-            <div className="size-2 bg-bluex rounded-full"></div>
-            <div className="">Shell</div>
             <div className="text-[10px] font-nerdfonts "></div>
             <div className="text-[10px] pl-1">
               {repoStars?.profileRepo ?? "-"}
