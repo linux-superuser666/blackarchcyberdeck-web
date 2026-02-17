@@ -23,7 +23,7 @@ export default function Home() {
       onDoubleClick={handleFullscreen}
       className="font-rajdhani flex mx-auto w-full min-h-screen relative overflow-hidden justify-center items-center"
     >
-      <div className="size-full max-w-[1340px] md:max-h-[630px] max-h-[630px] absolute bottom-0 flex z-10 justify-center items-end">
+      <div className="size-full max-w-[1340px] md:max-h-[630px] max-h-[630px] absolute bottom-0 min-2xl:hidden flex z-10 justify-center items-end">
         <SideWidget />
       </div>
 
