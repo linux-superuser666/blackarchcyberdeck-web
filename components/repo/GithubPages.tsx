@@ -175,7 +175,7 @@ const GithubPages = () => {
         </div>
       </div>
 
-      <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-2 pl-0 pr-12 pb-2 p-1">
+      <div className="size-full grid grid-cols-[1fr_250px_250px] grid-rows-[1fr_50px] gap-0 pl-0 pr-12 pb-2 p-1">
         <div className="row-span-2 p-1 gap-4 size-full flex flex-col items-center text-greyx/70">
           <div className="flex items-center p-1 justify-center border border-greyx/30 rounded-full bg-black/80 size-24">
             <Image
@@ -205,12 +205,24 @@ const GithubPages = () => {
               <div>{githubData?.following ?? "-"}</div>
               <div>following</div>
             </div>
-            <div>Block or Report</div>
+            <div className="flex gap-2">
+              <div className="text-[10px] font-nerdfonts "></div>
+              <Link
+                className="text-greyx w-full text-[7px] hover:text-bluex hover:underline"
+                target="_blank"
+                href="https://blackarchcyberdeck-web.vercel.app/"
+              >
+                https://blackarchcyberdeck-web.vercel.app/
+              </Link>
+            </div>
+            <div className="text-greyx/70 text-[8px]">Block or Report</div>
           </div>
         </div>
         {/* readme.md */}
         <div className="col-span-2 border border-greyx/20 rounded-sm grid grid-cols-1 grid-rows-[20px_1fr] p-3">
-          <div className="size-full">linux-superuser666/README.md</div>
+          <div className="size-full tracking-wider text-[8px]">
+            linux-superuser666 / README.md
+          </div>
           <div className="size-full flex items-center flex-col gap-3">
             {cdnImgReadme.map((section, index) => (
               <div
@@ -263,33 +275,25 @@ const GithubPages = () => {
           </Link>
         </div>
         <div className="group col-start-3 row-start-2 size-full">
-          <Link
-            className="size-full relative z-10"
-            target="_blank"
-            href="https://github.com/linux-superuser666/linux-superuser666"
-          >
-            <div className="size-full border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-3">
-              <div className="size-full items-center flex gap-1">
-                <div className="text-[10px] font-nerdfonts "></div>
-                <div className="group-hover:underline text-bluex font-bold">
-                  linux-superuser666
-                </div>
-                <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20 text-greyx/50">
-                  Public
-                </div>
-              </div>
-              <div className="text-[8px] text-greyx/50 size-full flex items-center">
-                Github Profile
-              </div>
-
-              <div className="size-full flex gap-1 items-center">
-                <div className="text-[8px]  font-nerdfonts "></div>
-                <div className="text-[8px] pl-1">
-                  {repoStars?.profileRepo ?? "-"}
-                </div>
+          <div className="size-full border border-greyx/20 rounded-sm grid grid-cols-1 py-1 px-2 grid-rows-3">
+            <div className="size-full items-center flex gap-1">
+              <div className="text-[10px] font-nerdfonts "></div>
+              <div className="text-bluex font-bold">linux-superuser666</div>
+              <div className="text-[9px] py-px size-fit px-1 rounded-4xl  border border-greyx/20 text-greyx/50">
+                Public
               </div>
             </div>
-          </Link>
+            <div className="text-[8px] text-greyx/50 size-full flex items-center">
+              Github Profile
+            </div>
+
+            <div className="size-full flex gap-1 items-center">
+              <div className="text-[8px]  font-nerdfonts "></div>
+              <div className="text-[8px] pl-1">
+                {repoStars?.profileRepo ?? "-"}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

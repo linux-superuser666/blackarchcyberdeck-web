@@ -38,7 +38,7 @@ const Crafting = () => {
 
   return (
     <div className="absolute border border-redx/50 h-full w-full ">
-      <div className="bg-black/50 text-redx size-full grid grid-cols-[200px_10px_60px_1fr_115px] text-[9px] grid-rows-[20px_1fr_15px] gap-0">
+      <div className="bg-black/50 text-redx size-full grid grid-cols-[200px_10px_60px_1fr_115px] text-[9px] grid-rows-[20px_361px_15px] gap-0">
         <div className="col-span-2 px-2.5 border-b h-full border-redx/30 w-full items-center flex gap-1.5 text-greyx justify-between">
           <div className="font-nerdfonts w-8">󰇘</div>
           <div className="font-nerdfonts"></div>
@@ -63,28 +63,28 @@ const Crafting = () => {
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts">󰇘</div>
         </div>
-        <div className="row-start-2 ">
-          <div className="row-start-2 py-1 pl-2 text-[8px] gap-1 font-mono flex flex-col">
-            <div className="flex">
-              <p className="text-bluex">[</p>
-              <p>BlackArch</p>
-              <p className="text-transparent">x</p>
-              <p className="text-greyx/40">~/.config/quickshell</p>
-              <p className="text-bluex">]</p>
-            </div>
-            <p className="text-bluex">$</p>
+        {/* terminal */}
+        <div className="row-start-2 size-full py-1 pl-2 text-[8px] gap-1 font-mono flex flex-col">
+          <div className="flex">
+            <p className="text-bluex">[</p>
+            <p>BlackArch</p>
+            <p className="text-transparent">x</p>
+            <p className="text-greyx/40">~/.config/quickshell</p>
+            <p className="text-bluex">]</p>
           </div>
+          <p className="text-bluex">$</p>
         </div>
         <div className="row-start-2 border-x border-redx/30"></div>
+        {/* isi */}
         <div className="row-start-2 flex size-full">
-          <div className="flex flex-col w-[80px] text-[3px] p-1 overflow-hidden pointer-event-none">
+          <div className="flex flex-col h-full w-[80px] text-[3px] p-1 overflow-hidden pointer-event-none">
             {shellContent.split("\n").map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
           </div>
           <div
             id="line number"
-            className="flex text-center w-8 flex-col border-r border-redx/30 gap-1 text-yellowx "
+            className="flex text-center w-8 h-full flex-col border-r border-redx/30 gap-1 text-yellowx overflow-hidden"
           >
             {shellContent.split("\n").map((_, idx) => (
               <p key={idx}>{idx + 1}</p>
@@ -92,7 +92,7 @@ const Crafting = () => {
           </div>
           <div className="flex w-full"></div>
         </div>
-        <div className="row-start-2 border-x border-redx/30 overflow-auto scrollbar-hidden">
+        <div className="row-start-2 size-full border-x border-redx/30 overflow-hidden">
           {shellContent.split("\n").map((line, idx) => (
             <p key={idx}>{line}</p>
           ))}
@@ -113,7 +113,7 @@ const Crafting = () => {
           ))}
         </div>
         <div className="col-span-5 border-t items-center flex-row px-1 border-redx/30 flex">
-          <div className="flex flex-row gap-1 5">
+          <div className="flex flex-row gap-2">
             <div className="font-nerdfonts "></div>
             <p>0</p>
             <div className="font-nerdfonts "></div>
