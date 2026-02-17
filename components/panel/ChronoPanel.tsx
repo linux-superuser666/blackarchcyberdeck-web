@@ -49,19 +49,31 @@ const ChronoPanel = () => {
   };
 
   return (
-    <div className="absolute z-50 right-0 bottom-0 mr-[11px] mt-1 w-[210px] flex flex-row gap-1 justify-end">
-      <div className="flex flex-col gap-0">
-        <BinTitle text="chrono_panel 1.001.1" />
-        <div className="text-redx w-[76px] flex justify-end">
-          <div className="relative flex w-[76px] h-4 items-center justify-center">
-            <div className="absolute pointer-events-none bg-redx z-40 w-10 h-[13px]" />
-
-            <div
-              onClick={handleClick}
-              className="absolute flex items-center justify-center w-[76px] h-9 z-50 text-[8px] text-black font-bold cursor-pointer"
-            >
-              <p>{getDisplayText()}</p>
+    <div className="absolute z-50 right-0 bottom-0 mr-[11px] mt-0.5 w-[100px] flex flex-row gap-1 justify-end h-[28px] text-redx">
+      <div className="grid grid-cols-1 grid-rows-[9px_1fr] size-full items-end">
+        <div className="w-full h-fit flex justify-end">
+          <BinTitle text="chrono_panel 1.001.1" />
+        </div>
+        <div className="size-full flex justify-end">
+          <div className="grid grid-cols-[4px_6px_1fr_6px_4px] w-[45px] h-full grid-rows-[3px_1fr_3px] gap-px">
+            <div className="col-start-2 text-[2px]">10010</div>
+            <div className="col-start-4 text-[2px]">10010</div>
+            <div className="row-start-2 size-full flex items-center justify-center">
+              <div className="w-0.5 h-1 bg-redx animate-pulse duration-100"></div>
             </div>
+            <div className="col-span-3 flex items-center justify-center row-start-2 bg-redx size-full rounded-xs">
+              <div
+                onClick={handleClick}
+                className="flex items-center justify-center size-full text-[8px] text-black font-bold"
+              >
+                <p>{getDisplayText()}</p>
+              </div>
+            </div>
+            <div className="col-start-5 row-start-2 size-full flex items-center justify-center">
+              <div className="w-0.5 h-1 bg-redx animate-pulse duration-100"></div>
+            </div>
+            <div className="col-start-2 row-start-3 text-[2px]">10010</div>
+            <div className="col-start-4 row-start-3 text-[2px]">10010</div>
           </div>
         </div>
       </div>
@@ -69,5 +81,6 @@ const ChronoPanel = () => {
     </div>
   );
 };
-
+{
+}
 export default ChronoPanel;
