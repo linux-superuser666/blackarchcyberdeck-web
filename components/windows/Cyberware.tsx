@@ -19,21 +19,28 @@ const Cyberware = () => {
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         {/* First command: sudo su */}
         <div className="flex flex-col gap-1">
-          <p className="text-redx/70">[mrnngstr666@BlackArch]-[~]</p>
+          <p className="text-redx">
+            [mrnngstr666@BlackArch] <span> - </span>[~]
+          </p>
           <p>
-            <span className="text-redx/70"> &gt;&gt;&gt; </span>
+            <span className="text-redx"> &gt;&gt;&gt; </span>
             <span className="text-redx">sudo su</span>
           </p>
 
           {/* Password Prompt */}
-          <p className="text-yellowx">[sudo] password for mrnngstr666:</p>
+          <p className="text-redx">[sudo] password for mrnngstr666:</p>
         </div>
 
         {/* Root Commands */}
         {leftCommands.slice(1).map((cmd, index) => (
           <div key={index} className="flex flex-col gap-1">
-            <p className="text-orangex">[BlackArch /home/mrnngstr666]#</p>
-            <p className="text-redx">{cmd}</p>
+            <p className="text-orangex">
+              [root@BlackArch] <span> - </span> [/home/mrnngstr666]
+            </p>
+            <p className="text-redx">
+              <span className="text-orangex"> &gt;&gt;&gt; </span>
+              {cmd}
+            </p>
           </div>
         ))}
       </div>
@@ -42,8 +49,13 @@ const Cyberware = () => {
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         {rightCommands.map((cmd, index) => (
           <div key={index} className="flex flex-col gap-1">
-            <p className="text-orangex">[BlackArch /home/mrnngstr666]#</p>
-            <p className="text-redx">{cmd}</p>
+            <p className="text-redx">
+              [mrnngstr666@BlackArch] <span> - </span>[~]
+            </p>
+            <p className="text-redx">
+              <span className="text-redx"> &gt;&gt;&gt; </span>
+              {cmd}
+            </p>
           </div>
         ))}
       </div>
