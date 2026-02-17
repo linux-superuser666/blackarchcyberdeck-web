@@ -9,7 +9,7 @@ import CableRx from "../common/CableRx";
 
 const SideWidget = () => {
   return (
-    <div className="absolute bottom-0 z-[2] w-[1340px] h-[630px] flex items-end justify-center">
+    <div className="absolute bottom-0 z-[2] w-[1340px] h-[630px] flex items-end justify-center scale-[0.75] sm:scale-[0.85] md:scale-[0.95] lg:scale-100 origin-bottom">
       <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
         <div className="border border-redx/0 relative row-span-3 flex justify-end">
           {/* left card */}
