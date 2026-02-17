@@ -160,7 +160,7 @@ const GithubPages = () => {
             {profileTabs.map((tab, index) => (
               <div
                 key={index}
-                className="h-full w-fit gap-2 flex flex-row items-center cursor-pointer hover:text-white transition"
+                className="h-full w-fit gap-2 flex flex-row items-center cursor-pointer"
               >
                 <div className="text-[7px] font-nerdfonts">{tab.icon}</div>
                 <div className="text-[8px] tracking-wide">{tab.label}</div>
