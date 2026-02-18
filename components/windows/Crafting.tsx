@@ -39,10 +39,10 @@ const Crafting = () => {
   return (
     <div className="absolute border border-redx/50 h-full w-full ">
       <div className="bg-black/50 text-redx size-full grid grid-cols-[200px_10px_60px_1fr_115px] text-[9px] grid-rows-[20px_361px_15px] gap-0">
-        <div className="col-span-2 px-2.5 border-b h-full border-redx/30 w-full items-center flex gap-1.5 text-greyx justify-between">
+        <div className="col-span-2 px-2.5 border-b h-full border-redx/30 w-full items-center flex gap-1.5  text-greyx justify-between">
           <div className="font-nerdfonts w-8">󰇘</div>
           <div className="font-nerdfonts"></div>
-          <p>Bash</p>
+          <p className="font-inter tracking-wide">Bash</p>
           <div className="font-nerdfonts">󰅀</div>
           <div className="font-nerdfonts"></div>
           <div className="text-transparent text-[3px]">x</div>
@@ -53,18 +53,18 @@ const Crafting = () => {
           <div className="text-transparent text-[8px]">x</div>
           <div className="font-nerdfonts"></div>
         </div>
-        <div className="col-span-2 col-start-3 border-b border-x border-redx/30 flex items-center gap-1 pl-3">
+        <div className="col-span-2 col-start-3 border-b border-x border-redx/30 flex items-center font-inter tracking-wide gap-1 pl-3">
           <div>Shell.qml</div>
           <div>Shell.qml</div>
         </div>
-        <div className="col-start-5 border-b flex justify-between border-redx/30 px-2.5 items-center">
+        <div className="col-start-5 border-b flex justify-between border-redx/30 px-2.5 items-center font-inter tracking-wide">
           <div className="uppercase">QUICKS..</div>
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts">󰇘</div>
         </div>
         {/* terminal */}
-        <div className="row-start-2 size-full py-1 pl-2 text-[8px] gap-1 font-mono flex flex-col">
+        <div className="row-start-2 size-full py-1 pl-2 text-[8px] gap-1 flex flex-col font-nerdfonts tracking-wide">
           <div className="flex">
             <p className="text-bluex">[</p>
             <p>BlackArch</p>
@@ -77,14 +77,14 @@ const Crafting = () => {
         <div className="row-start-2 border-x border-redx/30"></div>
         {/* isi */}
         <div className="row-start-2 flex size-full">
-          <div className="flex flex-col h-full w-[80px] text-[3px] p-1 overflow-hidden pointer-event-none">
+          <div className="flex flex-col h-full w-[80px] text-[3px] p-1 overflow-hidden pointer-event-none font-inter">
             {shellContent.split("\n").map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
           </div>
           <div
             id="line number"
-            className="flex text-center w-8 h-full flex-col border-r border-redx/30 gap-1 text-yellowx overflow-hidden"
+            className="flex text-center w-8 h-full flex-col border-r border-redx/30 gap-1 text-yellowx font-light font-inter text-[6px] overflow-hidden"
           >
             {shellContent.split("\n").map((_, idx) => (
               <p key={idx}>{idx + 1}</p>
@@ -92,7 +92,7 @@ const Crafting = () => {
           </div>
           <div className="flex w-full"></div>
         </div>
-        <div className="row-start-2 size-full border-x border-redx/30 overflow-hidden">
+        <div className="row-start-2 size-full border-x border-redx/30 overflow-hidden font-nerdfonts font-light tex-[7px]">
           {shellContent.split("\n").map((line, idx) => (
             <p key={idx}>{line}</p>
           ))}
@@ -106,7 +106,7 @@ const Crafting = () => {
               <div className="text-greyx text-[8px] font-nerdfonts flex items-center">
                 {item.type === "dir" ? "" : ""}
               </div>
-              <div className="w-full flex justify-start font-bold tracking-wider truncate">
+              <div className="w-full flex justify-start font-medium tracking-wider font-inter truncate">
                 {item.name}
               </div>
             </div>

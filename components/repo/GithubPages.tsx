@@ -208,7 +208,7 @@ const GithubPages = () => {
             <div className="flex gap-2">
               <div className="text-[10px] font-nerdfonts "></div>
               <Link
-                className="text-greyx w-full text-[7px] hover:text-bluex hover:underline"
+                className="text-greyx w-full text-[8px] hover:text-bluex hover:underline"
                 target="_blank"
                 href="https://blackarchcyberdeck-web.vercel.app/"
               >

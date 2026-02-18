@@ -23,16 +23,6 @@ const faqSections = [
     ),
   },
   {
-    id: "keybind",
-    title: "Keybind",
-    content: (
-      <>
-        <SubtitleDoc text="Keybind" />
-        <p>Check on tab user guide / keybind.</p>
-      </>
-    ),
-  },
-  {
     id: "requirements",
     title: "System Requirements",
     content: (
@@ -78,7 +68,7 @@ const FaqDocs = () => {
         className="flex w-full flex-col px-4 gap-4"
         style={{ height: "320px" }}
       >
-        <TitleDoc text="FAQ - BlackArch Cyberdeck" />
+        <TitleDoc text="Frequently Asked Questions" />
 
         <div className="flex overflow-x-hidden overflow-y-auto radio-list flex-col gap-6 text-[12px] font-medium leading-relaxed">
           {faqSections.map((section) => (

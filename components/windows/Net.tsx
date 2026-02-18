@@ -18,13 +18,13 @@ const Net = () => {
           </div>
           <div className="font-nerdfonts text-greyx"></div>
           <p>-</p>
-          <p>100%</p>
+          <p className="font-inter">100%</p>
           <p>+</p>
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts"></div>
-          <div className="flex w-20 gap-1">
+          <div className="flex w-20 gap-1.5">
             <div className="font-nerdfonts"></div>
-            <p>Sign In</p>
+            <p className="font-inter">Sign In</p>
           </div>
           <div className="font-nerdfonts text-greyx"></div>
           <div className="font-nerdfonts text-greyx">󰍜</div>

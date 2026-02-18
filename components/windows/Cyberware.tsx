@@ -14,7 +14,7 @@ const rightCommands = [
 
 const Cyberware = () => {
   return (
-    <div className="grid gap-1 grid-cols-[1fr_2fr] z-40 h-full w-full text-[10px] font-semibold tracking-wide relative">
+    <div className="grid gap-1 font-nerdfonts grid-cols-[1fr_2fr] z-40 h-full w-full text-[9px] font-medium  relative">
       {/* LEFT PANEL */}
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         {/* First command: sudo su */}
