@@ -31,7 +31,9 @@ const DocsBtnDrop: React.FC<DocsBtnDropProps> = ({
           clipPath: "polygon(0% 0%, 100% 0, 100% 75%, 97% 100%, 0% 100%)",
         }}
       >
-        <div className="w-full text-[12px] text-redx font-semibold">{text}</div>
+        <div className="w-full text-[10px] uppercase tracking-wide text-cyanx/80 font-semibold">
+          {text}
+        </div>
 
         <div
           className={`${open ? "bg-greyx/70 " : "bg-redx/50"} h-2 w-3 p-px`}

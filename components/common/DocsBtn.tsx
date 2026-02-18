@@ -27,7 +27,9 @@ const DocsBtn: React.FC<DocsBtnProps> = ({
           clipPath: "polygon(0% 0%, 100% 0, 100% 80%, 97% 100%, 0% 100%)",
         }}
       >
-        <div className="w-full text-[12px] text-redx font-semibold">{text}</div>
+        <div className="w-full text-[10px] uppercase tracking-wide text-cyanx/80 font-semibold">
+          {text}
+        </div>
       </div>
     </div>
   );
