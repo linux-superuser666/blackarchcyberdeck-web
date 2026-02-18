@@ -1,0 +1,39 @@
+{
+  "version": "30-01-2026",
+  "releaseDate": "2026-01-30",
+  "sections": [
+    {
+      "id": "new-features",
+      "title": "New Features",
+      "items": [
+        {
+          "text": "Added App Launcher Panel"
+        },
+          {
+          "text": "Added System Panel"
+        },
+          {
+          "text": "Added Chrono Panel"
+        },
+          {
+          "text": "Added Hypr Panel"
+        },
+          {
+          "text": "Added Control Panel"
+        },
+        {
+          "text": "Added Radiostation/Mpd/Ncmpcpp Client"
+        }
+      ]
+    },
+    {
+      "id": "bug-fixes",
+      "title": "Bug Fixes",
+      "items": [
+        {
+          "text": "Fixed Chrono Panel Event Click"
+        }
+      ]
+    }
+  ]
+}

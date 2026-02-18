@@ -1,0 +1,48 @@
+{
+  "version": "05-02-2026",
+  "releaseDate": "2026-05-15",
+  "sections": [
+    {
+      "id": "new-features",
+      "title": "New Features",
+      "items": [
+        {
+          "text": "Added Quickhack Panel (for BlackArch Linux Only)"
+        },
+        {
+          "text": "Added Level Panel"
+        },
+        {
+          "text": "Added Network Panel"
+        },
+        {
+          "text": "Added Network Panel/Rofi"
+        },
+        {
+          "text": "Added Session Manager"
+        },
+        {
+          "text": "Added Window Swicther"
+        }
+      ]
+    },
+    {
+      "id": "bug-fixes",
+      "title": "Bug Fixes",
+      "items": [
+        {
+          "text": "Fixed Level Panel Slider"
+        },
+        {
+          "text": "Fixed Network Panel Toggle"
+        },
+        {
+          "text": "Fixed Network Panel Ecg Aniamtion"
+        },
+        {
+          "text": "Fixed Level Panel Toggle"
+        }
+      ]
+    }
+  ]
+}
