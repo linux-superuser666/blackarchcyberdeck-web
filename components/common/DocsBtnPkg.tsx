@@ -14,7 +14,7 @@ const DocsBtnPkg: React.FC<DocsBtnPkgProps> = ({
   return (
     <div
       onClick={onClick}
-      className="bg-redx/30 h-5 w-52 p-px cursor-pointer transition-colors"
+      className="bg-redx/30 h-5 w-48 p-px cursor-pointer transition-colors"
       style={{
         clipPath: "polygon(0% 0%, 100% 0, 100% 80%, 97% 100%, 0% 100%)",
       }}

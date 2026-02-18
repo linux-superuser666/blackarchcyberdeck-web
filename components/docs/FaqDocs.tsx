@@ -1,21 +1,119 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import TitleDoc from "../common/TitleDoc";
+import SubtitleDoc from "../common/SubtitleDocs";
+
+const faqSections = [
+  {
+    id: "note",
+    title: "Note",
+    content: (
+      <>
+        <div className="uppercase text-bluex">
+          <span className="font-nerdfonts"> </span>
+          <span className="font-bold">Note</span>
+        </div>
+
+        <div>
+          This page is being actively expanded upon as more common questions
+          come up.
+        </div>
+      </>
+    ),
+  },
+  {
+    id: "keybind",
+    title: "Keybind",
+    content: (
+      <>
+        <SubtitleDoc text="Keybind" />
+        <p>Check on tab user guide / keybind.</p>
+      </>
+    ),
+  },
+  {
+    id: "requirements",
+    title: "System Requirements",
+    content: (
+      <>
+        <SubtitleDoc text="System Requirements" />
+        <p>
+          BlackArch Cyberdeck is designed for Arch-based distributions with
+          Hyprland compositor installed.
+        </p>
+        <p>Until Now Only support Arch Linux & Black Arch Linux</p>
+      </>
+    ),
+  },
+  {
+    id: "troubleshoot",
+    title: "Troubleshooting",
+    content: (
+      <>
+        <SubtitleDoc text="Troubleshooting" />
+        <p>
+          If themes or icons are not applied correctly, ensure folders are
+          placed in the correct directory and restart your system.
+        </p>
+      </>
+    ),
+  },
+];
 
 const FaqDocs = () => {
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const scrollToSection = (id: string) => {
+    sectionRefs.current[id]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <div
-      className="flex w-full flex-col overflow-x-hidden overflow-y-auto radio-list px-4 gap-4"
-      style={{ height: "320px" }}
-    >
-      <TitleDoc text="FaqDocs Content" />
-      <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem veniam
-        ex iure natus nulla nesciunt nisi, non in! Fugiat, incidunt nostrum.
-        Cupiditate veritatis animi totam impedit nemo similique error quas
-        ducimus eaque ea doloribus ex, dicta praesentium? Qui molestiae quasi
-        saepe quis aperiam libero eos fugit at voluptatem vel? Incidunt aliquid
-        laborum numquam sit accusamus est officiis illo assumenda voluptatum
-        magnam ad officia minus eum pariatur.
+    <div className="flex tracking-wider gap-1 justify-between">
+      {/* MAIN CONTENT */}
+      <div
+        className="flex w-full flex-col px-4 gap-4"
+        style={{ height: "320px" }}
+      >
+        <TitleDoc text="FAQ - BlackArch Cyberdeck" />
+
+        <div className="flex overflow-x-hidden overflow-y-auto radio-list flex-col gap-6 text-[12px] font-medium leading-relaxed">
+          {faqSections.map((section) => (
+            <div
+              key={section.id}
+              ref={(el) => {
+                sectionRefs.current[section.id] = el;
+              }}
+              className="flex flex-col gap-2 scroll-mt-4"
+            >
+              <div className="text-redx uppercase tracking-widest text-[11px]">
+                {section.title}
+              </div>
+
+              {section.content}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* SIDEBAR TOC */}
+      <div className="w-48 border-l border-redx/10 pl-3 text-[11px]">
+        <p className="text-redx mb-3 uppercase tracking-widest">On This Page</p>
+
+        <div className="flex flex-col gap-2">
+          {faqSections.map((section) => (
+            <button
+              key={section.id}
+              onClick={() => scrollToSection(section.id)}
+              className="text-left uppercase text-greyx hover:text-redx transition-all"
+            >
+              {section.title}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

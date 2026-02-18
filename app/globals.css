@@ -302,6 +302,7 @@ body {
 }
 
 /* Custom Scrollbar */
+
 .radio-list::-webkit-scrollbar {
   width: 3px;
   height: 4px;
@@ -319,7 +320,26 @@ body {
 .radio-list::-webkit-scrollbar-thumb:hover {
   background: #bbb;
 }
+/* journal scrollbar */
+.journal-list::-webkit-scrollbar {
+  width: 3px;
+  height: 4px;
+}
 
+.journal-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.journal-list::-webkit-scrollbar-thumb {
+  background: #f75049;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(247, 80, 73, 0.3);
+}
+
+.journal-list::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
 /* =========================
    GLITCH EFFECT (Optimized)
 ========================= */

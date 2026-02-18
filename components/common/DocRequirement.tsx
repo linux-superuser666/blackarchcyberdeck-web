@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 
 interface DocRequirementProps {
@@ -16,6 +18,18 @@ const DocRequirement: React.FC<DocRequirementProps> = ({
   label = "Command :",
   className = "",
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error("Copy failed", err);
+    }
+  };
+
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
       {/* TITLE */}
@@ -39,9 +53,17 @@ const DocRequirement: React.FC<DocRequirementProps> = ({
       <div className="text-redx font-medium">{label}</div>
 
       {/* COMMAND BOX */}
-      <div className="w-full border border-redx/30 px-2 py-2 flex items-center gap-2">
+      <div className="relative w-full border border-redx/30 px-2 py-2 flex items-center gap-2">
         <span className="text-redx">$</span>
-        <span className="text-redx/80 font-semibold">{command}</span>
+        <span className="text-redx/80 font-semibold pr-14">{command}</span>
+
+        {/* COPY BUTTON (tidak mengubah layout) */}
+        <button
+          onClick={handleCopy}
+          className="absolute right-2 text-[10px] text-redx hover:opacity-70 transition font-nerdfonts"
+        >
+          {copied ? "󰄬" : ""}
+        </button>
       </div>
     </div>
   );

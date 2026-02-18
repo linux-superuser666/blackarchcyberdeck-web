@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import DocsBtn from "../common/DocsBtn";
 import DocsBtnDrop from "../common/DocsBtnDrop";
@@ -12,8 +12,15 @@ import InstallationDocs from "@/components/docs/InstallationDocs";
 import SetupDocs from "@/components/docs/SetupDocs";
 import FaqDocs from "@/components/docs/FaqDocs";
 import TitleDoc from "../common/TitleDoc";
+import KeybindDocs from "../docs/KeybindDocs";
 
-type Page = "about" | "changelog" | "installation" | "setup" | "faq";
+type Page =
+  | "about"
+  | "changelog"
+  | "installation"
+  | "setup"
+  | "faq"
+  | "keybind";
 
 const Journal = () => {
   const [guideOpen, setGuideOpen] = useState<boolean>(false);
@@ -21,13 +28,6 @@ const Journal = () => {
 
   const handleChangePage = (page: Page) => {
     setActivePage(page);
-
-    // Auto open dropdown jika dari user guide
-    if (page === "installation" || page === "setup") {
-      setGuideOpen(true);
-    } else {
-      setGuideOpen(false);
-    }
   };
 
   const pages: Record<Page, React.ReactNode> = {
@@ -36,10 +36,11 @@ const Journal = () => {
     installation: <InstallationDocs />,
     setup: <SetupDocs />,
     faq: <FaqDocs />,
+    keybind: <KeybindDocs />,
   };
 
   return (
-    <div className="border border-redx/50 h-full w-full grid grid-rows-[18px_1fr_15px] bg-neutral-900/90">
+    <div className="border border-redx/50 h-full w-full grid grid-rows-[18px_1fr_15px] bg-black">
       {/* TOP MENU */}
       <div className="border-b border-redx/10 flex justify-between text-[9px] p-1 text-slate-100 h-full w-full">
         <div className="flex gap-3.5">
@@ -58,10 +59,18 @@ const Journal = () => {
       </div>
 
       {/* MAIN AREA */}
-      <div className="border-b h-full w-full border-redx/10 p-1">
-        <div className="size-full font-rajdhani bg-black p-2 text-[12px] text-greyx flex flex-col gap-4">
+      <div className="border-b h-full bg-black w-full p-1 overflow-hidden border-redx/10 ">
+        <div
+          className="size-full font-rajdhani px-2 text-[12px] text-greyx flex flex-col gap-1"
+          style={{
+            background:
+              "linear-gradient(178deg,rgba(247, 80, 73, 0.2) 0%, rgba(3, 3, 24, 0.1) 42%, rgba(14, 14, 23, 0.1) 92%)",
+          }}
+        >
           {/* HEADER */}
-          <TitleDoc text="BlackArch Cyberdeck" />
+          <div className="pt-2 pb-2">
+            <TitleDoc text="BlackArch Cyberdeck" />
+          </div>
           {/* CONTENT AREA */}
           <div className="flex gap-2 w-full h-full">
             {/* LEFT SIDEBAR */}
@@ -78,27 +87,39 @@ const Journal = () => {
                 onClick={() => handleChangePage("changelog")}
               />
 
-              <DocsBtnDrop
-                text="User Guide"
-                open={guideOpen}
-                active={activePage === "installation" || activePage === "setup"}
-                onClick={() => setGuideOpen((prev) => !prev)}
-              />
+              <div>
+                <DocsBtnDrop
+                  text="User Guide"
+                  className="mb-1"
+                  open={guideOpen}
+                  active={
+                    activePage === "installation" ||
+                    activePage === "setup" ||
+                    activePage === "keybind"
+                  }
+                  onClick={() => setGuideOpen((prev) => !prev)}
+                />
 
-              {guideOpen && (
-                <div className="flex flex-col gap-1 ml-3">
-                  <DocsBtnPkg
-                    text="Installation"
-                    active={activePage === "installation"}
-                    onClick={() => handleChangePage("installation")}
-                  />
-                  <DocsBtnPkg
-                    text="Setup"
-                    active={activePage === "setup"}
-                    onClick={() => handleChangePage("setup")}
-                  />
-                </div>
-              )}
+                {guideOpen && (
+                  <div className="flex flex-col gap-1 ml-4">
+                    <DocsBtnPkg
+                      text="Installation"
+                      active={activePage === "installation"}
+                      onClick={() => handleChangePage("installation")}
+                    />
+                    <DocsBtnPkg
+                      text="Setup"
+                      active={activePage === "setup"}
+                      onClick={() => handleChangePage("setup")}
+                    />
+                    <DocsBtnPkg
+                      text="Keybind"
+                      active={activePage === "keybind"}
+                      onClick={() => handleChangePage("keybind")}
+                    />
+                  </div>
+                )}
+              </div>
 
               <DocsBtn
                 text="FAQ"
@@ -110,15 +131,8 @@ const Journal = () => {
             <div className="flex-1 overflow-y-auto pr-2">
               {pages[activePage]}
             </div>
-            {/* RIGHT SIDEBAR */}
-            <div className="w-36">side bar right</div>
           </div>
         </div>
-      </div>
-
-      {/* FOOTER */}
-      <div className="border size-full border-redx/10 text-[9px] uppercase text-slate-100 flex justify-end px-2 items-center">
-        BlackArch System v1.0
       </div>
     </div>
   );
