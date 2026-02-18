@@ -110,13 +110,12 @@ const InstallationDocs = () => {
 
       {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3 pl-3">
-        <div className="text-xs font-bold uppercase text-greyx">Packages</div>
-
+        <TitleDoc text="Table of Contents" />
         {packages.map((pkg) => (
           <button
             key={pkg.id}
             onClick={() => scrollToSection(pkg.id)}
-            className="text-left text-[11px] uppercase hover:text-white transition"
+            className="text-left text-greenx font-medium text-[10px] uppercase hover:text-redx transition"
           >
             {pkg.title}
           </button>

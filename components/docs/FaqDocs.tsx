@@ -100,15 +100,14 @@ const FaqDocs = () => {
       </div>
 
       {/* SIDEBAR TOC */}
-      <div className="w-48 border-l border-redx/10 pl-3 text-[11px]">
-        <p className="text-redx mb-3 uppercase tracking-widest">On This Page</p>
-
+      <div className="w-48 flex flex-col gap-3">
+        <TitleDoc text="Table of Contents" />
         <div className="flex flex-col gap-2">
           {faqSections.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="text-left uppercase text-greyx hover:text-redx transition-all"
+              className="text-left text-[10px] uppercase text-greenx hover:text-redx transition-all"
             >
               {section.title}
             </button>

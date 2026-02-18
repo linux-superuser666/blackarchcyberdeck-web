@@ -107,15 +107,14 @@ const AboutDocs = () => {
       </div>
 
       {/* SIDEBAR TOC */}
-      <div className="w-48 border-l border-redx/10 pl-3 text-[11px]">
-        <p className="text-redx mb-3 uppercase tracking-widest">On This Page</p>
-
-        <div className="flex flex-col gap-2">
+      <div className="w-48 flex flex-col gap-3">
+        <TitleDoc text="Table of Contents" />
+        <div className="flex flex-col gap-2 text-greenx font-medium text-[10px]">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="text-left text-greyx uppercase hover:text-redx transition-all"
+              className="text-left uppercase hover:text-redx transition-all"
             >
               {section.title}
             </button>

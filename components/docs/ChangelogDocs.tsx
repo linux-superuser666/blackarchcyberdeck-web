@@ -107,14 +107,13 @@ const ChangelogDocs = () => {
       </div>
 
       {/* 🔥 SIDEBAR TOC */}
-      <div className="w-48 flex flex-col gap-3 pl-3">
+      <div className="w-48 flex flex-col gap-3">
         <TitleDoc text="Table of Contents" />
-
         {changelogData.map((section) => (
           <button
             key={section.id}
             onClick={() => scrollToSection(section.id)}
-            className="text-left text-[11px] uppercase hover:text-greyx transition"
+            className="text-left text-greenx font-medium text-[10px] uppercase hover:text-redx transition"
           >
             {section.title}
           </button>
