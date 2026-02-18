@@ -90,24 +90,25 @@ const ChangelogDocs = () => {
       </div>
 
       {/* SIDEBAR TOC */}
-      <div className="w-48 flex flex-col gap-3">
+      <div className="w-48 flex flex-col gap-3" style={{ height: "320px" }}>
         <TitleDoc text="Table of Contents" />
+        <div className="flex size-full overflow-x-hidden overflow-y-auto journal-list flex-col gap-3">
+          {changelogs.map((log, logIndex) =>
+            log.sections.map((section, sectionIndex) => {
+              const sectionId = `section-${logIndex}-${sectionIndex}`;
 
-        {changelogs.map((log, logIndex) =>
-          log.sections.map((section, sectionIndex) => {
-            const sectionId = `section-${logIndex}-${sectionIndex}`;
-
-            return (
-              <button
-                key={`toc-${log.version}-${section.id}-${sectionIndex}`}
-                onClick={() => scrollToSection(sectionId)}
-                className="text-left text-greenx font-medium text-[10px] uppercase hover:text-redx transition"
-              >
-                {log.version} — {section.title}
-              </button>
-            );
-          })
-        )}
+              return (
+                <button
+                  key={`toc-${log.version}-${section.id}-${sectionIndex}`}
+                  onClick={() => scrollToSection(sectionId)}
+                  className="text-left text-greenx font-medium text-[10px] uppercase hover:text-redx transition"
+                >
+                  {log.version} — {section.title}
+                </button>
+              );
+            })
+          )}
+        </div>
       </div>
     </div>
   );
