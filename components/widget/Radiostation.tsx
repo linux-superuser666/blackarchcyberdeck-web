@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { useUIStore } from "@/state/widgetState";
-import { radioSongs } from "@/api/radioSongs";
+import { radioSongs } from "@/data/radiostation/radioSongs";
 import ImageType from "../common/ImageType";
 import CoverGridLine from "../multimedia/CoverGridLine";
 

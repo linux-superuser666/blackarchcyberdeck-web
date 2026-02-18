@@ -2,7 +2,7 @@
 import Image from "next/image";
 import react, { useState } from "react";
 import BinLogo from "../common/BinLogo";
-import appsData from "../../api/appdata.json";
+import appsData from "../../data/launcher/appdata.json";
 import { useUIStore } from "@/state/widgetState";
 import ImageType from "../common/ImageType";
 import BottomPanelButton from "../Box/BottomPanelButton";
