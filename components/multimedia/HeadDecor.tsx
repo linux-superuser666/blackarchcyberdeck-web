@@ -6,7 +6,7 @@ import PanelTop from "./PanelTop";
 const HeadDecor = () => {
   return (
     <div className="size-full">
-      <div className="absolute size-fit top-[2px] right-[85px]">
+      <div className="absolute select-none size-fit top-[2px] right-[85px]">
         <PanelTop />
       </div>
       <div className="size-full z-30 grid grid-cols-[19px_1fr_1fr_1fr_19px] grid-rows-[20px_18px_1fr_1fr_1fr] gap-0">

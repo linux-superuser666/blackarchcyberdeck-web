@@ -36,7 +36,7 @@ const Crafting = () => {
   }, []);
 
   return (
-    <div className="absolute border border-redx/50 h-full w-full ">
+    <div className="select-none absolute border border-redx/50 h-full w-full ">
       <div className="bg-black/50 text-redx size-full grid grid-cols-[200px_10px_60px_1fr_115px] text-[9px] grid-rows-[20px_361px_15px] gap-0">
         <div className="col-span-2 px-2.5 border-b h-full border-redx/30 w-full items-center flex gap-1.5  text-greyx justify-between">
           <div className="font-nerdfonts w-8">󰇘</div>

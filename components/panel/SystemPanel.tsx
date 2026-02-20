@@ -32,7 +32,7 @@ const SystemPanel = () => {
   }, []);
 
   return (
-    <div className="ml-3 mt-px w-[280px] flex flex-row gap-1">
+    <div className="ml-3 select-none mt-px w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
       <div className="flex flex-col leading-none gap-0">
         <BinTitle text="system_panel 1.001.1" />
@@ -41,7 +41,7 @@ const SystemPanel = () => {
             <div className="bg-greyx size-full p-px  [clip-path:polygon(0_0,_100%_0%,_100%_100%,_40%_100%,_0%_60%)] ">
               <div className="bg-black size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_44%_100%,_0%_58%)] text-center p-px">
                 <div className="bg-greyx size-full [clip-path:polygon(0_0,_100%_0%,_100%_100%,_44%_100%,_0%_58%)] p-px text-black   text-center items-center justify-center font-bold text-[9px]">
-                  <div className="size-full pt-[4px] pr-[2px] pl-[3px]">
+                  <div className="size-full select-none pt-[4px] pr-[2px] pl-[3px]">
                     {cpu}
                   </div>
                 </div>

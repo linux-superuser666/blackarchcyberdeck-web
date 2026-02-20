@@ -59,10 +59,10 @@ const SideWidget = () => {
           <div className="absolute hidden xl:flex left-[142px] bottom-[120px]">
             <CableCat height={103} width={72} />
           </div>
-          <div className="absolute left-[113px] bottom-[273px]">
+          <div className="absolute select-none left-[113px] bottom-[273px]">
             <SocialPanel />
           </div>
-          <div className="absolute left-[113px] bottom-[445px]">
+          <div className="absolute select-none left-[113px] bottom-[445px]">
             <AiPanel />
           </div>
         </div>

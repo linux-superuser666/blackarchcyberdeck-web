@@ -31,7 +31,7 @@ const BinLogo = ({
   }, [speed]);
 
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col select-none items-center gap-1">
       <div
         className={`font-medium tracking-[1px] text-redx ${leadingClass}`}
         style={{ fontSize: textSize }}

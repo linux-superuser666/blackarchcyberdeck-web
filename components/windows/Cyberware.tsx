@@ -14,7 +14,7 @@ const rightCommands = [
 
 const Cyberware = () => {
   return (
-    <div className="grid gap-1 font-nerdfonts grid-cols-[1fr_2fr] z-40 h-full w-full text-[9px] font-medium  relative">
+    <div className="select-none grid gap-1 font-nerdfonts grid-cols-[1fr_2fr] z-40 h-full w-full text-[9px] font-medium  relative">
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         <div className="flex flex-col gap-1">
           <p className="text-redx">

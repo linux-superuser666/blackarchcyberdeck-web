@@ -44,7 +44,7 @@ const SocialPanelL = () => {
           <div className="border size-full p-px items-center justify-center flex flex-col border-redx/30 relative">
             <GlitchText
               text="social & support"
-              className="uppercase text-center"
+              className="uppercase select-none text-center"
               fontSize={9}
             />
             <div className="border uppercase text-xs text-redx/50 size-full grid grid-cols-1 grid-rows-4 border-redx/30 items-center justify-center text-center">
@@ -58,7 +58,11 @@ const SocialPanelL = () => {
                     target="_blank"
                     className="flex size-full flex-col items-center justify-center hover:text-redx transition-colors"
                   >
-                    <GlitchText text={item.name} fontSize={14} />
+                    <GlitchText
+                      className="select-none"
+                      text={item.name}
+                      fontSize={14}
+                    />
                     <GlitchCanvas
                       src={item.src}
                       width={30}

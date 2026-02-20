@@ -148,7 +148,7 @@ const Inventory: React.FC = () => {
     return null;
   };
   return (
-    <div className="absolute font-inter tracking-wider bg-black/30 text-[10px] size-full grid grid-rows-[30px_1fr] border-redx/30 border">
+    <div className="absolute select-none font-inter tracking-wider bg-black/30 text-[10px] size-full grid grid-rows-[30px_1fr] border-redx/30 border">
       <div className="border-b size-full font-medium items-center border-redx/30 flex flex-row gap-3.5 p-0.5 text-redx/50">
         <div className="font-nerdfonts text-lg text-greyx pl-px">󰇙</div>
         <div className="font-nerdfonts text-sm"></div>

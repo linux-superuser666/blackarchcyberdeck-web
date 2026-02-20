@@ -59,9 +59,7 @@ const Notify = () => {
 
   return (
     <div
-      className={`ml-3 absolute z-[999] top-[290px] w-[200px] flex flex-row gap-1 h-[145px]
-        transform origin-left transition-transform duration-700
-        ease-[cubic-bezier(0.65,0,0.35,1)]
+      className={`ml-3 absolute z-[999] top-[290px] w-[200px] flex flex-row gap-1 h-[145px] select-none transform origin-left transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]
         ${
           containerVisible
             ? "scale-x-100 opacity-100"

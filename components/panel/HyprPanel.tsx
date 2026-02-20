@@ -154,7 +154,7 @@ const HyprPanel = () => {
         </div>
         <div className="text-redx w-full uppercase justify-end flex">
           {/* WORKSPACES */}
-          <div className="flex font-semibold flex-row gap-0.5 items-center justify-center">
+          <div className="flex font-semibold flex-row gap-0.5 items-center justify-center select-none">
             {workspaces.map((ws) => {
               const isActive = active === ws.label;
               return (

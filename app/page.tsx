@@ -21,9 +21,9 @@ export default function Home() {
     <div
       ref={ref}
       onDoubleClick={handleFullscreen}
-      className="font-rajdhani flex mx-auto w-full min-w-screen min-h-screen relative overflow-hidden justify-center items-center"
+      className="font-rajdhani select-none flex mx-auto w-full min-w-screen min-h-screen relative overflow-hidden justify-center items-center"
     >
-      <div className="size-full maxw-[1204px] max-h-[595px] xl:max-w-[1340px] xl:max-h-[630px] absolute bottom-0 overflow-hidden hidden xl:flex z-10 justify-center items-end">
+      <div className="size-full max-w-[1204px] max-h-[595px] xl:max-w-[1340px] xl:max-h-[630px] absolute bottom-0 overflow-hidden hidden xl:flex z-10 justify-center items-end">
         <SideWidget />
       </div>
 

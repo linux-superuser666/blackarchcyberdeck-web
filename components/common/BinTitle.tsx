@@ -8,7 +8,7 @@ interface BinTitleProps {
 const BinTitle: React.FC<BinTitleProps> = ({ text, className = "" }) => {
   return (
     <div
-      className={`text-[5px] text-redx/80 uppercase font-orbitron ${className}`}
+      className={`text-[5px] select-none text-redx/80 uppercase font-orbitron ${className}`}
     >
       {text}
     </div>
