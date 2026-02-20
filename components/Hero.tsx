@@ -9,10 +9,10 @@ import PanelRight from "./multimedia/PanelRight";
 const Hero = () => {
   return (
     <div className="flex flex-col justify-end items-center size-full">
-      <div className="absolute z-50 size-fit bottom-40 left-1 xl:left-10">
+      <div className="absolute z-50 size-fit bottom-40 right-[1100px] lg:bottom-40 lg:right-[975px] xl:right-[1010px]">
         <PanelLeft />
       </div>
-      <div className="absolute z-50 size-fit bottom-40 right-1 xl:right-10">
+      <div className="absolute z-50 size-fit bottom-40 left-[1100px] lg:bottom-40 lg:left-[975px] xl:left-[1013px]">
         <PanelRight />
       </div>
       <div className="w-full z-40 max-w-[987px] h-[540px] bg-yellowx/50 px-[2px] pt-[2px] [clip-path:polygon(0_6.5%,_1.5%_4%,_60.7%_4%,_63.4%_0,_98.6%_0,_100%_2%,_100%_70%,_98%_70%,_98%_100%,_2%_100%,_2%_70%,_0%_70%)]">
@@ -68,7 +68,7 @@ const Hero = () => {
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start rounded-b-sm border-x border-b border-yellowx/50"></div>
         <div className="w-30 h-1 shadow-2xl shadow-redx/20 bg-black justify-center px-px pb-px flex items-start border-x rounded-b-sm border-b border-yellowx/50"></div>
       </div>
-      <div className="w-full h-1 border-t border-redx/0 mt-[1px] bg-redx/10"></div>
+      <div className="w-full h-1 border-t hidden xl:flex border-redx/0 mt-[1px] bg-redx/10"></div>
     </div>
   );
 };

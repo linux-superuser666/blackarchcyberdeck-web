@@ -9,7 +9,7 @@ import CableRx from "../common/CableRx";
 
 const SideWidget = () => {
   return (
-    <div className="absolute bottom-0 z-[2] lg:w-[1340px] h-[630px] flex items-end justify-center">
+    <div className="absolute bottom-0 z-[2] size-full flex items-end justify-center ">
       <div className="size-full grid grid-cols-[18rem_1fr_18rem] grid-rows-[4rem_1fr_3rem]">
         <div className="border border-redx/0 relative row-span-3 flex justify-end">
           {/* left card */}
@@ -34,7 +34,7 @@ const SideWidget = () => {
           <div className="absolute right-[162px] bottom-[448px] tranform rotate-180">
             <CableCat radius={8} width={32} height={55} />
           </div>
-          <div className="absolute right-[113px] bottom-[86px]">
+          <div className="absolute right-[165px] bottom-[86px]">
             <SocialPanelL />
           </div>
         </div>

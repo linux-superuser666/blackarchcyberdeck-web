@@ -15,6 +15,16 @@
     --foreground: #ededed;
   }
 }
+@custom-variant maxscreen-1200x590 {
+  @media (max-width: 1204px) and (max-height: 595px) {
+    @slot;
+  }
+}
+@custom-variant minscreen-1200x590 {
+  @media (min-width: 1204px) and (min-height: 595px) {
+    @slot;
+  }
+}
 
 @theme inline {
   --color-yellowx: #f0b537;
