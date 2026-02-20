@@ -1,18 +1,9 @@
-/* =========================
-   IMPORTS
-========================= */
-
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/mshaugh/nerdfont-webfonts@v3.3.0/build/firacode-nerd-font.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
-
-/* =========================
-   ROOT COLORS
-========================= */
-
 :root {
   --background: #f75049;
   --foreground: #171717;
@@ -25,12 +16,7 @@
   }
 }
 
-/* =========================
-   TAILWIND THEME TOKENS
-========================= */
-
 @theme inline {
-  /* Colors */
   --color-yellowx: #f0b537;
   --color-orangex: #fb932e;
   --color-violetx: #9d2bf5;
@@ -41,17 +27,12 @@
   --color-whitex: #ffffff;
   --color-redx: #f75049;
   --color-darkbluex: #0e0e17;
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Fonts */
   --font-rajdhani: "Rajdhani", sans-serif;
   --font-orbitron: "Orbitron", sans-serif;
   --font-Inter: "Inter", sans-serif;
   --font-nerdfonts: "FiraCode Nerd Font", monospace;
-
-  /* Animations */
   --animate-shake: shake 0.3s ease-in-out;
   --animate-marquee: marquee 20s linear infinite;
   --animate-scanner-y: scanner-y 10s ease-in-out infinite;
@@ -71,10 +52,6 @@
   --animate-walk-up: walk-up 7s linear infinite;
   --animate-walk-down: walk-down 7s linear infinite;
 }
-
-/* =========================
-   KEYFRAMES
-========================= */
 
 @keyframes walk-up {
   0% {
@@ -154,7 +131,6 @@
     opacity: 0;
   }
 
-  /* PAUSE 2 DETIK */
   70% {
     margin-left: 50px;
     opacity: 0;
@@ -185,8 +161,6 @@
     margin-right: 50px;
     opacity: 0;
   }
-
-  /* PAUSE 2 DETIK */
   70% {
     margin-right: 50px;
     opacity: 0;
@@ -269,18 +243,10 @@
   }
 }
 
-/* =========================
-   BASE STYLES
-========================= */
-
 body {
   background: var(--background);
   color: var(--foreground);
 }
-
-/* =========================
-   CUSTOM UTILITIES
-========================= */
 
 .font-rajdhani {
   font-family: var(--font-rajdhani);
@@ -296,12 +262,9 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Scrollbar Hidden */
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
-
-/* Custom Scrollbar */
 
 .radio-list::-webkit-scrollbar {
   width: 3px;
@@ -320,7 +283,6 @@ body {
 .radio-list::-webkit-scrollbar-thumb:hover {
   background: #bbb;
 }
-/* journal scrollbar */
 .journal-list::-webkit-scrollbar {
   width: 3px;
   height: 4px;
@@ -340,9 +302,6 @@ body {
   background: #bbb;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
 }
-/* =========================
-   GLITCH EFFECT (Optimized)
-========================= */
 
 .glitch-wrapper {
   --glitch-x: 0px;
@@ -363,10 +322,6 @@ body {
   opacity: var(--glitch-opacity);
 }
 
-/* =========================
-   SCANLINES
-========================= */
-
 .scanlines {
   background: repeating-linear-gradient(
     to bottom,
@@ -386,10 +341,6 @@ body {
     background-position: 0 100%;
   }
 }
-
-/* =========================
-   GLITCH EFFECT (NEW)
-========================= */
 
 .glitch {
   position: relative;
@@ -467,10 +418,6 @@ body {
     transform: skew(0deg);
   }
 }
-
-/* =========================
-   CUSTOM CURSOR
-========================= */
 
 *,
 body,

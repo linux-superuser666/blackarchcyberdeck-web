@@ -42,13 +42,11 @@ const KeybindDocs = () => {
 
   return (
     <div className="flex gap-1 justify-between">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col tracking-wider px-4 gap-4"
         style={{ height: "320px" }}
       >
         <TitleDoc text="Keybind" />
-
         <div className="flex flex-col overflow-y-auto pr-1 journal-list gap-5 flex-1 min-h-0">
           {keybindData.map((section) => (
             <div
@@ -59,14 +57,10 @@ const KeybindDocs = () => {
               className="flex flex-col gap-2"
             >
               <SubtitleDoc text={section.title} />
-
-              {/* HEADER ROW */}
               <div className="flex text-[10px] uppercase font-bold text-redx border-b border-redx/20 pb-1">
                 <div className="w-32">Key</div>
                 <div className="flex-1">Action</div>
               </div>
-
-              {/* KEYBIND ROWS */}
               {section.bindings.map((bind, index) => (
                 <div
                   key={index}
@@ -80,7 +74,6 @@ const KeybindDocs = () => {
                   >
                     {bind.key}
                   </div>
-
                   <div
                     className="flex-1 text-greyx"
                     style={{
@@ -95,8 +88,6 @@ const KeybindDocs = () => {
           ))}
         </div>
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3">
         <TitleDoc text="Table of Contents" />
         {keybindData.map((section) => (

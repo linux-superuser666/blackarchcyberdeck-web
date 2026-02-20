@@ -12,13 +12,11 @@ type WinSwitchProps = {
 };
 
 const WinSwitch = ({ className = "" }: WinSwitchProps) => {
-  // Akses store untuk workspace
   const setActiveWorkspace = useUIStore((s) => s.setActiveWorkspace);
   const setOccupiedWorkspaces = useUIStore((s) => s.setOccupiedWorkspaces);
   const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
 
-  // Mapping app → workspace
   const appToWorkspace: Record<string, string[]> = {
     kitty: ["cyberware"],
     thunar: ["inventory"],
@@ -48,7 +46,6 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
        ${className}`}
     >
       <div className="w-[320px] h-[184px] animate-fade-in">
-        {/* Background Window */}
         <div className="flex flex-row gap-px size-full">
           <div className="w-6 h-full">
             <LeftBracket />
@@ -63,16 +60,10 @@ const WinSwitch = ({ className = "" }: WinSwitchProps) => {
               </div>
               <p>cyberdeck system app watcher</p>
             </div>
-            {/* List of apps */}
             <div className="p-1 flex flex-col gap-1">
               <div className="w-full h-10 justify-between relative bg-redx/80 p-1 flex flex-row">
                 <div className="absolute pl-[90px] inset-0 size-full">
-                  <div
-                    className="h-full w-22  
-                 bg-gradient-to-r from-greyx/1 via-greyx/30 to-greyx/1
-                   animate-scanner-x
-                 "
-                  ></div>
+                  <div className="h-full w-22 bg-gradient-to-r from-greyx/1 via-greyx/30 to-greyx/1 animate-scanner-x"></div>
                 </div>
                 <ImageType textSize="text-[8px]" textColor="text-black/80" />
                 <div className="h-full flex flex-row ">

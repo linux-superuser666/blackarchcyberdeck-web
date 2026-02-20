@@ -26,7 +26,7 @@ const LevelBox = () => {
         height={10}
         className="object-contain border "
       />
-      <div className="absolute uppercase text-right items-start justify-end   font-bold text-[4px] right-[1px] top-[3px] flex">
+      <div className="absolute uppercase text-right items-start justify-end font-bold text-[4px] right-[1px] top-[3px] flex">
         <div>X</div>
       </div>
     </div>

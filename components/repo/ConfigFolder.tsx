@@ -10,7 +10,6 @@ const ConfigFolder = () => {
       { name: "kitty", type: "dir" },
       { name: "rofi", type: "dir" },
     ];
-
     setItems(configData);
   }, []);
 

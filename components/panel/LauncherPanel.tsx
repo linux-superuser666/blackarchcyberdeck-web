@@ -1,6 +1,7 @@
 "use client";
-import Image from "next/image";
+
 import react, { useState } from "react";
+import Image from "next/image";
 import BinLogo from "../common/BinLogo";
 import appsData from "../../data/launcher/appdata.json";
 import { useUIStore } from "@/state/widgetState";
@@ -11,9 +12,7 @@ import BinTitle from "../common/BinTitle";
 const LauncherPanel = () => {
   const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
-
   const [filterText, setFilterText] = useState("");
-
   const filteredApps = appsData.apps.filter(
     (app) =>
       app.name.toLowerCase().includes(filterText.toLowerCase()) ||
@@ -26,12 +25,10 @@ const LauncherPanel = () => {
   return (
     <div className="ml-3 absolute z-[999] top-14 w-[280px] flex flex-row gap-1">
       <BinLogo iconSrc="/icons/control-dbus-alt.png" />
-
       <div className="flex flex-col leading-none gap-0">
         <BinTitle text="connection_dbus 1.001.1" />
         <div className="text-redx border-b border-redx/50 h-52 w-48 flex flex-row gap-1 uppercase text-xs">
           <div className="flex flex-col gap-1 h-full w-full">
-            {/* INPUT */}
             <div className="bg-black border border-redx/50 h-fit pl-1 items-center p-0.5 w-full gap-0 flex flex-row">
               <div className="w-fit text-[9px]">sequences:</div>
               <input
@@ -42,8 +39,6 @@ const LauncherPanel = () => {
                 onChange={(e) => setFilterText(e.target.value)}
               />
             </div>
-
-            {/* LIST */}
             <div className="h-full w-full overflow-hidden mb-1 pr-1 hover:overflow-y-auto radio-list">
               {filteredApps.map((app) => {
                 const isMatched =
@@ -53,7 +48,6 @@ const LauncherPanel = () => {
                       .toLowerCase()
                       .includes(filterText.toLowerCase()) ||
                     app.type.toLowerCase().includes(filterText.toLowerCase()));
-
                 return (
                   <div
                     key={app.id}
@@ -66,8 +60,6 @@ const LauncherPanel = () => {
                       height={10}
                       className="object-contain"
                     />
-
-                    {/* WARNING ICON */}
                     <div
                       className={`
                         flex w-2 h-[9px] text-center justify-center font-bold text-[6px] p-px
@@ -92,9 +84,7 @@ const LauncherPanel = () => {
                         !
                       </div>
                     </div>
-
                     <div className="flex gap-px">
-                      {/* BAR */}
                       <div
                         className=" bg-redx/50 h-full w-1.5
                         p-px [clip-path:polygon(0_50%,_0_0,_100%_0,_100%_100%,_0_100%,_0_80%,_20%_80%,_20%_50%)]"
@@ -111,8 +101,6 @@ const LauncherPanel = () => {
                           `}
                         />
                       </div>
-
-                      {/* TEXT PANEL */}
                       <div
                         className={`
                           flex bg-redx/50 text-start w-[147px] h-full font-semibold flex-col

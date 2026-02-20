@@ -5,10 +5,7 @@ import GlitchSlideImg from "./GlitchSlideImg";
 
 const PanelTop = () => {
   return (
-    <div
-      className="bg-yellowx/50 
-            w-[310px] h-12 p-[2px] [clip-path:polygon(12%_0,_99%_0,_100%_4%,_100%_94%,_99%_100%,_0.5%_100%,_0_96%,_0_66%)]"
-    >
+    <div className="bg-yellowx/50 w-[310px] h-12 p-[2px] [clip-path:polygon(12%_0,_99%_0,_100%_4%,_100%_94%,_99%_100%,_0.5%_100%,_0_96%,_0_66%)]">
       <div className="size-full bg-black  [clip-path:polygon(12%_0,_99%_0,_100%_4%,_100%_94%,_99%_100%,_0.5%_100%,_0_96%,_0_71%)] ">
         <div className="size-full flex flex-row pl-1">
           <div className="h-full flex items-end w-fit pb-1 mr-4">

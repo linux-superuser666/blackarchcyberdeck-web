@@ -26,7 +26,7 @@ const ChronoPanel = () => {
   };
 
   if (!mounted || !now) {
-    return null; // ⬅️ penting supaya SSR & client match
+    return null;
   }
 
   const formatTime = () =>
@@ -83,4 +83,5 @@ const ChronoPanel = () => {
 };
 {
 }
+
 export default ChronoPanel;

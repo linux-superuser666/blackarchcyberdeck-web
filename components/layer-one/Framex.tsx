@@ -11,7 +11,6 @@ const Framex = () => {
   const [index1, setIndex1] = useState(0);
   const [index2, setIndex2] = useState(0);
 
-  // Update binary pertama
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex1((i) => (i + 1) % BINARY_PATTERNS_1.length);
@@ -19,7 +18,6 @@ const Framex = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Update binary kedua
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex2((i) => (i + 1) % BINARY_PATTERNS_2.length);
@@ -39,22 +37,16 @@ const Framex = () => {
           <div className="h-1/2 flex items-end animate-walk-up relative overflow-hidden">
             <PinUp />
           </div>
-
           <div className="h-1/2 flex items-start animate-walk-down relative overflow-hidden">
             <PinDown />
           </div>
         </div>
         <div></div>
       </div>
-
-      {/* frame bottom */}
       <div className="text-start w-full h-7"></div>
-
-      {/* frame right */}
       <div className="items-start justify-between text-start w-full h-full flex">
         <div className="flex h-full pt-16 justify-between flex-col">
           <div className="flex flex-col gap-4 top-0 relative">
-            {/* Binary pertama */}
             <div
               className="text-[6px] relative leading-1.5 text-redx font-medium
               before:content-['-'] before:animate-blink-slow before:-top-4 before:text-sm before:absolute before:text-yellowx"
@@ -66,8 +58,6 @@ const Framex = () => {
               <br />
               {BINARY_PATTERNS_1[(index1 + 3) % BINARY_PATTERNS_1.length]}
             </div>
-
-            {/* Binary kedua */}
             <div
               className="text-[6px] relative leading-1.5 text-redx font-medium
               before:content-['-'] before:animate-blink-slow before:-top-4 before:text-sm before:absolute before:text-yellowx"
@@ -79,7 +69,6 @@ const Framex = () => {
               <br />
               {BINARY_PATTERNS_2[(index2 + 3) % BINARY_PATTERNS_2.length]}
             </div>
-
             <div
               className="text-[8px] relative leading-2 text-redx font-medium
               before:content-['-'] before:animate-blink-slow before:-top-4 before:text-sm before:absolute before:text-yellowx"
@@ -87,12 +76,10 @@ const Framex = () => {
           </div>
           <div>1</div>
         </div>
-
         <div className="flex h-full flex-col bg-scanner w-1 overflow-hidden">
           <div className="h-1/2 flex items-end animate-walk-up relative overflow-hidden">
             <PinUp />
           </div>
-
           <div className="h-1/2 flex items-start animate-walk-down relative overflow-hidden">
             <PinDown />
           </div>

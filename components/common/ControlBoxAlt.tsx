@@ -1,13 +1,10 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 const ControlBoxAlt = () => {
   return (
     <div className="flex flex-col w-9 h-9 gap-0 leading-none justify-center items-center">
-      {/* TOP LINE */}
       <div className="bg-redx/70 w-4 h-[1px] "></div>
-
-      {/* BORDER LAYER */}
       <div
         className="
           w-8 h-8 bg-redx/70
@@ -15,7 +12,6 @@ const ControlBoxAlt = () => {
           flex items-center justify-center
         "
       >
-        {/* INNER FILL */}
         <div
           className=" relative
             w-[30px] h-[30px] bg-black/85
@@ -31,7 +27,6 @@ const ControlBoxAlt = () => {
             height={16}
             className="object-contain"
           />
-          {/* content reusable / img/ div/ */}
         </div>
         <div className="absolute text-right items-start justify-end h-7 font-bold text-[7px] w-7 flex">
           <div id="numberCount">100</div>

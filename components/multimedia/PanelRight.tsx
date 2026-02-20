@@ -24,14 +24,12 @@ const PanelRight = () => {
           <div className="size-8 absolute top-5 left-0.5 bg-redx/20 px-px [clip-path:polygon(0%_0%,_100%_50%,_0%_100%)] py-[2px] pl-px pr-[3px]">
             <div className="bg-black size-full [clip-path:polygon(0%_0%,_100%_50%,_0%_100%)]"></div>
           </div>
-
           <div className="size-8 absolute left-0.5 top-[42px] bg-redx/20 px-px [clip-path:polygon(100%_0%,_100%_100%,_0%_50%)] py-[2px] pl-[3px] pr-px">
             <div className="bg-black size-full [clip-path:polygon(100%_0%,_100%_100%,_0%_50%)]"></div>
           </div>
           <div className="size-8 absolute left-0.5 top-[65px] bg-redx/20 px-px [clip-path:polygon(0%_0%,_100%_50%,_0%_100%)] py-[2px] pl-px pr-[3px]">
             <div className="bg-black size-full [clip-path:polygon(0%_0%,_100%_50%,_0%_100%)]"></div>
           </div>
-
           <div className="size-8 absolute left-0.5 top-[87px] bg-redx/20 px-px [clip-path:polygon(100%_0%,_100%_100%,_0%_50%)] py-[2px] pl-[3px] pr-px">
             <div className="bg-black size-full [clip-path:polygon(100%_0%,_100%_100%,_0%_50%)]"></div>
           </div>

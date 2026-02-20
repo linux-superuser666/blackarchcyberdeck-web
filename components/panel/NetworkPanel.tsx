@@ -23,11 +23,9 @@ const NetworkPanel = ({ className = "" }: NetworkPanelProps) => {
   const activeWidget = useUIStore((s) => s.activeWidget);
   const toggleWidget = useUIStore((s) => s.toggleWidget);
   const { up, down } = useNetworkTraffic();
-  const trafficUp = up; // dari hook web traffic
+  const trafficUp = up;
   const trafficDown = down;
-
   useEdexDualECG("ecgNetwork", trafficUp, trafficDown);
-
   if (activeWidget !== "networkPanel") return null;
 
   return (
@@ -45,7 +43,6 @@ const NetworkPanel = ({ className = "" }: NetworkPanelProps) => {
             <div className="uppercase">network manager</div>
             <PanelBorderPx />
             <div className="text-greyx">Ethernet</div>
-
             <div className="flex w-full mb-1 justify-between flex-row">
               <div className="text-greyx">enp3s0</div>
               <SwitchBtn />

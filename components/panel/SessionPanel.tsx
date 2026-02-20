@@ -3,17 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { useUIStore } from "@/state/widgetState";
-import BrackRightBC from "../common/BrackRightBC";
-import BrackLeftBT from "../common/BrackLeftBT";
 import ImageType from "../common/ImageType";
 import BottomPanelButton from "../Box/BottomPanelButton";
-import TitlePanelOrbit from "../common/TitlePanelOrbit";
-import PanelBorderPx from "../common/PanelBorderPx";
-import LevelSlider from "../common/LevelSlider";
-import PresetCtrl from "./PresetCtrl";
-import SwitchBtn from "../common/SwitchBtn";
-import { useNetworkTraffic } from "@/hooks/useNetworkTraffic";
-import { useEdexDualECG } from "@/hooks/useEdexDualECG";
 import LeftBracket from "../common/LeftBracket";
 
 type SessionPanelProps = {
@@ -24,32 +15,32 @@ const SESSION_ACTIONS = [
   {
     key: "lock",
     label: "lock",
-    icon: "", // nf-fa-lock
+    icon: "",
   },
   {
     key: "logout",
     label: "logout",
-    icon: "󰍃", // nf-md-logout
+    icon: "󰍃",
   },
   {
     key: "suspend",
     label: "suspend",
-    icon: "󰒲", // nf-md-power_sleep
+    icon: "󰒲",
   },
   {
     key: "hibernate",
     label: "hibernate",
-    icon: "󰤄", // nf-md-power_plug_off
+    icon: "󰤄",
   },
   {
     key: "shutdown",
     label: "shutdown",
-    icon: "⏻", // nf-md-power
+    icon: "⏻",
   },
   {
     key: "reboot",
     label: "reboot",
-    icon: "󰑐", // nf-md-restart
+    icon: "󰑐",
   },
 ];
 

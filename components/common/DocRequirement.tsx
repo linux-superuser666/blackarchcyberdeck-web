@@ -32,7 +32,6 @@ const DocRequirement: React.FC<DocRequirementProps> = ({
 
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
-      {/* TITLE */}
       <div className="flex">
         <Image
           src="/icons/package.png"
@@ -48,16 +47,10 @@ const DocRequirement: React.FC<DocRequirementProps> = ({
           </div>
         </div>
       </div>
-
-      {/* LABEL */}
       <div className="text-redx font-medium">{label}</div>
-
-      {/* COMMAND BOX */}
       <div className="relative w-full border border-redx/30 px-2 py-2 flex items-center gap-2">
         <span className="text-redx">$</span>
         <span className="text-redx/80 font-semibold pr-14">{command}</span>
-
-        {/* COPY BUTTON (tidak mengubah layout) */}
         <button
           onClick={handleCopy}
           className="absolute right-2 text-[10px] text-redx hover:opacity-70 transition font-nerdfonts"

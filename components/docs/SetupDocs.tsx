@@ -5,7 +5,6 @@ import TitleDoc from "../common/TitleDoc";
 
 const CommandBlock = ({ command }: { command: string }) => {
   const [copied, setCopied] = useState(false);
-
   const handleCopy = async () => {
     await navigator.clipboard.writeText(command);
     setCopied(true);
@@ -50,7 +49,6 @@ const sections = [
           <li>hypr</li>
           <li>kitty</li>
         </ul>
-
         <CommandBlock command="mv quickshell rofi hypr kitty ~/.config/" />
       </>
     ),
@@ -63,7 +61,6 @@ const sections = [
         <p>
           Move theme folder to <b>.themes</b> directory:
         </p>
-
         <CommandBlock command="cd dotThemes" />
         <CommandBlock command="mv Cyberdeck-Blackarch ~/.themes/" />
       </>
@@ -77,7 +74,6 @@ const sections = [
         <p>
           Move icon folder to <b>.icons</b> directory:
         </p>
-
         <CommandBlock command="cd dotIcons" />
         <CommandBlock command="mv Blackarch-Cyberdeck ~/.icons/" />
       </>
@@ -89,7 +85,6 @@ const sections = [
     content: (
       <>
         <p>After all setup done, restart:</p>
-
         <CommandBlock command="reboot" />
       </>
     ),
@@ -98,7 +93,6 @@ const sections = [
 
 const SetupDocs = () => {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
   const scrollToSection = (id: string) => {
     sectionRefs.current[id]?.scrollIntoView({
       behavior: "smooth",
@@ -108,13 +102,11 @@ const SetupDocs = () => {
 
   return (
     <div className="flex flex-row tracking-wider gap-1 size-full">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col overflow-x-hidden overflow-y-auto radio-list px-4 gap-8"
         style={{ height: "320px" }}
       >
         <TitleDoc text="Setup Guide" />
-
         {sections.map((section) => (
           <div
             key={section.id}
@@ -132,8 +124,6 @@ const SetupDocs = () => {
           </div>
         ))}
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3 pl-3">
         <TitleDoc text="Table of Contents" />
         <div className="flex flex-col gap-2">

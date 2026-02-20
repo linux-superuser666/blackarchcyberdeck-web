@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 import HyprFolder from "../repo/HyprFolder";
 import QuickshellFolder from "../repo/QuickshellFolder";
 import KittyFolder from "../repo/KittyFolder";
@@ -27,7 +26,6 @@ const Inventory: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>("/home/mrnngstr666");
   const computePath = (targetItem: FolderItem): string => {
     const pathParts: string[] = [];
-
     const traverse = (items: (FolderItem | string)[], parentPath: string) => {
       for (const item of items) {
         if (typeof item !== "string") {
@@ -43,7 +41,6 @@ const Inventory: React.FC = () => {
       }
       return false;
     };
-
     traverse(
       sections.flatMap((s) => s.items),
       "/home/mrnngstr666"
@@ -111,8 +108,6 @@ const Inventory: React.FC = () => {
               onClick={() => {
                 if (item.component) {
                   setActiveFolder(item.name);
-
-                  // Hitung path
                   const newPath = computePath(item);
                   setCurrentPath(newPath);
                 }
@@ -120,7 +115,6 @@ const Inventory: React.FC = () => {
             >
               {item.name}
             </p>
-
             {item.children && (
               <div className="pl-4 border-l border-redx/30">
                 {renderTree(item.children)}
@@ -144,8 +138,6 @@ const Inventory: React.FC = () => {
         }
       }
     }
-
-    // ✅ hanya tampil fallback kalau benar-benar tidak ada yang match
     if (!activeFolder) {
       return (
         <div className="flex text-redx font-medium w-full flex-col gap-1 text-xs">
@@ -153,13 +145,10 @@ const Inventory: React.FC = () => {
         </div>
       );
     }
-
     return null;
   };
-
   return (
     <div className="absolute font-inter tracking-wider bg-black/30 text-[10px] size-full grid grid-rows-[30px_1fr] border-redx/30 border">
-      {/* Top bar */}
       <div className="border-b size-full font-medium items-center border-redx/30 flex flex-row gap-3.5 p-0.5 text-redx/50">
         <div className="font-nerdfonts text-lg text-greyx pl-px">󰇙</div>
         <div className="font-nerdfonts text-sm"></div>
@@ -174,9 +163,7 @@ const Inventory: React.FC = () => {
           
         </div>
       </div>
-
       <div className="grid grid-cols-[150px_1fr] size-full relative">
-        {/* Sidebar */}
         <div className="border-r border-redx/30 p-2">
           {sections.map((section, i) => (
             <div key={i} className="mb-2">
@@ -185,8 +172,6 @@ const Inventory: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Content */}
         <div className="p-4">
           {findComponent(sections.flatMap((s) => s.items))}
         </div>

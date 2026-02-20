@@ -45,18 +45,15 @@ const packages = [
 const InstallationDocs = () => {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [copiedId, setCopiedId] = useState<string | null>(null);
-
   const scrollToSection = (id: string) => {
     sectionRefs.current[id]?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
-
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
-
     setTimeout(() => {
       setCopiedId(null);
     }, 1500);
@@ -64,13 +61,11 @@ const InstallationDocs = () => {
 
   return (
     <div className="flex tracking-wider flex-row gap-1 size-full">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col overflow-x-hidden overflow-y-auto journal-list px-4 gap-6"
         style={{ height: "300px" }}
       >
         <TitleDoc text="Install Requirement Packages" />
-
         {packages.map((pkg) => (
           <div
             key={pkg.id}
@@ -85,17 +80,13 @@ const InstallationDocs = () => {
               command={pkg.installCommand}
               label="Install Command :"
             />
-
-            {/* VERSION CHECK */}
             <div className="flex flex-col gap-1">
               <div className="text-redx font-medium">Version Check :</div>
-
               <div className="relative w-full border border-redx/30 px-2 py-2 flex items-center gap-2">
                 <span className="text-redx">$</span>
                 <span className="text-redx/80 font-semibold pr-14">
                   {pkg.versionCommand}
                 </span>
-
                 <button
                   onClick={() => handleCopy(pkg.versionCommand, pkg.id)}
                   className="absolute right-2 text-[10px] text-redx hover:opacity-70 transition font-nerdfonts"
@@ -107,8 +98,6 @@ const InstallationDocs = () => {
           </div>
         ))}
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3 pl-3">
         <TitleDoc text="Table of Contents" />
         {packages.map((pkg) => (

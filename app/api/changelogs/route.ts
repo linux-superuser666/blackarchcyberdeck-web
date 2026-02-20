@@ -3,12 +3,9 @@ import path from "path";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";  
-
 export async function GET() {
   const directory = path.join(process.cwd(), "data/changelogs");
-
   const files = fs.readdirSync(directory);
-
   const logs = files
     .filter((file) => file.endsWith(".json"))
     .map((file) => {
@@ -21,6 +18,5 @@ export async function GET() {
         new Date(b.releaseDate).getTime() -
         new Date(a.releaseDate).getTime()
     );
-
   return NextResponse.json(logs);
 }

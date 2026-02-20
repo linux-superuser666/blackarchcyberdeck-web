@@ -84,13 +84,11 @@ const AboutDocs = () => {
 
   return (
     <div className="flex tracking-wider gap-1 justify-between">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col px-4 gap-4"
         style={{ height: "320px" }}
       >
         <TitleDoc text="About BlackArch Cyberdeck" />
-
         <div className="flex overflow-x-hidden overflow-y-auto radio-list flex-col gap-6 text-[12px] font-medium leading-relaxed">
           {sections.map((section) => (
             <div
@@ -105,8 +103,6 @@ const AboutDocs = () => {
           ))}
         </div>
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3">
         <TitleDoc text="Table of Contents" />
         <div className="flex flex-col gap-2 text-greenx font-medium text-[10px]">

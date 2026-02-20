@@ -39,27 +39,22 @@ const ChangelogDocs = () => {
 
   return (
     <div className="flex gap-1 tracking-wider justify-between">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col px-4 gap-4"
         style={{ height: "320px" }}
       >
         <TitleDoc text="Changelog" />
-
         <div className="flex flex-col overflow-y-auto pr-1 journal-list gap-6 flex-1 min-h-0">
           {changelogs.map((log, logIndex) => (
             <div
               key={`log-${log.version}-${logIndex}`}
               className="flex flex-col gap-4"
             >
-              {/* VERSION HEADER */}
               <div>
                 <SubtitleDoc text={log.version} />
               </div>
-
               {log.sections.map((section, sectionIndex) => {
                 const sectionId = `section-${logIndex}-${sectionIndex}`;
-
                 return (
                   <div
                     key={`section-${log.version}-${section.id}-${sectionIndex}`}
@@ -88,15 +83,12 @@ const ChangelogDocs = () => {
           ))}
         </div>
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3" style={{ height: "320px" }}>
         <TitleDoc text="Table of Contents" />
         <div className="flex size-full overflow-x-hidden overflow-y-auto journal-list flex-col gap-3">
           {changelogs.map((log, logIndex) =>
             log.sections.map((section, sectionIndex) => {
               const sectionId = `section-${logIndex}-${sectionIndex}`;
-
               return (
                 <button
                   key={`toc-${log.version}-${section.id}-${sectionIndex}`}

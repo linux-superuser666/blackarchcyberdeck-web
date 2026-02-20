@@ -15,9 +15,7 @@ const rightCommands = [
 const Cyberware = () => {
   return (
     <div className="grid gap-1 font-nerdfonts grid-cols-[1fr_2fr] z-40 h-full w-full text-[9px] font-medium  relative">
-      {/* LEFT PANEL */}
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
-        {/* First command: sudo su */}
         <div className="flex flex-col gap-1">
           <p className="text-redx">
             [mrnngstr666@BlackArch] <span> - </span>[~]
@@ -26,12 +24,8 @@ const Cyberware = () => {
             <span className="text-redx"> &gt;&gt;&gt; </span>
             <span className="text-redx">sudo su</span>
           </p>
-
-          {/* Password Prompt */}
           <p className="text-redx">[sudo] password for mrnngstr666:</p>
         </div>
-
-        {/* Root Commands */}
         {leftCommands.slice(1).map((cmd, index) => (
           <div key={index} className="flex flex-col gap-1">
             <p className="text-orangex">
@@ -44,8 +38,6 @@ const Cyberware = () => {
           </div>
         ))}
       </div>
-
-      {/* RIGHT PANEL */}
       <div className="border p-2 border-redx/50 flex flex-col gap-3">
         {rightCommands.map((cmd, index) => (
           <div key={index} className="flex flex-col gap-1">

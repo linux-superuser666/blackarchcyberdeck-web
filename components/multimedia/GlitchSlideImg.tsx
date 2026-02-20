@@ -23,7 +23,6 @@ const GlitchSlideImg = () => {
         setShaking(false);
       }, 300);
     }, 2000);
-
     return () => clearInterval(interval);
   }, []);
 

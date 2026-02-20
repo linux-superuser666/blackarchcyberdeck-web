@@ -189,7 +189,6 @@ const QuickHack = () => {
                         type
                       </div>
                       <div className="uppercase font-semibold">
-                        {" "}
                         {hoveredTool?.type}
                       </div>
                     </div>
@@ -209,9 +208,7 @@ const QuickHack = () => {
           <BinLogo iconSrc={"/icons/control-dbus-alt.png"} />
         </div>
       </div>
-
       <div className="row-start-3"></div>
-
       <div className="col-start-3 justify-end row-start-3 flex gap-2 size-full">
         <BottomPanelButton
           onClick={() => toggleWidget("quickHack")}
@@ -224,7 +221,6 @@ const QuickHack = () => {
           label="Close"
         />
       </div>
-
       <div className="col-start-1 row-start-4">10</div>
     </div>
   );

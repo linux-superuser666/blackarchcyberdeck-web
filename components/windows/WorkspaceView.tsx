@@ -1,18 +1,23 @@
 "use client";
+
 import { JSX, useEffect, useState } from "react";
+
 type Props = {
   active: string;
   views: Record<string, JSX.Element>;
 };
+
 const WorkspaceView = ({ active, views }: Props) => {
   const [current, setCurrent] = useState(active);
   const [prev, setPrev] = useState<string | null>(null);
+
   useEffect(() => {
     if (active !== current) {
       setPrev(current);
       setCurrent(active);
     }
   }, [active]);
+
   return (
     <div className="relative w-full h-full overflow-hidden">
       {prev && (
@@ -22,4 +27,5 @@ const WorkspaceView = ({ active, views }: Props) => {
     </div>
   );
 };
+
 export default WorkspaceView;

@@ -1,7 +1,6 @@
 import localFont from "next/font/local";
 import { Rajdhani, Orbitron } from "next/font/google";
 
-/* Google Fonts */
 export const rajdhani = Rajdhani({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -31,7 +30,6 @@ export const nerdFont = localFont({
   display: "swap",
 });
 
-/* Blender Pro */
 export const blenderProBook = localFont({
   src: "./fonts/BlenderProBook.woff2",
   variable: "--font-blender",

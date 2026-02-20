@@ -53,7 +53,6 @@ const faqSections = [
 
 const FaqDocs = () => {
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
   const scrollToSection = (id: string) => {
     sectionRefs.current[id]?.scrollIntoView({
       behavior: "smooth",
@@ -63,13 +62,11 @@ const FaqDocs = () => {
 
   return (
     <div className="flex tracking-wider gap-1 justify-between">
-      {/* MAIN CONTENT */}
       <div
         className="flex w-full flex-col px-4 gap-4"
         style={{ height: "320px" }}
       >
         <TitleDoc text="Frequently Asked Questions" />
-
         <div className="flex overflow-x-hidden overflow-y-auto radio-list flex-col gap-6 text-[12px] font-medium leading-relaxed">
           {faqSections.map((section) => (
             <div
@@ -82,14 +79,11 @@ const FaqDocs = () => {
               <div className="text-redx uppercase tracking-widest text-[11px]">
                 {section.title}
               </div>
-
               {section.content}
             </div>
           ))}
         </div>
       </div>
-
-      {/* SIDEBAR TOC */}
       <div className="w-48 flex flex-col gap-3">
         <TitleDoc text="Table of Contents" />
         <div className="flex flex-col gap-2">

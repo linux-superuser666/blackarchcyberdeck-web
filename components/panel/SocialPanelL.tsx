@@ -34,24 +34,19 @@ const SocialPanelL = () => {
   return (
     <div className="bg-yellowx/50 w-[120px] h-[310px] p-[2px] [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)]">
       <div className="bg-black size-full [clip-path:polygon(0%__0%,__100%__0,__100%__93%,__90%__100%,__0%__100%)] flex flex-col justify-between p-px">
-        {/* Top decorative */}
         <div className="w-full flex h-2.5 justify-between flex-row">
           <Mur />
           <Mur />
           <Mur />
         </div>
-
-        {/* Content */}
         <div className="w-full flex h-full items-center justify-between flex-row">
           <Mur />
-
           <div className="border size-full p-px items-center justify-center flex flex-col border-redx/30 relative">
             <GlitchText
               text="social & support"
               className="uppercase text-center"
               fontSize={9}
             />
-
             <div className="border uppercase text-xs text-redx/50 size-full grid grid-cols-1 grid-rows-4 border-redx/30 items-center justify-center text-center">
               {socials.map((item, index) => (
                 <div
@@ -71,17 +66,13 @@ const SocialPanelL = () => {
                       intensity={1}
                     />
                   </Link>
-
                   {index !== socials.length - 1 && <PanelBorderPx />}
                 </div>
               ))}
             </div>
           </div>
-
           <Mur />
         </div>
-
-        {/* Bottom decorative */}
         <div className="w-full flex h-2.5 justify-between flex-row">
           <Mur />
           <Mur />

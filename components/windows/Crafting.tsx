@@ -19,7 +19,6 @@ const Crafting = () => {
       .then((res) => res.json())
       .then((data: any) => {
         if (data.content) {
-          // Decode base64
           const decoded = atob(data.content.replace(/\n/g, ""));
           setShellContent(decoded);
         }
@@ -63,7 +62,6 @@ const Crafting = () => {
           <div className="font-nerdfonts"></div>
           <div className="font-nerdfonts">󰇘</div>
         </div>
-        {/* terminal */}
         <div className="row-start-2 size-full py-1 pl-2 text-[8px] gap-1 flex flex-col font-nerdfonts tracking-wide">
           <div className="flex">
             <p className="text-bluex">[</p>

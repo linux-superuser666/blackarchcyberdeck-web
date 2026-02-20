@@ -3,7 +3,7 @@ import Image from "next/image";
 type BottomPanelButtonProps = {
   icon: string;
   label: string;
-  iconSize?: number; // px
+  iconSize?: number;
   onClick?: () => void;
 };
 

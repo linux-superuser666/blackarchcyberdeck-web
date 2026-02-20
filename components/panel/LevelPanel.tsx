@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { useUIStore } from "@/state/widgetState";
 import BrackRightBC from "../common/BrackRightBC";
 import BrackLeftBT from "../common/BrackLeftBT";
@@ -55,21 +54,17 @@ const LevelPanel = ({ className = "" }: LevelPanelProps) => {
             <div>Radiostation</div>
             <LevelSlider />
           </div>
-
           <div className="h-full"></div>
-
           <PanelBorderPx />
           <div className="text-greyx">Screen Controller</div>
           <div className="flex w-full justify-between flex-row">
             <div>Preset</div>
             <PresetCtrl label="LVDS-1 1366x768" />
           </div>
-
           <div className="flex my-1 w-full justify-between flex-row">
             <div>Enable Controller Screen</div>
             <SwitchBtn />
           </div>
-
           <PanelBorderPx />
           <div className="flex mt-1 w-full justify-between flex-row">
             <div>screen light</div>

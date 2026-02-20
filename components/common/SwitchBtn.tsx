@@ -25,8 +25,7 @@ const SwitchBtn = () => {
         <div className=" size-full [clip-path:polygon(0_0,_100%_0,_100%_70%,_80%_100%,_0_100%)] bg-darkbluex p-px">
           <div
             className={`
-            absolute top-[1px] h-[10px] w-[16px] transition-all
-                 [clip-path:polygon(0_0,_100%_0,_100%_70%,_70%_100%,_0_100%)]  
+            absolute top-[1px] h-[10px] w-[16px] transition-all [clip-path:polygon(0_0,_100%_0,_100%_70%,_70%_100%,_0_100%)]  
             ${isOn ? "right-0.5 bg-white" : "left-0.5 bg-redx"}
           `}
           />

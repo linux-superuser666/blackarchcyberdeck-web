@@ -31,7 +31,6 @@ const WinBox = () => {
             className="object-fill size-[11px]"
           />
         </div>
-
         <div className="absolute uppercase text-right items-start justify-end h-4 pr-[1px] pt-[3px] font-medium text-[5px] w-4 flex inset-0 text-greyx">
           <div id="numberCount">6</div>
         </div>

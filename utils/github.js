@@ -5,7 +5,6 @@ export async function getGithubFolderContents(repo) {
     },
   });
   if (!res.ok) return [];
-  const data = await res.json();
-  // Ambil nama file/folder saja
+  const data = await res.json(); 
   return data.map((item) => ({ name: item.name, isFolder: item.type === "dir" }));
 }

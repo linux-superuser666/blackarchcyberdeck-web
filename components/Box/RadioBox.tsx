@@ -17,7 +17,6 @@ const RadioBox = () => {
         prev.map(() => Math.floor(Math.random() * (MAX_H - MIN_H + 1)) + MIN_H)
       );
     }, 350);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -34,7 +33,6 @@ const RadioBox = () => {
         height={16}
         className="object-fill inset-0 absolute"
       />
-
       <div />
       <div className="absolute h-4 w-4 flex gap-[1px] flex-row items-end pb-[2px] justify-center">
         {bars.map((h, i) => (
@@ -44,8 +42,6 @@ const RadioBox = () => {
             style={{ height: `${h * 2}px` }}
           />
         ))}
-
-        {/* STATUS ARROW */}
         <div className="absolute h-3 w-3.5 flex items-start justify-end pt-0.5">
           <div
             id="statusRadio"

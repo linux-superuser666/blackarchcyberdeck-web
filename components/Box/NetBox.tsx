@@ -29,7 +29,6 @@ const NetBox = () => {
             height={9}
             className="object-contain"
           />
-          {/* content reusable / img/ div/ */}
         </div>
         <div className="absolute inset-0 pt-[2px] pr-[1px] uppercase text-right items-start justify-end h-4 font-bold text-[4px] w-4 flex">
           <div id="numberCount">tx</div>

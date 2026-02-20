@@ -7,8 +7,8 @@ type BinLogoProps = {
   iconSrc: string;
   alt?: string;
   speed?: number;
-  textSize?: string; // ukuran teks
-  leadingClass?: string; // class untuk line-height / leading
+  textSize?: string;
+  leadingClass?: string;
 };
 
 const BINARY_PATTERNS = ["1011", "1011", "0101", "1101"];
@@ -18,7 +18,7 @@ const BinLogo = ({
   alt = "icon",
   speed = 3000,
   textSize = "3px",
-  leadingClass = "leading-none", // default leading
+  leadingClass = "leading-none",
 }: BinLogoProps) => {
   const [index, setIndex] = useState(0);
 
@@ -42,8 +42,6 @@ const BinLogo = ({
           </div>
         ))}
       </div>
-
-      {/* Icon */}
       <Image
         src={iconSrc}
         alt={alt}

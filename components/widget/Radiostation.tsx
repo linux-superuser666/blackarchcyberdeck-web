@@ -36,7 +36,6 @@ const Radiostation = () => {
 
   const playSong = (song: (typeof radioSongs)[0]) => {
     setCurrentSong(song);
-
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.src = song.src;
@@ -44,7 +43,6 @@ const Radiostation = () => {
       audioRef.current.play();
     }
   };
-
   const stopSong = () => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -52,23 +50,15 @@ const Radiostation = () => {
     }
     setCurrentSong(null);
   };
-
   const playNextSong = () => {
     if (!currentSong) return;
-
     const currentIndex = radioSongs.findIndex(
       (song) => song.src === currentSong.src
     );
-
     const nextIndex =
-      currentIndex === radioSongs.length - 1
-        ? 0 // balik ke awal kalau sudah terakhir
-        : currentIndex + 1;
-
+      currentIndex === radioSongs.length - 1 ? 0 : currentIndex + 1;
     const nextSong = radioSongs[nextIndex];
-
     setCurrentSong(nextSong);
-
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.src = nextSong.src;
@@ -80,7 +70,6 @@ const Radiostation = () => {
   return (
     <>
       <audio ref={audioRef} onEnded={playNextSong} className="hidden" />
-
       {activeWidget === "radioStation" && (
         <div className="absolute inset-0 z-[999] w-full h-full bg-black/70 flex justify-center items-center leading-none">
           <div className="flex flex-col w-[234px] h-[320px]">

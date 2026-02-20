@@ -28,13 +28,11 @@ const CyberTooltipRight: React.FC<CyberTooltipRightProps> = ({
             ))}
           </div>
         </div>
-
         <div className="flex">
           <div className="size-10 relative">
             <div
               className={`absolute inset-0 size-full z-10 ${accentClass} [clip-path:polygon(100%_0,_0_100%,_0_95%,_96%_0)]`}
             ></div>
-
             <div
               className={`absolute bottom-0 z-20 left-0 size-3 ${accentClass} p-[2px]`}
             >

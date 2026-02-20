@@ -17,41 +17,31 @@ export default function SiriClassicWave({
 
   useEffect(() => {
     if (!containerRef.current) return;
-
     const element = containerRef.current;
-
     const initWave = () => {
       const width = element.offsetWidth;
       const height = element.offsetHeight;
-
       siriRef.current?.dispose();
-
       siriRef.current = new SiriWave({
         container: element,
         width,
         height,
-        style: "ios", // classic
+        style: "ios",
         color,
         speed: 0.2,
         amplitude: 1,
         autostart: true,
       });
     };
-
     initWave();
-
-    // Auto resize kalau ukuran berubah
     const resizeObserver = new ResizeObserver(() => {
       initWave();
     });
-
     resizeObserver.observe(element);
-
     return () => {
       resizeObserver.disconnect();
       siriRef.current?.dispose();
     };
   }, [color]);
-
   return <div ref={containerRef} className={className} />;
 }
