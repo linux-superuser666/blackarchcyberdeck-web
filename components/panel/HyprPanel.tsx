@@ -29,73 +29,73 @@ const HyprPanel = () => {
     {
       label: "cyberware",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-1-idle.png",
+        occupied: "/ws/ws-1-occupied.png",
+        active: "/ws/ws-1-active.png",
       },
     },
     {
       label: "inventory",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-2-idle.png",
+        occupied: "/ws/ws-2-occupied.png",
+        active: "/ws/ws-2-active.png",
       },
     },
     {
       label: "crafting",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-3-idle.png",
+        occupied: "/ws/ws-3-occupied.png",
+        active: "/ws/ws-3-active.png",
       },
     },
     {
       label: "net",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-4-idle.png",
+        occupied: "/ws/ws-4-occupied.png",
+        active: "/ws/ws-4-active.png",
       },
     },
     {
       label: "journal",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-5-idle.png",
+        occupied: "/ws/ws-5-occupied.png",
+        active: "/ws/ws-5-active.png",
       },
     },
     {
       label: "media",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-6-idle.png",
+        occupied: "/ws/ws-6-occupied.png",
+        active: "/ws/ws-6-active.png",
       },
     },
     {
       label: "codex",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-7-idle.png",
+        occupied: "/ws/ws-7-occupied.png",
+        active: "/ws/ws-7-active.png",
       },
     },
     {
       label: "message",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-8-idle.png",
+        occupied: "/ws/ws-8-occupied.png",
+        active: "/ws/ws-8-active.png",
       },
     },
     {
       label: "machine",
       icons: {
-        idle: "/ws/ws-idle.png",
-        occupied: "/ws/ws-occupied.png",
-        active: "/ws/ws-active.png",
+        idle: "/ws/ws-9-idle.png",
+        occupied: "/ws/ws-9-occupied.png",
+        active: "/ws/ws-9-active.png",
       },
     },
   ];
