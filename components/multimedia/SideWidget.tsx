@@ -22,9 +22,6 @@ const SideWidget = () => {
           <div className="absolute right-[135px] bottom-[396px] transform rotate-180 hidden xl:flex">
             <CableRx />
           </div>
-          <div className="absolute hidden xl:flex right-[230px] bottom-[100px]">
-            <AthLeft />
-          </div>
           <div className="absolute hidden xl:flex right-[163px] bottom-[448px] tranform rotate-180">
             <CableCat height={68} width={41} />
           </div>
@@ -34,7 +31,7 @@ const SideWidget = () => {
           <div className="absolute hidden xl:flex right-[162px] bottom-[448px] tranform rotate-180">
             <CableCat radius={8} width={32} height={55} />
           </div>
-          <div className="absolute right-[165px] bottom-[86px]">
+          <div className="absolute right-[100px] bottom-[86px]">
             <SocialPanelL />
           </div>
         </div>
