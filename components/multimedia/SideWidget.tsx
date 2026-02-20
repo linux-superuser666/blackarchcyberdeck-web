@@ -16,22 +16,22 @@ const SideWidget = () => {
           <div className="absolute bottom-[535px] right-[111px]">
             <div className="w-1 h-10 border-l rounded-l-sm border-y border-yellowx/50"></div>
           </div>
-          <div className="absolute bottom-[507px] transform rotate-90 right-[93px]">
+          <div className="absolute hidden xl:flex bottom-[507px] transform rotate-90 right-[93px]">
             <CableTx />
           </div>
-          <div className="absolute right-[135px] bottom-[396px] transform rotate-180">
+          <div className="absolute right-[135px] bottom-[396px] transform rotate-180 hidden xl:flex">
             <CableRx />
           </div>
-          <div className="absolute right-[230px] bottom-[100px]">
+          <div className="absolute hidden xl:flex right-[230px] bottom-[100px]">
             <AthLeft />
           </div>
-          <div className="absolute right-[163px] bottom-[448px] tranform rotate-180">
+          <div className="absolute hidden xl:flex right-[163px] bottom-[448px] tranform rotate-180">
             <CableCat height={68} width={41} />
           </div>
-          <div className="absolute right-[163px] bottom-[448px] tranform rotate-180">
+          <div className="absolute hidden xl:flex right-[163px] bottom-[448px] tranform rotate-180">
             <CableCat radius={11} width={36} height={61} />
           </div>
-          <div className="absolute right-[162px] bottom-[448px] tranform rotate-180">
+          <div className="absolute hidden xl:flex right-[162px] bottom-[448px] tranform rotate-180">
             <CableCat radius={8} width={32} height={55} />
           </div>
           <div className="absolute right-[165px] bottom-[86px]">
@@ -44,19 +44,19 @@ const SideWidget = () => {
           <div className="absolute bottom-[559px] left-[111px]">
             <div className="w-1 h-10 border-r rounded-r-sm border-y border-yellowx/50"></div>
           </div>
-          <div className="absolute bottom-[76px] transform -rotate-90 left-[73px] ">
+          <div className="absolute hidden xl:flex bottom-[76px] transform -rotate-90 left-[73px] ">
             <CableTx />
           </div>
-          <div className="absolute left-[143px] bottom-[222px]">
+          <div className="absolute hidden xl:flex left-[143px] bottom-[222px]">
             <CableRx />
           </div>
-          <div className="absolute left-[142px] bottom-[131px]">
+          <div className="absolute hidden xl:flex left-[142px] bottom-[131px]">
             <CableCat radius={8} width={59} height={93} />
           </div>
-          <div className="absolute left-[142px] bottom-[126px]">
+          <div className="absolute hidden xl:flex left-[142px] bottom-[126px]">
             <CableCat radius={11} width={65} height={96} />
           </div>
-          <div className="absolute left-[142px] bottom-[120px]">
+          <div className="absolute hidden xl:flex left-[142px] bottom-[120px]">
             <CableCat height={103} width={72} />
           </div>
           <div className="absolute left-[113px] bottom-[273px]">
